@@ -183,31 +183,37 @@ a:hover {
   margin-top: 0.6rem;
 }
 
-/* Ondes décoratives du hero */
-.hero-ondes {
-  position: absolute;
-  right: -4rem;
-  top: -2rem;
-  opacity: 0.5;
-  pointer-events: none;
-  user-select: none;
+/* Hero centré */
+.hero-centre {
+  text-align: center;
+  padding: 3rem 0 2.2rem;
+}
+.hero-centre h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+}
+.hero-centre p {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.08rem;
 }
 
-/* Navigation horizontale entre produits — cartes à vignette */
+/* Navigation horizontale entre produits — grandes cartes à vignette (~2/3 de page) */
 .onglets-produits {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;
   overflow-x: auto;
   padding: 0.25rem 0.25rem 0.9rem;
   margin: 1rem -0.25rem 1.5rem;
   scrollbar-width: thin;
+  scroll-snap-type: x proximity;
 }
 
 .onglet-produit {
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  width: 11.5rem;
+  width: min(40rem, 82vw);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   font-family: var(--police);
@@ -246,7 +252,8 @@ a:hover {
   background: radial-gradient(ellipse at center, var(--surface-2), var(--surface));
 }
 .onglet-produit .nom {
-  padding: 0.5rem 0.9rem 0.6rem;
+  padding: 0.7rem 1rem 0.8rem;
+  font-size: 1.05rem;
   font-weight: 500;
   text-align: center;
 }
@@ -274,6 +281,7 @@ a:hover {
   border-radius: var(--rayon-grand);
   padding: 2rem;
   animation: apparition 0.35s ease-out;
+  scroll-margin-top: 5rem;
 }
 .panneau-produit[hidden] { display: none; }
 
@@ -348,16 +356,10 @@ a:hover {
 }
 .captures img {
   display: block;
-  height: 20rem;
-  width: auto;
+  width: min(40rem, 78vw);
+  height: auto;
   border-radius: var(--rayon);
   border: 1px solid var(--bordure);
-}
-
-@media (max-width: 640px) {
-  .captures img {
-    height: 14rem;
-  }
 }
 .captures-vide {
   color: var(--texte-3);
@@ -566,7 +568,6 @@ a:hover {
   .entete-inner { flex-wrap: wrap; gap: 0.6rem 1rem; }
   .nav-principale { margin-left: 0; order: 3; width: 100%; }
   .panneau-produit { padding: 1.4rem; }
-  .hero-ondes { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

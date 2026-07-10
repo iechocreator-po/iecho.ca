@@ -25,7 +25,7 @@ export function cheminPage(page: PageKey, lang: Langue): string {
 
 export const ui = {
   fr: {
-    'site.tagline': 'petits produits, grandes explorations',
+    'site.tagline': 'Expérimenter, apprendre, faire résonner des idées en produits.',
     'site.description':
       "iecho — un atelier de produits numériques : des outils locaux et personnels, construits pour apprendre.",
     'nav.produits': 'Produits',
@@ -68,7 +68,7 @@ export const ui = {
     'pied.note': 'construit à la main, hébergé sobrement.',
   },
   en: {
-    'site.tagline': 'small products, wide explorations',
+    'site.tagline': 'Experiment, learn, make ideas echo into products.',
     'site.description':
       'iecho — a digital product workshop: local, personal tools built to learn.',
     'nav.produits': 'Products',
@@ -111,7 +111,7 @@ export const ui = {
     'pied.note': 'handmade, soberly hosted.',
   },
   es: {
-    'site.tagline': 'productos pequeños, exploraciones amplias',
+    'site.tagline': 'Experimentar, aprender, hacer resonar las ideas en productos.',
     'site.description':
       'iecho — un taller de productos digitales: herramientas locales y personales, construidas para aprender.',
     'nav.produits': 'Productos',

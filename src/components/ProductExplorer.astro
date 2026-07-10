@@ -57,12 +57,12 @@ const libelleStatut = {
 };
 ---
 <div class="onglets-produits" role="tablist" aria-label={tr('produits.titre')}>
-  {produits.map((p, i) => (
+  {produits.map((p) => (
     <button
       class="onglet-produit"
       role="tab"
       id={`onglet-${p.id}`}
-      aria-selected={i === 0 ? 'true' : 'false'}
+      aria-selected="false"
       aria-controls={`panneau-${p.id}`}
       data-produit={p.id}
     >
@@ -82,13 +82,13 @@ const libelleStatut = {
   ))}
 </div>
 
-{produits.map((p, i) => (
+{produits.map((p) => (
   <section
     class="panneau-produit"
     role="tabpanel"
     id={`panneau-${p.id}`}
     aria-labelledby={`onglet-${p.id}`}
-    hidden={i !== 0}
+    hidden
   >
     <h2>{p.nom}</h2>
     <p class="sous-titre">{p.sousTitre}</p>
@@ -152,6 +152,10 @@ const libelleStatut = {
   onglets.forEach((onglet) => {
     onglet.addEventListener('click', (e) => {
       activer(onglet);
+      // Amène la fiche du produit dans le champ de vision.
+      document
+        .getElementById(onglet.getAttribute('aria-controls')!)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       // Onde concentrique au point de clic — le motif écho.
       const rect = onglet.getBoundingClientRect();
       const onde = document.createElement('span');

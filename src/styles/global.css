@@ -329,14 +329,17 @@ a:hover {
   padding: 0.2rem 0.6rem;
 }
 
-/* Captures d'écran */
+/* Captures d'écran — bande horizontale, images non recadrées (hauteur commune) */
 .captures {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
   gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+  scrollbar-width: thin;
 }
 .captures a {
   display: block;
+  flex-shrink: 0;
   border-radius: var(--rayon);
   transition: transform 0.2s;
 }
@@ -345,9 +348,16 @@ a:hover {
 }
 .captures img {
   display: block;
-  width: 100%;
+  height: 20rem;
+  width: auto;
   border-radius: var(--rayon);
   border: 1px solid var(--bordure);
+}
+
+@media (max-width: 640px) {
+  .captures img {
+    height: 14rem;
+  }
 }
 .captures-vide {
   color: var(--texte-3);

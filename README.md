@@ -23,6 +23,7 @@ npm run build      # génère dist/
 | Quoi | Où |
 |---|---|
 | Contenu des produits (résumé, besoin, stack, roadmap) | `src/data/produits/{fr,en,es}.json` |
+| Ordre des produits et affichage de la section technique | `src/data/produits.config.json` (`ordre`, `afficherTechnique`) |
 | Textes d'interface et pages Mission / À propos | `src/i18n/ui.ts` |
 | Slugs localisés des pages | `routes` dans `src/i18n/ui.ts` + fichiers `src/pages/<lang>/` |
 | Design (couleurs, ondes, composants) | `src/styles/global.css` |

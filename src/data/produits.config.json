@@ -1,0 +1,9 @@
+{
+  "_doc": "Configuration d'affichage des produits (indépendante de la langue).",
+
+  "_doc_ordre": "Ordre d'affichage dans le sélecteur horizontal ET les fiches. Utiliser les identifiants (id) des produits. Un produit absent de cette liste est placé à la fin.",
+  "ordre": ["marbella", "toledo", "madrid", "valencia", "barcelona"],
+
+  "_doc_afficherTechnique": "Produits pour lesquels la section « Sous le capot » (détails techniques) est affichée. Par défaut, elle est masquée pour tous les autres.",
+  "afficherTechnique": ["barcelona"]
+}

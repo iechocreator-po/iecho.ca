@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { t, type Langue } from '../i18n/ui';
+import config from '../data/produits.config.json';
 
 interface Produit {
   id: string;
@@ -22,8 +23,20 @@ interface Props {
   lang: Langue;
   produits: Produit[];
 }
-const { lang, produits } = Astro.props;
+const { lang, produits: produitsBruts } = Astro.props;
 const tr = t(lang);
+
+// Ordre d'affichage piloté par produits.config.json ; un produit absent de la
+// liste est placé à la fin (ordre stable d'origine).
+const ordre: string[] = config.ordre ?? [];
+const rang = (id: string) => {
+  const i = ordre.indexOf(id);
+  return i === -1 ? ordre.length : i;
+};
+const produits = [...produitsBruts].sort((a, b) => rang(a.id) - rang(b.id));
+
+// Produits dont la section technique (« Sous le capot ») est affichée.
+const afficherTechnique = new Set<string>(config.afficherTechnique ?? []);
 
 const dossierCaptures = path.resolve('./public/captures');
 function capturesPour(id: string): string[] {
@@ -101,12 +114,14 @@ const libelleStatut = {
       )}
     </div>
 
-    <div class="section-produit">
-      <h3>{tr('produit.technique')}</h3>
-      <ul class="pastilles">
-        {p.stack.map((tech) => <li>{tech}</li>)}
-      </ul>
-    </div>
+    {afficherTechnique.has(p.id) && (
+      <div class="section-produit">
+        <h3>{tr('produit.technique')}</h3>
+        <ul class="pastilles">
+          {p.stack.map((tech) => <li>{tech}</li>)}
+        </ul>
+      </div>
+    )}
 
     <div class="section-produit">
       <h3>{tr('produit.roadmap')}</h3>

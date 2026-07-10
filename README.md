@@ -26,7 +26,7 @@ npm run build      # génère dist/
 | Textes d'interface et pages Mission / À propos | `src/i18n/ui.ts` |
 | Slugs localisés des pages | `routes` dans `src/i18n/ui.ts` + fichiers `src/pages/<lang>/` |
 | Design (couleurs, ondes, composants) | `src/styles/global.css` |
-| Captures d'écran d'un produit | déposer dans `public/captures/` puis lister les chemins dans le champ `captures` du JSON |
+| Captures d'écran d'un produit | déposer dans `public/captures/` nommées `<id>-1.png`, `<id>-2.png`… (png/jpg/webp) — la `-1` devient la vignette du bouton, toutes vont dans la galerie. Détection automatique au build, rien d'autre à faire |
 
 Statuts de roadmap : `proposee`, `encours`, `livree`.
 

@@ -193,12 +193,12 @@ a:hover {
   user-select: none;
 }
 
-/* Navigation horizontale entre produits */
+/* Navigation horizontale entre produits — cartes à vignette */
 .onglets-produits {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
   overflow-x: auto;
-  padding: 0.25rem 0.25rem 0.75rem;
+  padding: 0.25rem 0.25rem 0.9rem;
   margin: 1rem -0.25rem 1.5rem;
   scrollbar-width: thin;
 }
@@ -207,32 +207,48 @@ a:hover {
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 11.5rem;
+  display: flex;
+  flex-direction: column;
   font-family: var(--police);
   font-size: 0.95rem;
   color: var(--texte-2);
   background: var(--surface);
   border: 1px solid var(--bordure);
-  border-radius: 999px;
-  padding: 0.5rem 1.1rem;
+  border-radius: var(--rayon-grand);
+  padding: 0;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .onglet-produit:hover {
   color: var(--texte);
   border-color: var(--bordure-vive);
+  transform: translateY(-2px);
 }
 .onglet-produit[aria-selected='true'] {
   color: var(--accent-vif);
-  background: var(--accent-doux);
   border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 6px 24px rgba(111, 199, 192, 0.12);
 }
-.onglet-produit .sous-nom {
+.onglet-produit .vignette {
   display: block;
-  font-size: 0.72rem;
-  color: var(--texte-3);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--bordure);
+  background: var(--surface-2);
 }
-.onglet-produit[aria-selected='true'] .sous-nom {
-  color: var(--accent);
+.onglet-produit .vignette-vide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, var(--surface-2), var(--surface));
+}
+.onglet-produit .nom {
+  padding: 0.5rem 0.9rem 0.6rem;
+  font-weight: 500;
+  text-align: center;
 }
 
 /* Onde au clic (motif écho) */
@@ -268,6 +284,11 @@ a:hover {
 
 .panneau-produit h2 {
   font-size: 1.5rem;
+}
+.panneau-produit .sous-titre {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-top: 0.1rem;
 }
 .panneau-produit .resume {
   color: var(--texte-2);
@@ -314,7 +335,16 @@ a:hover {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 0.8rem;
 }
+.captures a {
+  display: block;
+  border-radius: var(--rayon);
+  transition: transform 0.2s;
+}
+.captures a:hover {
+  transform: translateY(-2px);
+}
 .captures img {
+  display: block;
   width: 100%;
   border-radius: var(--rayon);
   border: 1px solid var(--bordure);

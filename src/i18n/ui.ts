@@ -43,13 +43,22 @@ export const ui = {
     'statut.encours': 'en cours',
     'statut.livree': 'livrée',
     'mission.titre': 'Mission',
-    'mission.brouillon':
-      "Ce texte est en cours d'écriture. L'intention derrière iecho : expérimenter, apprendre — et partager ce qui en sort.",
+    'mission.intro.1': "Un echo symbolise l'impact, l'expression, le reflet, la résonance.",
+    'mission.intro.2':
+      "L'intention derrière iecho : expérimenter, apprendre et partager ce qui en sort.",
     'mission.logos.titre': 'Logos en gestation',
     'mission.logos.intro':
       'Le logo iecho se cherche encore. Dites-nous lequel vous inspire via le bouton « Partager une idée ».',
     'apropos.titre': 'À propos',
-    'apropos.brouillon': 'Bio en préparation.',
+    'apropos.bio.1':
+      'Consultant en développement de produits numériques et spécialiste en gestion de projet.',
+    'apropos.bio.2': 'Membre du conseil d’administration de Quatre-Chemins.org.',
+    'apropos.bio.3':
+      "Animé par un intérêt profond pour l'humain, le dialogue authentique et la transformation au sein des communautés professionnelles.",
+    'apropos.bio.4':
+      'Enseignant universitaire en gestion de projets, en développement rapide de produits numériques et en amélioration continue.',
+    'apropos.bio.5':
+      "iecho est né de son besoin constant d'expérimenter et d'apprendre par l'action.",
     'apropos.collabs': 'Collaborations',
     'apropos.collabs.brouillon': 'Section en préparation.',
     'apropos.perso': 'Plus léger',
@@ -86,13 +95,21 @@ export const ui = {
     'statut.encours': 'in progress',
     'statut.livree': 'shipped',
     'mission.titre': 'Mission',
-    'mission.brouillon':
-      'This text is being written. The intention behind iecho: experiment, learn — and share what comes out of it.',
+    'mission.intro.1': 'An echo symbolizes impact, expression, reflection, resonance.',
+    'mission.intro.2':
+      'The intention behind iecho: experiment, learn, and share what comes out of it.',
     'mission.logos.titre': 'Logos in gestation',
     'mission.logos.intro':
       'The iecho logo is still finding itself. Tell us which one inspires you via the “Share an idea” button.',
     'apropos.titre': 'About',
-    'apropos.brouillon': 'Bio in preparation.',
+    'apropos.bio.1':
+      'Consultant in digital product development and project management specialist.',
+    'apropos.bio.2': 'Board member of Quatre-Chemins.org.',
+    'apropos.bio.3':
+      'Driven by a deep interest in people, authentic dialogue, and transformation within professional communities.',
+    'apropos.bio.4':
+      'University lecturer in project management, rapid digital product development, and continuous improvement.',
+    'apropos.bio.5': 'iecho was born from his constant need to experiment and learn by doing.',
     'apropos.collabs': 'Collaborations',
     'apropos.collabs.brouillon': 'Section in preparation.',
     'apropos.perso': 'Lighter things',
@@ -129,13 +146,22 @@ export const ui = {
     'statut.encours': 'en curso',
     'statut.livree': 'entregada',
     'mission.titre': 'Misión',
-    'mission.brouillon':
-      'Este texto está en redacción. La intención detrás de iecho: experimentar, aprender — y compartir lo que surja.',
+    'mission.intro.1': 'Un eco simboliza el impacto, la expresión, el reflejo, la resonancia.',
+    'mission.intro.2':
+      'La intención detrás de iecho: experimentar, aprender y compartir lo que surja.',
     'mission.logos.titre': 'Logos en gestación',
     'mission.logos.intro':
       'El logo de iecho aún se está buscando. Cuéntanos cuál te inspira con el botón «Compartir una idea».',
     'apropos.titre': 'Acerca de',
-    'apropos.brouillon': 'Bio en preparación.',
+    'apropos.bio.1':
+      'Consultor en desarrollo de productos digitales y especialista en gestión de proyectos.',
+    'apropos.bio.2': 'Miembro del consejo de administración de Quatre-Chemins.org.',
+    'apropos.bio.3':
+      'Motivado por un profundo interés en las personas, el diálogo auténtico y la transformación dentro de las comunidades profesionales.',
+    'apropos.bio.4':
+      'Profesor universitario en gestión de proyectos, desarrollo rápido de productos digitales y mejora continua.',
+    'apropos.bio.5':
+      'iecho nació de su necesidad constante de experimentar y aprender mediante la acción.',
     'apropos.collabs': 'Colaboraciones',
     'apropos.collabs.brouillon': 'Sección en preparación.',
     'apropos.perso': 'Cosas más ligeras',

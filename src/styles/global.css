@@ -416,25 +416,37 @@ a:hover {
   font-style: italic;
 }
 
-/* Grille des logos en gestation */
+/* Logos en gestation — une rangée horizontale par niveau (logos du même
+   niveau alignés sur le même axe) */
+.niveau-logos + .niveau-logos {
+  margin-top: 0.9rem;
+}
 .logos-gestation {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
   gap: 0.9rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 0.6rem;
   margin-top: 1.2rem;
+  scrollbar-width: thin;
 }
 .logo-carte {
+  flex-shrink: 0;
+  width: 9rem;
+  height: 9rem;
   background: var(--surface);
   border: 1px solid var(--bordure);
   border-radius: var(--rayon-grand);
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  color: var(--texte-3);
-  font-size: 0.85rem;
+  justify-content: center;
   transition: border-color 0.2s, transform 0.2s;
+}
+.logo-carte img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: calc(var(--rayon-grand) - 0.4rem);
 }
 .logo-carte:hover {
   border-color: var(--bordure-vive);

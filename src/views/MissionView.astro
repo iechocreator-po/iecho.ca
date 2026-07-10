@@ -1,4 +1,10 @@
 ---
+// Logos en gestation : les planches déposées dans public/logos/ (nommées
+// logo-n<niveau>-<planche>-<quadrant>.png par le script de découpe, ou
+// directement logo-n<niveau>-<n>.png pour un logo simple) sont groupées par
+// niveau et affichées en rangées horizontales, une rangée par niveau.
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../layouts/Base.astro';
 import { t, type Langue } from '../i18n/ui';
 
@@ -8,33 +14,63 @@ interface Props {
 const { lang } = Astro.props;
 const tr = t(lang);
 
-// Pistes de logo soumises au regard des visiteurs (votes via le bouton feedback).
-const variantes = [
+const dossierLogos = path.resolve('./public/logos');
+const motif = /^logo-n(\d+)-.+\.(png|jpe?g|webp|svg)$/i;
+const fichiers = fs.existsSync(dossierLogos)
+  ? fs
+      .readdirSync(dossierLogos)
+      .filter((f) => motif.test(f))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  : [];
+
+const niveaux = new Map<number, string[]>();
+for (const f of fichiers) {
+  const niveau = Number(f.match(motif)![1]);
+  if (!niveaux.has(niveau)) niveaux.set(niveau, []);
+  niveaux.get(niveau)!.push(`/logos/${f}`);
+}
+
+// Niveau 4 (existant) : trois pistes dessinées en SVG, indépendantes des
+// fichiers déposés — conservées telles quelles, ajoutées à la suite.
+const niveau4Svg = [
   { id: 'logo-a', rayons: [4, 9, 14], opacites: [1, 0.5, 0.22] },
   { id: 'logo-b', rayons: [3, 7, 11, 15], opacites: [1, 0.65, 0.38, 0.16] },
   { id: 'logo-c', rayons: [5, 12], opacites: [1, 0.35] },
 ];
+niveaux.set(4, []); // s'assure que le niveau 4 existe même sans image déposée
+
+const ordreNiveaux = Array.from(niveaux.keys()).sort((a, b) => a - b);
 ---
 <Base lang={lang} page="mission" titre={tr('mission.titre')}>
   <div class="prose">
     <h1>{tr('mission.titre')}</h1>
-    <p class="note-brouillon">{tr('mission.brouillon')}</p>
+    <p>{tr('mission.intro.1')}</p>
+    <p>{tr('mission.intro.2')}</p>
 
     <h2>{tr('mission.logos.titre')}</h2>
     <p>{tr('mission.logos.intro')}</p>
-    <div class="logos-gestation">
-      {variantes.map((v) => (
-        <div class="logo-carte">
-          <svg width="72" height="72" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            {v.rayons.map((r, i) => (
-              i === 0
-                ? <circle cx="18" cy="18" r={r} fill="var(--accent)" fill-opacity={v.opacites[i]} />
-                : <circle cx="18" cy="18" r={r} stroke="var(--accent)" stroke-opacity={v.opacites[i]} stroke-width="1.5" />
-            ))}
-          </svg>
-          <span>{v.id}</span>
+
+    {ordreNiveaux.map((niveau) => (
+      <div class="niveau-logos">
+        <div class="logos-gestation">
+          {niveaux.get(niveau)!.map((src) => (
+            <div class="logo-carte">
+              <img src={src} alt="" loading="lazy" />
+            </div>
+          ))}
+          {niveau === 4 && niveau4Svg.map((v) => (
+            <div class="logo-carte">
+              <svg width="72" height="72" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                {v.rayons.map((r, i) => (
+                  i === 0
+                    ? <circle cx="18" cy="18" r={r} fill="var(--accent)" fill-opacity={v.opacites[i]} />
+                    : <circle cx="18" cy="18" r={r} stroke="var(--accent)" stroke-opacity={v.opacites[i]} stroke-width="1.5" />
+                ))}
+              </svg>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </Base>

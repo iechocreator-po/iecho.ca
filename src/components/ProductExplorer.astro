@@ -1,0 +1,136 @@
+---
+// Navigation horizontale entre produits + panneau de détail.
+// Le contenu vient de src/data/produits/<lang>.json.
+import { t, type Langue } from '../i18n/ui';
+
+interface Produit {
+  id: string;
+  nom: string;
+  sousTitre: string;
+  resume: string;
+  besoin: string;
+  stack: string[];
+  captures: string[];
+  roadmap: { titre: string; statut: 'proposee' | 'encours' | 'livree' }[];
+}
+
+interface Props {
+  lang: Langue;
+  produits: Produit[];
+}
+const { lang, produits } = Astro.props;
+const tr = t(lang);
+
+const libelleStatut = {
+  proposee: tr('statut.proposee'),
+  encours: tr('statut.encours'),
+  livree: tr('statut.livree'),
+};
+---
+<div class="onglets-produits" role="tablist" aria-label={tr('produits.titre')}>
+  {produits.map((p, i) => (
+    <button
+      class="onglet-produit"
+      role="tab"
+      id={`onglet-${p.id}`}
+      aria-selected={i === 0 ? 'true' : 'false'}
+      aria-controls={`panneau-${p.id}`}
+      data-produit={p.id}
+    >
+      {p.nom}
+      <span class="sous-nom">{p.sousTitre}</span>
+    </button>
+  ))}
+</div>
+
+{produits.map((p, i) => (
+  <section
+    class="panneau-produit"
+    role="tabpanel"
+    id={`panneau-${p.id}`}
+    aria-labelledby={`onglet-${p.id}`}
+    hidden={i !== 0}
+  >
+    <h2>{p.nom}</h2>
+    <p class="resume">{p.resume}</p>
+
+    <div class="section-produit">
+      <h3>{tr('produit.besoin')}</h3>
+      <p>{p.besoin}</p>
+    </div>
+
+    <div class="section-produit">
+      <h3>{tr('produit.captures')}</h3>
+      {p.captures.length > 0 ? (
+        <div class="captures">
+          {p.captures.map((src) => (
+            <img src={src} alt={p.nom} loading="lazy" />
+          ))}
+        </div>
+      ) : (
+        <p class="captures-vide">{tr('produit.captures.bientot')}</p>
+      )}
+    </div>
+
+    <div class="section-produit">
+      <h3>{tr('produit.technique')}</h3>
+      <ul class="pastilles">
+        {p.stack.map((tech) => <li>{tech}</li>)}
+      </ul>
+    </div>
+
+    <div class="section-produit">
+      <h3>{tr('produit.roadmap')}</h3>
+      <ul class="roadmap">
+        {p.roadmap.map((f) => (
+          <li>
+            <span class={`statut statut-${f.statut}`}>{libelleStatut[f.statut]}</span>
+            {f.titre}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+))}
+
+<script>
+  const onglets = document.querySelectorAll<HTMLButtonElement>('.onglet-produit');
+
+  function activer(onglet: HTMLButtonElement) {
+    onglets.forEach((o) => {
+      const actif = o === onglet;
+      o.setAttribute('aria-selected', String(actif));
+      const panneau = document.getElementById(o.getAttribute('aria-controls')!);
+      if (panneau) panneau.hidden = !actif;
+    });
+  }
+
+  onglets.forEach((onglet) => {
+    onglet.addEventListener('click', (e) => {
+      activer(onglet);
+      // Onde concentrique au point de clic — le motif écho.
+      const rect = onglet.getBoundingClientRect();
+      const onde = document.createElement('span');
+      onde.className = 'onde-clic';
+      const taille = Math.max(rect.width, rect.height) * 2;
+      onde.style.width = onde.style.height = `${taille}px`;
+      onde.style.left = `${e.clientX - rect.left}px`;
+      onde.style.top = `${e.clientY - rect.top}px`;
+      onglet.appendChild(onde);
+      onde.addEventListener('animationend', () => onde.remove());
+    });
+  });
+
+  // Navigation clavier gauche/droite entre les onglets.
+  document.querySelector('.onglets-produits')?.addEventListener('keydown', (e) => {
+    const ke = e as KeyboardEvent;
+    if (ke.key !== 'ArrowRight' && ke.key !== 'ArrowLeft') return;
+    const liste = Array.from(onglets);
+    const courant = liste.findIndex((o) => o.getAttribute('aria-selected') === 'true');
+    const suivant = ke.key === 'ArrowRight'
+      ? (courant + 1) % liste.length
+      : (courant - 1 + liste.length) % liste.length;
+    activer(liste[suivant]);
+    liste[suivant].focus();
+  });
+</script>

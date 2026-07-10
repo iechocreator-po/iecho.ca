@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import FeedbackWidget from '../components/FeedbackWidget.astro';
+import { langues, cheminPage, t, type Langue, type PageKey } from '../i18n/ui';
+import '../styles/global.css';
+
+interface Props {
+  lang: Langue;
+  page: PageKey;
+  titre: string;
+  description?: string;
+}
+const { lang, page, titre, description } = Astro.props;
+const tr = t(lang);
+const site = Astro.site ?? new URL('https://iecho.ca');
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titre} · iecho</title>
+    <meta name="description" content={description ?? tr('site.description')} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(cheminPage(page, lang), site)} />
+    {langues.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(cheminPage(page, l), site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(cheminPage(page, 'fr'), site)} />
+    <meta property="og:title" content={`${titre} · iecho`} />
+    <meta property="og:description" content={description ?? tr('site.description')} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <Header lang={lang} page={page} />
+    <main>
+      <slot />
+    </main>
+    <footer class="pied">
+      <p>iecho — {tr('pied.note')}</p>
+    </footer>
+    <FeedbackWidget lang={lang} />
+  </body>
+</html>

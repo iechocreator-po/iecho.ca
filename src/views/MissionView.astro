@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, type Langue } from '../i18n/ui';
+
+interface Props {
+  lang: Langue;
+}
+const { lang } = Astro.props;
+const tr = t(lang);
+
+// Pistes de logo soumises au regard des visiteurs (votes via le bouton feedback).
+const variantes = [
+  { id: 'logo-a', rayons: [4, 9, 14], opacites: [1, 0.5, 0.22] },
+  { id: 'logo-b', rayons: [3, 7, 11, 15], opacites: [1, 0.65, 0.38, 0.16] },
+  { id: 'logo-c', rayons: [5, 12], opacites: [1, 0.35] },
+];
+---
+<Base lang={lang} page="mission" titre={tr('mission.titre')}>
+  <div class="prose">
+    <h1>{tr('mission.titre')}</h1>
+    <p class="note-brouillon">{tr('mission.brouillon')}</p>
+
+    <h2>{tr('mission.logos.titre')}</h2>
+    <p>{tr('mission.logos.intro')}</p>
+    <div class="logos-gestation">
+      {variantes.map((v) => (
+        <div class="logo-carte">
+          <svg width="72" height="72" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            {v.rayons.map((r, i) => (
+              i === 0
+                ? <circle cx="18" cy="18" r={r} fill="var(--accent)" fill-opacity={v.opacites[i]} />
+                : <circle cx="18" cy="18" r={r} stroke="var(--accent)" stroke-opacity={v.opacites[i]} stroke-width="1.5" />
+            ))}
+          </svg>
+          <span>{v.id}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>

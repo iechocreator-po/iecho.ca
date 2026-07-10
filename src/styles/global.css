@@ -1,0 +1,538 @@
+/* ============================================================
+   iecho — thème sombre, sobre, mystérieux.
+   Motif signature : ondes concentriques (l'écho).
+   ============================================================ */
+
+:root {
+  --fond: #0a0c10;
+  --fond-halo: #0e1218;
+  --surface: #12161d;
+  --surface-2: #171c25;
+  --bordure: #242b36;
+  --bordure-vive: #33404f;
+  --texte: #dce3ec;
+  --texte-2: #93a0b1;
+  --texte-3: #64707f;
+  --accent: #6fc7c0;
+  --accent-vif: #8fe0d8;
+  --accent-doux: rgba(111, 199, 192, 0.1);
+  --ambre: #d4aa60;
+  --ambre-doux: rgba(212, 170, 96, 0.12);
+  --vert: #83c795;
+  --vert-doux: rgba(131, 199, 149, 0.12);
+  --rayon: 10px;
+  --rayon-grand: 16px;
+  --police: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --police-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--police);
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Halo d'écho très discret en arrière-plan */
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    var(--fond-halo),
+    var(--fond) 70%
+  );
+  background-repeat: no-repeat;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-vif);
+}
+
+::selection {
+  background: var(--accent-doux);
+  color: var(--accent-vif);
+}
+
+/* ---------- En-tête ---------- */
+
+.entete {
+  border-bottom: 1px solid var(--bordure);
+  background: rgba(10, 12, 16, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.entete-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--texte);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.marque:hover { color: var(--texte); }
+.marque svg { display: block; }
+.marque:hover .onde-2 { animation: echo-pulse 1.6s ease-out infinite; }
+.marque:hover .onde-3 { animation: echo-pulse 1.6s ease-out 0.25s infinite; }
+
+@keyframes echo-pulse {
+  0% { opacity: 0.9; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+.nav-principale {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.nav-principale a {
+  color: var(--texte-2);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-principale a:hover {
+  color: var(--texte);
+  background: var(--surface-2);
+}
+.nav-principale a[aria-current='page'] {
+  color: var(--accent-vif);
+  background: var(--accent-doux);
+}
+
+/* ---------- Sélecteur de langue ---------- */
+
+.langues {
+  display: flex;
+  gap: 0.15rem;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  padding: 0.15rem;
+}
+.langues a {
+  color: var(--texte-3);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  transition: color 0.2s, background 0.2s;
+}
+.langues a:hover { color: var(--texte); }
+.langues a[aria-current='true'] {
+  color: var(--fond);
+  background: var(--accent);
+}
+
+/* ---------- Page produits ---------- */
+
+.hero {
+  padding: 2.5rem 0 2rem;
+  position: relative;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+.hero p {
+  color: var(--texte-2);
+  max-width: 38rem;
+  margin-top: 0.6rem;
+}
+
+/* Ondes décoratives du hero */
+.hero-ondes {
+  position: absolute;
+  right: -4rem;
+  top: -2rem;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Navigation horizontale entre produits */
+.onglets-produits {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 0.75rem;
+  margin: 1rem -0.25rem 1.5rem;
+  scrollbar-width: thin;
+}
+
+.onglet-produit {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-family: var(--police);
+  font-size: 0.95rem;
+  color: var(--texte-2);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.onglet-produit:hover {
+  color: var(--texte);
+  border-color: var(--bordure-vive);
+}
+.onglet-produit[aria-selected='true'] {
+  color: var(--accent-vif);
+  background: var(--accent-doux);
+  border-color: var(--accent);
+}
+.onglet-produit .sous-nom {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--texte-3);
+}
+.onglet-produit[aria-selected='true'] .sous-nom {
+  color: var(--accent);
+}
+
+/* Onde au clic (motif écho) */
+.onde-clic {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: onde-clic 0.6s ease-out forwards;
+}
+@keyframes onde-clic {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Panneau produit */
+.panneau-produit {
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-grand);
+  padding: 2rem;
+  animation: apparition 0.35s ease-out;
+}
+.panneau-produit[hidden] { display: none; }
+
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panneau-produit h2 {
+  font-size: 1.5rem;
+}
+.panneau-produit .resume {
+  color: var(--texte-2);
+  font-size: 1.08rem;
+  margin-top: 0.5rem;
+  max-width: 40rem;
+}
+
+.section-produit {
+  margin-top: 2rem;
+}
+.section-produit h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--texte-3);
+  margin-bottom: 0.7rem;
+}
+.section-produit p {
+  color: var(--texte);
+  max-width: 42rem;
+}
+
+/* Pastilles de stack */
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+}
+.pastilles li {
+  font-family: var(--police-mono);
+  font-size: 0.8rem;
+  color: var(--texte-2);
+  background: var(--surface-2);
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* Captures d'écran */
+.captures {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+.captures img {
+  width: 100%;
+  border-radius: var(--rayon);
+  border: 1px solid var(--bordure);
+}
+.captures-vide {
+  color: var(--texte-3);
+  font-style: italic;
+  border: 1px dashed var(--bordure);
+  border-radius: var(--rayon);
+  padding: 1.2rem 1.4rem;
+}
+
+/* Feuille de route */
+.roadmap {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.roadmap li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+}
+.statut {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+.statut-proposee { color: var(--texte-2); background: rgba(147, 160, 177, 0.12); }
+.statut-encours { color: var(--ambre); background: var(--ambre-doux); }
+.statut-livree { color: var(--vert); background: var(--vert-doux); }
+
+/* ---------- Pages Mission / À propos ---------- */
+
+.prose {
+  max-width: 42rem;
+}
+.prose h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 2.5rem 0 1rem; }
+.prose h2 { font-size: 1.3rem; margin: 2.5rem 0 0.8rem; }
+.prose p { color: var(--texte-2); margin-bottom: 1rem; }
+
+.note-brouillon {
+  border-left: 2px solid var(--accent);
+  background: var(--accent-doux);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  padding: 0.9rem 1.2rem;
+  color: var(--texte-2);
+  font-style: italic;
+}
+
+/* Grille des logos en gestation */
+.logos-gestation {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+.logo-carte {
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-grand);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--texte-3);
+  font-size: 0.85rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.logo-carte:hover {
+  border-color: var(--bordure-vive);
+  transform: translateY(-2px);
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  border-top: 1px solid var(--bordure);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--texte-3);
+  font-size: 0.85rem;
+}
+
+/* ---------- Bouton feedback flottant ---------- */
+
+.feedback-bouton {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--police);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--fond);
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  transition: background 0.2s, transform 0.2s;
+}
+.feedback-bouton:hover {
+  background: var(--accent-vif);
+  transform: translateY(-1px);
+}
+
+/* Dialogue modal */
+.feedback-dialogue {
+  border: 1px solid var(--bordure-vive);
+  border-radius: var(--rayon-grand);
+  background: var(--surface);
+  color: var(--texte);
+  padding: 0;
+  width: min(92vw, 26rem);
+}
+.feedback-dialogue::backdrop {
+  background: rgba(5, 6, 8, 0.7);
+  backdrop-filter: blur(3px);
+}
+.feedback-inner {
+  padding: 1.6rem;
+}
+.feedback-inner h2 {
+  font-size: 1.2rem;
+}
+.feedback-inner .intro {
+  color: var(--texte-2);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1.1rem;
+}
+.feedback-inner textarea,
+.feedback-inner input[type='email'] {
+  width: 100%;
+  font-family: var(--police);
+  font-size: 0.95rem;
+  color: var(--texte);
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 0.7rem 0.9rem;
+  resize: vertical;
+}
+.feedback-inner textarea:focus,
+.feedback-inner input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.feedback-inner textarea { min-height: 7rem; }
+.feedback-inner label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--texte-3);
+  margin: 0.9rem 0 0.35rem;
+}
+.feedback-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+.bouton-secondaire,
+.bouton-primaire {
+  font-family: var(--police);
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+.bouton-secondaire {
+  color: var(--texte-2);
+  background: transparent;
+  border: 1px solid var(--bordure);
+}
+.bouton-secondaire:hover { color: var(--texte); border-color: var(--bordure-vive); }
+.bouton-primaire {
+  color: var(--fond);
+  background: var(--accent);
+  border: none;
+  font-weight: 500;
+}
+.bouton-primaire:hover { background: var(--accent-vif); }
+.bouton-primaire:disabled { opacity: 0.6; cursor: wait; }
+
+.feedback-message {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+.feedback-message.ok { color: var(--vert); }
+.feedback-message.erreur { color: var(--ambre); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .entete-inner { flex-wrap: wrap; gap: 0.6rem 1rem; }
+  .nav-principale { margin-left: 0; order: 3; width: 100%; }
+  .panneau-produit { padding: 1.4rem; }
+  .hero-ondes { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

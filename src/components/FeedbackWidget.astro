@@ -1,0 +1,90 @@
+---
+// Bouton flottant « Partager une idée » + fenêtre modale.
+// Envoi via Formspree : remplacer FORMSPREE_ID par l'identifiant du formulaire
+// (https://formspree.io — les réponses arrivent par courriel, rien n'est public).
+import { t, type Langue } from '../i18n/ui';
+
+interface Props {
+  lang: Langue;
+}
+const { lang } = Astro.props;
+const tr = t(lang);
+
+const FORMSPREE_ID = 'mwvdgqgy';
+---
+<button class="feedback-bouton" data-ouvre-feedback>
+  <svg width="16" height="16" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <circle cx="16" cy="16" r="4" fill="currentColor" />
+    <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" />
+  </svg>
+  {tr('feedback.bouton')}
+</button>
+
+<dialog class="feedback-dialogue" data-feedback-dialogue>
+  <form class="feedback-inner" method="dialog" data-feedback-form data-endpoint={`https://formspree.io/f/${FORMSPREE_ID}`}>
+    <h2>{tr('feedback.titre')}</h2>
+    <p class="intro">{tr('feedback.intro')}</p>
+
+    <textarea name="message" required placeholder={tr('feedback.placeholder')}></textarea>
+
+    <label for="feedback-email">{tr('feedback.email')}</label>
+    <input id="feedback-email" type="email" name="email" autocomplete="email" />
+
+    <!-- Contexte automatique : rempli par le script à l'ouverture -->
+    <input type="hidden" name="page" value="" />
+    <input type="hidden" name="produit" value="" />
+    <input type="hidden" name="langue" value={lang} />
+
+    <p class="feedback-message" role="status" data-feedback-message></p>
+
+    <div class="feedback-actions">
+      <button type="button" class="bouton-secondaire" data-ferme-feedback>{tr('feedback.fermer')}</button>
+      <button type="submit" class="bouton-primaire" data-feedback-envoyer>{tr('feedback.envoyer')}</button>
+    </div>
+  </form>
+</dialog>
+
+<script define:vars={{ libelles: { envoi: tr('feedback.envoi'), envoyer: tr('feedback.envoyer'), merci: tr('feedback.merci'), erreur: tr('feedback.erreur') } }}>
+  const bouton = document.querySelector('[data-ouvre-feedback]');
+  const dialogue = document.querySelector('[data-feedback-dialogue]');
+  const form = dialogue.querySelector('[data-feedback-form]');
+  const message = dialogue.querySelector('[data-feedback-message]');
+  const envoyer = dialogue.querySelector('[data-feedback-envoyer]');
+
+  bouton.addEventListener('click', () => {
+    // Contexte automatique : page courante + produit affiché le cas échéant.
+    form.elements.page.value = window.location.pathname;
+    const ongletActif = document.querySelector('.onglet-produit[aria-selected="true"]');
+    form.elements.produit.value = ongletActif ? ongletActif.dataset.produit : '';
+    message.textContent = '';
+    message.className = 'feedback-message';
+    dialogue.showModal();
+  });
+
+  dialogue.querySelector('[data-ferme-feedback]').addEventListener('click', () => dialogue.close());
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    envoyer.disabled = true;
+    envoyer.textContent = libelles.envoi;
+    try {
+      const reponse = await fetch(form.dataset.endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      if (!reponse.ok) throw new Error(`HTTP ${reponse.status}`);
+      message.textContent = libelles.merci;
+      message.className = 'feedback-message ok';
+      form.elements.message.value = '';
+      setTimeout(() => dialogue.close(), 1800);
+    } catch (err) {
+      console.warn('Envoi feedback échoué :', err);
+      message.textContent = libelles.erreur;
+      message.className = 'feedback-message erreur';
+    } finally {
+      envoyer.disabled = false;
+      envoyer.textContent = libelles.envoyer;
+    }
+  });
+</script>

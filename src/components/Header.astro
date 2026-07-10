@@ -1,0 +1,43 @@
+---
+import EchoMark from './EchoMark.astro';
+import { langues, nomsLangues, cheminPage, t, type Langue, type PageKey } from '../i18n/ui';
+
+interface Props {
+  lang: Langue;
+  page: PageKey;
+}
+const { lang, page } = Astro.props;
+const tr = t(lang);
+
+const liens: { key: PageKey; libelle: string }[] = [
+  { key: 'produits', libelle: tr('nav.produits') },
+  { key: 'mission', libelle: tr('nav.mission') },
+  { key: 'apropos', libelle: tr('nav.apropos') },
+];
+---
+<header class="entete">
+  <div class="entete-inner">
+    <a href={cheminPage('produits', lang)} class="marque" aria-label="iecho — accueil">
+      <EchoMark />
+      <span>iecho</span>
+    </a>
+    <nav class="nav-principale" aria-label="Navigation principale">
+      {liens.map((lien) => (
+        <a
+          href={cheminPage(lien.key, lang)}
+          aria-current={lien.key === page ? 'page' : undefined}
+        >{lien.libelle}</a>
+      ))}
+    </nav>
+    <nav class="langues" aria-label="Langue">
+      {langues.map((l) => (
+        <a
+          href={cheminPage(page, l)}
+          aria-current={l === lang ? 'true' : undefined}
+          aria-label={nomsLangues[l]}
+          lang={l}
+        >{l}</a>
+      ))}
+    </nav>
+  </div>
+</header>

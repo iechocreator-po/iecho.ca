@@ -1,0 +1,72 @@
+[
+  {
+    "id": "toledo",
+    "nom": "toledo",
+    "sousTitre": "traduction de PDF, 100 % locale",
+    "resume": "Traduire des livres et documents PDF entiers sur sa propre machine — aucune donnée envoyée vers le cloud.",
+    "besoin": "Lire un document dans sa langue sans le confier à un service en ligne. toledo découpe le PDF en chapitres, le traduit avec un modèle LLM local (Ollama), et peut aussi le convertir en Markdown, générer des fiches d'étude par chapitre ou le lire à voix haute.",
+    "stack": ["Python", "FastAPI", "Ollama", "Piper / Kokoro (TTS)", "Tesseract (OCR)", "Swift (app macOS)"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Traduction par chapitres avec file d'attente", "statut": "livree" },
+      { "titre": "Glossaire personnalisé et contrôle qualité", "statut": "livree" },
+      { "titre": "Synthèse vocale locale (Piper + Kokoro)", "statut": "livree" },
+      { "titre": "OCR des PDF scannés (Tesseract)", "statut": "livree" },
+      { "titre": "Fiches d'étude par chapitre", "statut": "livree" },
+      { "titre": "Refonte UX de l'app macOS", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "marbella",
+    "nom": "marbella",
+    "sousTitre": "calculatrice pour la retraite",
+    "resume": "Projeter sa retraite en quelques paramètres, sans tableur intimidant.",
+    "besoin": "Répondre simplement à la question « est-ce que ça tient la route ? » : épargne, rendement, horizon, retraits — et voir l'effet de chaque hypothèse sur le résultat.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Projection d'épargne et de retraits", "statut": "encours" },
+      { "titre": "Comparaison de scénarios", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "valencia",
+    "nom": "valencia",
+    "sousTitre": "immobilier en Espagne, agrégé",
+    "resume": "Rassembler des fiches immobilières espagnoles dans un tableau de bord unique.",
+    "besoin": "Chercher un bien en Espagne oblige à jongler entre plusieurs portails. valencia centralise les fiches dans une base locale et les présente dans un dashboard filtrable pour comparer et suivre le marché.",
+    "stack": ["Express", "SQLite", "React"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Dashboard de consultation (MVP)", "statut": "livree" },
+      { "titre": "Formulaire d'ingestion de fiches", "statut": "encours" },
+      { "titre": "Scraper automatique (Puppeteer)", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "madrid",
+    "nom": "madrid",
+    "sousTitre": "portefeuille financier en un coup d'œil",
+    "resume": "Un tableau de bord personnel pour suivre son portefeuille d'investissement.",
+    "besoin": "Voir l'ensemble de ses positions, leur évolution et leur répartition sans dépendre des interfaces de chaque courtier.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Vue consolidée du portefeuille", "statut": "encours" }
+    ]
+  },
+  {
+    "id": "barcelona",
+    "nom": "barcelona",
+    "sousTitre": "le trading avancé, appris en jouant",
+    "resume": "Apprendre des concepts avancés de trading — comme la stratégie de la roue sur options — par la simulation.",
+    "besoin": "Les stratégies d'options s'apprennent mal dans les livres. barcelona les fait vivre : on simule, on se trompe, on comprend — sans risquer un dollar.",
+    "stack": ["TypeScript", "Vite (web)", "Expo / React Native (mobile)", "monorepo npm workspaces"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Simulateur web de la stratégie de la roue", "statut": "livree" },
+      { "titre": "Port de l'interface en app mobile native", "statut": "encours" },
+      { "titre": "Persistance des simulations", "statut": "proposee" }
+    ]
+  }
+]

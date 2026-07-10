@@ -1,0 +1,72 @@
+[
+  {
+    "id": "toledo",
+    "nom": "toledo",
+    "sousTitre": "traducción de PDF, 100 % local",
+    "resume": "Traducir libros y documentos PDF completos en tu propia máquina — ningún dato se envía a la nube.",
+    "besoin": "Leer un documento en tu idioma sin confiarlo a un servicio en línea. toledo divide el PDF en capítulos, lo traduce con un LLM local (Ollama), y también puede convertirlo a Markdown, generar fichas de estudio por capítulo o leerlo en voz alta.",
+    "stack": ["Python", "FastAPI", "Ollama", "Piper / Kokoro (TTS)", "Tesseract (OCR)", "Swift (app macOS)"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Traducción por capítulos con cola de trabajos", "statut": "livree" },
+      { "titre": "Glosario personalizado y control de calidad", "statut": "livree" },
+      { "titre": "Síntesis de voz local (Piper + Kokoro)", "statut": "livree" },
+      { "titre": "OCR para PDF escaneados (Tesseract)", "statut": "livree" },
+      { "titre": "Fichas de estudio por capítulo", "statut": "livree" },
+      { "titre": "Rediseño UX de la app macOS", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "marbella",
+    "nom": "marbella",
+    "sousTitre": "calculadora para la jubilación",
+    "resume": "Proyectar tu jubilación con unos pocos parámetros, sin hojas de cálculo intimidantes.",
+    "besoin": "Responder a la pregunta «¿esto se sostiene?»: ahorros, rendimiento, horizonte, retiros — y ver el efecto de cada supuesto en el resultado.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Proyección de ahorros y retiros", "statut": "encours" },
+      { "titre": "Comparación de escenarios", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "valencia",
+    "nom": "valencia",
+    "sousTitre": "inmobiliaria en España, agregada",
+    "resume": "Reunir fichas inmobiliarias españolas en un solo panel.",
+    "besoin": "Buscar una propiedad en España obliga a saltar entre varios portales. valencia centraliza las fichas en una base local y las presenta en un panel filtrable para comparar y seguir el mercado.",
+    "stack": ["Express", "SQLite", "React"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Panel de consulta (MVP)", "statut": "livree" },
+      { "titre": "Formulario de ingesta de fichas", "statut": "encours" },
+      { "titre": "Scraper automático (Puppeteer)", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "madrid",
+    "nom": "madrid",
+    "sousTitre": "tu cartera de un vistazo",
+    "resume": "Un panel personal para seguir una cartera de inversión.",
+    "besoin": "Ver todas tus posiciones, su evolución y su distribución sin depender de la interfaz de cada bróker.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Vista consolidada de la cartera", "statut": "encours" }
+    ]
+  },
+  {
+    "id": "barcelona",
+    "nom": "barcelona",
+    "sousTitre": "trading avanzado, aprendido jugando",
+    "resume": "Aprender conceptos avanzados de trading — como la estrategia de la rueda con opciones — mediante simulación.",
+    "besoin": "Las estrategias de opciones se aprenden mal en los libros. barcelona las hace vivir: simulas, te equivocas, entiendes — sin arriesgar un dólar.",
+    "stack": ["TypeScript", "Vite (web)", "Expo / React Native (móvil)", "monorepo npm workspaces"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Simulador web de la estrategia de la rueda", "statut": "livree" },
+      { "titre": "Port de la interfaz a app móvil nativa", "statut": "encours" },
+      { "titre": "Persistencia de simulaciones", "statut": "proposee" }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, type Langue } from '../i18n/ui';
+
+interface Props {
+  lang: Langue;
+}
+const { lang } = Astro.props;
+const tr = t(lang);
+---
+<Base lang={lang} page="apropos" titre={tr('apropos.titre')}>
+  <div class="prose">
+    <h1>{tr('apropos.titre')}</h1>
+    <p class="note-brouillon">{tr('apropos.brouillon')}</p>
+
+    <h2>{tr('apropos.collabs')}</h2>
+    <p>{tr('apropos.collabs.brouillon')}</p>
+
+    <h2>{tr('apropos.perso')}</h2>
+    <p>{tr('apropos.perso.brouillon')}</p>
+  </div>
+</Base>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "toledo",
+    "nom": "toledo",
+    "sousTitre": "PDF translation, 100% local",
+    "resume": "Translate entire PDF books and documents on your own machine — no data ever sent to the cloud.",
+    "besoin": "Read a document in your language without handing it to an online service. toledo splits the PDF into chapters, translates it with a local LLM (Ollama), and can also convert it to Markdown, generate per-chapter study sheets or read it aloud.",
+    "stack": ["Python", "FastAPI", "Ollama", "Piper / Kokoro (TTS)", "Tesseract (OCR)", "Swift (macOS app)"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Chapter-based translation with job queue", "statut": "livree" },
+      { "titre": "Custom glossary and quality control", "statut": "livree" },
+      { "titre": "Local text-to-speech (Piper + Kokoro)", "statut": "livree" },
+      { "titre": "OCR for scanned PDFs (Tesseract)", "statut": "livree" },
+      { "titre": "Per-chapter study sheets", "statut": "livree" },
+      { "titre": "macOS app UX overhaul", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "marbella",
+    "nom": "marbella",
+    "sousTitre": "retirement calculator",
+    "resume": "Project your retirement from a few parameters, without an intimidating spreadsheet.",
+    "besoin": "Answer the simple question “does this hold up?”: savings, returns, horizon, withdrawals — and see how each assumption changes the outcome.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Savings and withdrawal projection", "statut": "encours" },
+      { "titre": "Scenario comparison", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "valencia",
+    "nom": "valencia",
+    "sousTitre": "Spanish real estate, aggregated",
+    "resume": "Gather Spanish property listings into a single dashboard.",
+    "besoin": "Looking for property in Spain means juggling several portals. valencia centralizes listings in a local database and presents them in a filterable dashboard to compare and track the market.",
+    "stack": ["Express", "SQLite", "React"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Browsing dashboard (MVP)", "statut": "livree" },
+      { "titre": "Listing ingestion form", "statut": "encours" },
+      { "titre": "Automatic scraper (Puppeteer)", "statut": "proposee" }
+    ]
+  },
+  {
+    "id": "madrid",
+    "nom": "madrid",
+    "sousTitre": "your portfolio at a glance",
+    "resume": "A personal dashboard to track an investment portfolio.",
+    "besoin": "See all your positions, their evolution and allocation without depending on each broker's interface.",
+    "stack": ["Web"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Consolidated portfolio view", "statut": "encours" }
+    ]
+  },
+  {
+    "id": "barcelona",
+    "nom": "barcelona",
+    "sousTitre": "advanced trading, learned by playing",
+    "resume": "Learn advanced trading concepts — like the options wheel strategy — through simulation.",
+    "besoin": "Options strategies are hard to learn from books. barcelona makes them tangible: you simulate, you fail, you understand — without risking a dollar.",
+    "stack": ["TypeScript", "Vite (web)", "Expo / React Native (mobile)", "npm workspaces monorepo"],
+    "captures": [],
+    "roadmap": [
+      { "titre": "Web simulator for the wheel strategy", "statut": "livree" },
+      { "titre": "Native mobile UI port", "statut": "encours" },
+      { "titre": "Simulation persistence", "statut": "proposee" }
+    ]
+  }
+]

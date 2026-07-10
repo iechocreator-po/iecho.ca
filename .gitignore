@@ -1,0 +1,11 @@
+# Dépendances et builds
+node_modules/
+dist/
+.astro/
+
+# Environnement
+.env
+.env.*
+
+# Système
+.DS_Store

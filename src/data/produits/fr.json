@@ -109,6 +109,7 @@
     "sousTitre": "le trading avancé, appris en jouant",
     "resume": "Apprendre des concepts avancés de trading — comme la stratégie de la roue sur options — par la simulation.",
     "besoin": "Les stratégies d'options s'apprennent mal dans les livres. barcelona les fait vivre : on simule, on se trompe, on comprend — sans risquer un dollar.",
+    "lien": "https://learning-finance.iechocreator.workers.dev/",
     "stack": [
       "TypeScript",
       "Vite (web)",

@@ -109,6 +109,7 @@
     "sousTitre": "trading avanzado, aprendido jugando",
     "resume": "Aprender conceptos avanzados de trading — como la estrategia de la rueda con opciones — mediante simulación.",
     "besoin": "Las estrategias de opciones se aprenden mal en los libros. barcelona las hace vivir: simulas, te equivocas, entiendes — sin arriesgar un dólar.",
+    "lien": "https://learning-finance.iechocreator.workers.dev/",
     "stack": [
       "TypeScript",
       "Vite (web)",

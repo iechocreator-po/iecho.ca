@@ -109,6 +109,7 @@
     "sousTitre": "advanced trading, learned by playing",
     "resume": "Learn advanced trading concepts — like the options wheel strategy — through simulation.",
     "besoin": "Options strategies are hard to learn from books. barcelona makes them tangible: you simulate, you fail, you understand — without risking a dollar.",
+    "lien": "https://learning-finance.iechocreator.workers.dev/",
     "stack": [
       "TypeScript",
       "Vite (web)",

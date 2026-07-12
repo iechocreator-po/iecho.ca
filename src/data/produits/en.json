@@ -46,6 +46,7 @@
     "sousTitre": "retirement calculator",
     "resume": "Project your retirement from a few parameters, without an intimidating spreadsheet.",
     "besoin": "Answer the simple question “does this hold up?”: savings, returns, horizon, withdrawals — and see how each assumption changes the outcome.",
+    "lien": "/outils/calculatrice-retraite.html",
     "stack": [
       "Web"
     ],

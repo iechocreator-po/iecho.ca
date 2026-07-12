@@ -46,6 +46,7 @@
     "sousTitre": "calculatrice pour la retraite",
     "resume": "Projeter sa retraite en quelques paramètres, sans tableur intimidant.",
     "besoin": "Répondre simplement à la question « est-ce que ça tient la route ? » : épargne, rendement, horizon, retraits — et voir l'effet de chaque hypothèse sur le résultat.",
+    "lien": "/outils/calculatrice-retraite.html",
     "stack": [
       "Web"
     ],

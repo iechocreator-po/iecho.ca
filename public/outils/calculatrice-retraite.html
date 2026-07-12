@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculatrice de retraite — Safe Withdrawal Rate</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f5f0;
+    --surface: #ffffff;
+    --surface2: #f1efea;
+    --text: #1a1a18;
+    --text2: #6b6b66;
+    --border: rgba(0,0,0,0.12);
+    --green: #0f6e56;
+    --green-bg: #e1f5ee;
+    --amber: #854f0b;
+    --amber-bg: #faeeda;
+    --red: #a32d2d;
+    --red-bg: #fcebeb;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a;
+      --surface: #252523;
+      --surface2: #2e2e2b;
+      --text: #f0ede8;
+      --text2: #9a9a94;
+      --border: rgba(255,255,255,0.1);
+      --green: #5dcaa5;
+      --green-bg: #085041;
+      --amber: #fac775;
+      --amber-bg: #633806;
+      --red: #f09595;
+      --red-bg: #791f1f;
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: var(--text2); margin-bottom: 1.5rem; }
+  .card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text2);
+    margin-bottom: 1rem;
+  }
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.85rem;
+  }
+  .slider-label { font-size: 13px; color: var(--text2); width: 220px; flex-shrink: 0; }
+  input[type=range] {
+    flex: 1;
+    accent-color: var(--green);
+    height: 4px;
+    cursor: pointer;
+  }
+  .slider-val { font-size: 13px; font-weight: 600; color: var(--text); min-width: 110px; text-align: right; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 600px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: 1fr; }
+    .slider-label { width: 150px; }
+  }
+  .metric {
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    text-align: center;
+  }
+  .metric-label { font-size: 11px; color: var(--text2); margin-bottom: 4px; }
+  .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
+  .metric-sub { font-size: 11px; color: var(--text2); margin-top: 4px; min-height: 16px; }
+  .scenario {
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+  }
+  .scenario-rate { font-size: 11px; color: var(--text2); margin-bottom: 4px; }
+  .scenario-port { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .scenario-detail { font-size: 11px; color: var(--text2); margin-bottom: 3px; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 6px;
+  }
+  .badge-success { background: var(--green-bg); color: var(--green); }
+  .badge-warning { background: var(--amber-bg); color: var(--amber); }
+  .badge-danger  { background: var(--red-bg);   color: var(--red); }
+  .ok    { color: var(--green); }
+  .warn  { color: var(--amber); }
+  .bad   { color: var(--red); }
+  .chart-wrapper { position: relative; width: 100%; height: 280px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 12px; color: var(--text2); }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-line { width: 20px; height: 2px; display: inline-block; }
+  .note { font-size: 12px; color: var(--text2); margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); line-height: 1.6; }
+  .note strong { color: var(--text); }
+  .header-banner {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .header-source {
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .header-source a { color: var(--green); text-decoration: none; }
+  .header-source a:hover { text-decoration: underline; }
+  .disclaimer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 600px) { .disclaimer { grid-template-columns: 1fr; } }
+  .disclaimer-block {
+    background: var(--amber-bg);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+  }
+  .disclaimer-lang {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+  .disclaimer-text {
+    font-size: 12px;
+    color: var(--amber);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Calculatrice de retraite — Safe Withdrawal Rate</h1>
+  <p class="subtitle">Valeurs en dollars d'aujourd'hui, indexées à l'inflation</p>
+
+  <div class="header-banner">
+    <div class="header-source">
+      📖 Source de la méthodologie : <a href="https://earlyretirementnow.com/2016/12/07/the-ultimate-guide-to-safe-withdrawal-rates-part-1-intro/" target="_blank">The Ultimate Guide to Safe Withdrawal Rates — Early Retirement Now (earlyretirementnow.com)</a>
+    </div>
+    <div class="disclaimer">
+      <div class="disclaimer-block">
+        <div class="disclaimer-lang">⚠ Avertissement — Français</div>
+        <div class="disclaimer-text">Cet outil a été créé à titre de divertissement et d'exploration personnelle uniquement. Il ne constitue pas un conseil financier, fiscal ou de placement professionnel. Les résultats sont fournis sans garantie d'exactitude. Consultez un planificateur financier agréé avant de prendre toute décision financière importante.</div>
+      </div>
+      <div class="disclaimer-block">
+        <div class="disclaimer-lang">⚠ Disclaimer — English</div>
+        <div class="disclaimer-text">This tool was created for entertainment and personal exploration purposes only. It does not constitute professional financial, tax, or investment advice. Results are provided without any warranty of accuracy. Please consult a certified financial planner before making any major financial decisions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Votre situation</div>
+
+    <div class="slider-row">
+      <span class="slider-label">Actifs actuels</span>
+      <input type="range" id="assets" min="100000" max="8000000" step="50000" value="1000000" oninput="calc()">
+      <span class="slider-val" id="assets-out">1 000 000 $</span>
+    </div>
+    <div class="slider-row">
+      <span class="slider-label">Épargne mensuelle additionnelle</span>
+      <input type="range" id="savings" min="0" max="25000" step="500" value="500" oninput="calc()">
+      <span class="slider-val" id="savings-out">500 $</span>
+    </div>
+    <div class="slider-row">
+      <span class="slider-label">Rendement annuel du portefeuille</span>
+      <input type="range" id="ret" min="2" max="10" step="0.25" value="5" oninput="calc()">
+      <span class="slider-val" id="ret-out">5.00 %</span>
+    </div>
+    <div class="slider-row">
+      <span class="slider-label">Inflation annuelle</span>
+      <input type="range" id="infl" min="1" max="5" step="0.25" value="2.5" oninput="calc()">
+      <span class="slider-val" id="infl-out">2.50 %</span>
+    </div>
+    <div class="slider-row">
+      <span class="slider-label">Retrait annuel souhaité</span>
+      <input type="range" id="wd" min="30000" max="300000" step="5000" value="60000" oninput="calc()">
+      <span class="slider-val" id="wd-out">60 000 $</span>
+    </div>
+    <div class="slider-row">
+      <span class="slider-label">Horizon de retraite (années)</span>
+      <input type="range" id="hor" min="15" max="65" step="1" value="40" oninput="calc()">
+      <span class="slider-val" id="hor-out">40 ans</span>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:1rem;">
+    <div class="metric">
+      <div class="metric-label">Portefeuille requis</div>
+      <div class="metric-value" id="m-req">—</div>
+      <div class="metric-sub">pour soutenir le retrait</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Écart à combler</div>
+      <div class="metric-value" id="m-gap">—</div>
+      <div class="metric-sub" id="m-gap-sub">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Attente estimée</div>
+      <div class="metric-value" id="m-wait">—</div>
+      <div class="metric-sub" id="m-wait-sub">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Taux de retrait effectif</div>
+      <div class="metric-value" id="m-swr">—</div>
+      <div class="metric-sub" id="m-swr-sub">—</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Scénarios selon le taux de retrait cible</div>
+    <div class="grid-3" id="scenarios"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Projection du portefeuille (30 ans)</div>
+    <div class="chart-wrapper">
+      <canvas id="chart" role="img" aria-label="Projection du portefeuille sur 30 ans selon différents rendements annuels"></canvas>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="note">
+    <strong>Méthodologie :</strong> Le portefeuille requis est calculé comme la valeur présente d'une rente croissante (indexée à l'inflation) sur l'horizon choisi, en utilisant le taux de rendement réel (rendement nominal − inflation). L'attente estimée est simulée mois par mois. Les calculs sont en dollars constants d'aujourd'hui. Cette calculatrice est à titre informatif seulement et ne constitue pas un conseil financier. Consultez un planificateur financier pour votre situation personnelle. Basée sur la recherche de <strong>earlyretirementnow.com</strong>.
+  </div>
+
+</div>
+
+<script>
+let chartInst = null;
+
+function fmtCAD(n) {
+  return new Intl.NumberFormat('fr-CA', { style:'currency', currency:'CAD', maximumFractionDigits:0 }).format(Math.round(n));
+}
+
+function waitStr(months) {
+  if (months >= 600) return '50+ ans';
+  const y = Math.floor(months / 12), m = months % 12;
+  if (y === 0) return m + ' mois';
+  return y + ' an' + (y > 1 ? 's' : '') + (m > 0 ? ' ' + m + ' mois' : '');
+}
+
+function calcWait(target, assets, monthlySav, annReturn) {
+  const mr = Math.pow(1 + annReturn, 1/12) - 1;
+  let p = assets, m = 0;
+  while (p < target && m < 600) { p = p * (1 + mr) + monthlySav; m++; }
+  return m;
+}
+
+function calc() {
+  const assets   = +document.getElementById('assets').value;
+  const savings  = +document.getElementById('savings').value;
+  const annRet   = +document.getElementById('ret').value / 100;
+  const infl     = +document.getElementById('infl').value / 100;
+  const wd       = +document.getElementById('wd').value;
+  const hor      = +document.getElementById('hor').value;
+
+  document.getElementById('assets-out').textContent = fmtCAD(assets);
+  document.getElementById('savings-out').textContent = fmtCAD(savings);
+  document.getElementById('ret-out').textContent = (+document.getElementById('ret').value).toFixed(2) + ' %';
+  document.getElementById('infl-out').textContent = (+document.getElementById('infl').value).toFixed(2) + ' %';
+  document.getElementById('wd-out').textContent = fmtCAD(wd);
+  document.getElementById('hor-out').textContent = hor + ' ans';
+
+  const realRet = (1 + annRet) / (1 + infl) - 1;
+  const required = Math.abs(realRet) < 0.0001
+    ? wd * hor
+    : wd * (1 - Math.pow(1 + realRet, -hor)) / realRet;
+
+  const gap = required - assets;
+  const swrPct = (wd / required) * 100;
+
+  // Portefeuille requis
+  document.getElementById('m-req').textContent = fmtCAD(required);
+
+  // Écart
+  const gapEl = document.getElementById('m-gap');
+  const gapSub = document.getElementById('m-gap-sub');
+  if (gap <= 0) {
+    gapEl.textContent = 'Aucun';
+    gapEl.className = 'metric-value ok';
+    gapSub.textContent = 'Vous êtes prêt!';
+  } else {
+    gapEl.textContent = fmtCAD(gap);
+    gapEl.className = 'metric-value warn';
+    gapSub.textContent = 'à accumuler';
+  }
+
+  // Attente
+  const waitEl = document.getElementById('m-wait');
+  const waitSub = document.getElementById('m-wait-sub');
+  if (gap <= 0) {
+    waitEl.textContent = '0 mois';
+    waitEl.className = 'metric-value ok';
+    waitSub.textContent = 'Retraite possible maintenant';
+  } else {
+    const m = calcWait(required, assets, savings, annRet);
+    waitEl.textContent = waitStr(m);
+    waitEl.className = 'metric-value ' + (m < 36 ? 'ok' : m < 84 ? 'warn' : 'bad');
+    waitSub.textContent = 'avant la retraite';
+  }
+
+  // SWR
+  const swrEl = document.getElementById('m-swr');
+  const swrSub = document.getElementById('m-swr-sub');
+  swrEl.textContent = swrPct.toFixed(2) + ' %';
+  if (swrPct <= 3.5) {
+    swrEl.className = 'metric-value ok';
+    swrSub.innerHTML = '<span style="color:var(--green);">✓ Très sécuritaire</span>';
+  } else if (swrPct <= 4.0) {
+    swrEl.className = 'metric-value warn';
+    swrSub.innerHTML = '<span style="color:var(--amber);">⚠ Acceptable (surveiller)</span>';
+  } else {
+    swrEl.className = 'metric-value bad';
+    swrSub.innerHTML = '<span style="color:var(--red);">✗ Trop élevé (46+ ans)</span>';
+  }
+
+  // Scénarios
+  const scenEl = document.getElementById('scenarios');
+  scenEl.innerHTML = '';
+  [3.0, 3.5, 4.0].forEach(swr => {
+    const req = wd / (swr / 100);
+    const g = req - assets;
+    const m = g <= 0 ? 0 : calcWait(req, assets, savings, annRet);
+    const safe = swr <= 3.5;
+    scenEl.innerHTML += `
+      <div class="scenario">
+        <div class="scenario-rate">Taux de retrait : <strong>${swr}%</strong></div>
+        <div class="scenario-port">${fmtCAD(req)}</div>
+        <div class="scenario-detail">Écart : ${g <= 0 ? '✓ déjà atteint' : fmtCAD(g)}</div>
+        <div class="scenario-detail">Attente : <strong>${g <= 0 ? 'Immédiat' : waitStr(m)}</strong></div>
+        <div><span class="badge ${safe ? 'badge-success' : 'badge-warning'}">${safe ? 'Sécuritaire' : 'Acceptable'}</span></div>
+      </div>`;
+  });
+
+  // Graphique
+  const years = Array.from({length: 31}, (_, i) => i);
+  const rets  = [4, 5, 6, 7, 8];
+  const colors = ['#3266ad', '#1D9E75', '#BA7517', '#D85A30', '#9933cc'];
+  const datasets = rets.map((r, i) => {
+    const mr = Math.pow(1 + r/100, 1/12) - 1;
+    return {
+      label: r + '% / an',
+      data: years.map(y => {
+        let p = assets;
+        for (let mo = 0; mo < y * 12; mo++) p = p * (1 + mr) + savings;
+        return Math.round(p);
+      }),
+      borderColor: colors[i],
+      backgroundColor: 'transparent',
+      pointRadius: 0,
+      borderWidth: 2,
+      tension: 0.3
+    };
+  });
+  datasets.push({
+    label: 'Cible',
+    data: years.map(() => Math.round(required)),
+    borderColor: '#888',
+    backgroundColor: 'transparent',
+    borderDash: [6, 4],
+    pointRadius: 0,
+    borderWidth: 1.5
+  });
+
+  if (chartInst) chartInst.destroy();
+  chartInst = new Chart(document.getElementById('chart'), {
+    type: 'line',
+    data: { labels: years.map(y => 'An ' + y), datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ' : ' + fmtCAD(ctx.raw) } }
+      },
+      scales: {
+        y: {
+          ticks: { callback: v => '$' + (v/1000000).toFixed(1) + 'M', font: { size: 11 } },
+          grid: { color: 'rgba(128,128,128,0.08)' }
+        },
+        x: {
+          ticks: { font: { size: 11 }, autoSkip: true, maxTicksLimit: 10 },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+
+  const legEl = document.getElementById('legend');
+  legEl.innerHTML = rets.map((r, i) =>
+    `<span class="legend-item"><span class="legend-line" style="background:${colors[i]};"></span>${r}%/an</span>`
+  ).join('') + `<span class="legend-item"><span class="legend-line" style="background:#888; border-top: 2px dashed #888;"></span>Cible</span>`;
+}
+
+calc();
+</script>
+</body>
+</html>

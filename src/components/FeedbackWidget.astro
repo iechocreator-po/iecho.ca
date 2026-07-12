@@ -3,6 +3,7 @@
 // Envoi via Formspree : remplacer FORMSPREE_ID par l'identifiant du formulaire
 // (https://formspree.io — les réponses arrivent par courriel, rien n'est public).
 import { t, type Langue } from '../i18n/ui';
+import produitsConfig from '../data/produits.config.json';
 
 interface Props {
   lang: Langue;
@@ -11,6 +12,7 @@ const { lang } = Astro.props;
 const tr = t(lang);
 
 const FORMSPREE_ID = 'mwvdgqgy';
+const produits = produitsConfig.ordre;
 ---
 <button class="feedback-bouton" data-ouvre-feedback>
   <svg width="16" height="16" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -27,12 +29,17 @@ const FORMSPREE_ID = 'mwvdgqgy';
 
     <textarea name="message" required placeholder={tr('feedback.placeholder')}></textarea>
 
+    <label for="feedback-produit">{tr('feedback.produit')}</label>
+    <select id="feedback-produit" name="produit">
+      <option value="">{tr('feedback.produit.aucun')}</option>
+      {produits.map((id) => <option value={id}>{id}</option>)}
+    </select>
+
     <label for="feedback-email">{tr('feedback.email')}</label>
     <input id="feedback-email" type="email" name="email" autocomplete="email" />
 
     <!-- Contexte automatique : rempli par le script à l'ouverture -->
     <input type="hidden" name="page" value="" />
-    <input type="hidden" name="produit" value="" />
     <input type="hidden" name="langue" value={lang} />
 
     <p class="feedback-message" role="status" data-feedback-message></p>
@@ -52,10 +59,10 @@ const FORMSPREE_ID = 'mwvdgqgy';
   const envoyer = dialogue.querySelector('[data-feedback-envoyer]');
 
   bouton.addEventListener('click', () => {
-    // Contexte automatique : page courante + produit affiché le cas échéant.
+    // Contexte automatique : page courante + produit pré-sélectionné si un onglet est affiché.
     form.elements.page.value = window.location.pathname;
     const ongletActif = document.querySelector('.onglet-produit[aria-selected="true"]');
-    form.elements.produit.value = ongletActif ? ongletActif.dataset.produit : '';
+    if (ongletActif) form.elements.produit.value = ongletActif.dataset.produit;
     message.textContent = '';
     message.className = 'feedback-message';
     dialogue.showModal();

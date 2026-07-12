@@ -25,7 +25,7 @@ export function cheminPage(page: PageKey, lang: Langue): string {
 
 export const ui = {
   fr: {
-    'site.tagline': 'Expérimenter, apprendre, faire résonner des idées en produits.',
+    'site.tagline': 'Expérimenter, apprendre, faire résonner des idées en produits numériques.',
     'site.description':
       "iecho — un atelier de produits numériques : des outils locaux et personnels, construits pour apprendre.",
     'nav.produits': 'Produits',
@@ -35,6 +35,7 @@ export const ui = {
     'produits.intro':
       "Des outils construits d'abord pour un besoin réel, partagés ensuite. Chaque produit est une exploration.",
     'produit.besoin': 'Le besoin',
+    'produit.essayer': 'Essayer',
     'produit.technique': 'Sous le capot',
     'produit.captures': "Captures d'écran",
     'produit.captures.bientot': 'Captures à venir — le produit évolue encore.',
@@ -68,6 +69,8 @@ export const ui = {
     'feedback.intro':
       'Une suggestion, un bogue, un logo préféré ? Rien n’est publié : seul Jean-Pierre lit ces messages.',
     'feedback.placeholder': 'Votre idée, en toute liberté…',
+    'feedback.produit': 'Produit concerné',
+    'feedback.produit.aucun': 'Général / aucun en particulier',
     'feedback.envoyer': 'Envoyer',
     'feedback.envoi': 'Envoi…',
     'feedback.merci': 'Merci ! Votre idée est bien partie.',
@@ -77,7 +80,7 @@ export const ui = {
     'pied.note': 'construit à la main, hébergé sobrement.',
   },
   en: {
-    'site.tagline': 'Experiment, learn, make ideas echo into products.',
+    'site.tagline': 'Experiment, learn, make ideas echo into digital products.',
     'site.description':
       'iecho — a digital product workshop: local, personal tools built to learn.',
     'nav.produits': 'Products',
@@ -87,6 +90,7 @@ export const ui = {
     'produits.intro':
       'Tools built first for a real need, then shared. Each product is an exploration.',
     'produit.besoin': 'The need',
+    'produit.essayer': 'Try it',
     'produit.technique': 'Under the hood',
     'produit.captures': 'Screenshots',
     'produit.captures.bientot': 'Screenshots coming soon — the product is still evolving.',
@@ -119,6 +123,8 @@ export const ui = {
     'feedback.intro':
       'A suggestion, a bug, a favourite logo? Nothing is published: only Jean-Pierre reads these messages.',
     'feedback.placeholder': 'Your idea, freely…',
+    'feedback.produit': 'Related product',
+    'feedback.produit.aucun': 'General / none in particular',
     'feedback.envoyer': 'Send',
     'feedback.envoi': 'Sending…',
     'feedback.merci': 'Thank you! Your idea is on its way.',
@@ -128,7 +134,7 @@ export const ui = {
     'pied.note': 'handmade, soberly hosted.',
   },
   es: {
-    'site.tagline': 'Experimentar, aprender, hacer resonar las ideas en productos.',
+    'site.tagline': 'Experimentar, aprender, hacer resonar las ideas en productos digitales.',
     'site.description':
       'iecho — un taller de productos digitales: herramientas locales y personales, construidas para aprender.',
     'nav.produits': 'Productos',
@@ -138,6 +144,7 @@ export const ui = {
     'produits.intro':
       'Herramientas construidas primero para una necesidad real, compartidas después. Cada producto es una exploración.',
     'produit.besoin': 'La necesidad',
+    'produit.essayer': 'Probarlo',
     'produit.technique': 'Bajo el capó',
     'produit.captures': 'Capturas de pantalla',
     'produit.captures.bientot': 'Capturas próximamente — el producto sigue evolucionando.',
@@ -171,6 +178,8 @@ export const ui = {
     'feedback.intro':
       'Una sugerencia, un error, un logo favorito? Nada se publica: solo Jean-Pierre lee estos mensajes.',
     'feedback.placeholder': 'Tu idea, con toda libertad…',
+    'feedback.produit': 'Producto relacionado',
+    'feedback.produit.aucun': 'General / ninguno en particular',
     'feedback.envoyer': 'Enviar',
     'feedback.envoi': 'Enviando…',
     'feedback.merci': '¡Gracias! Tu idea va en camino.',

@@ -15,6 +15,7 @@ interface Produit {
   sousTitre: string;
   resume: string;
   besoin: string;
+  lien?: string;
   stack: string[];
   roadmap: { titre: string; statut: 'proposee' | 'encours' | 'livree' }[];
 }
@@ -93,6 +94,11 @@ const libelleStatut = {
     <h2>{p.nom}</h2>
     <p class="sous-titre">{p.sousTitre}</p>
     <p class="resume">{p.resume}</p>
+    {p.lien && (
+      <a class="bouton-essayer" href={p.lien} target="_blank" rel="noopener">
+        {tr('produit.essayer')} {p.nom}
+      </a>
+    )}
 
     <div class="section-produit">
       <h3>{tr('produit.besoin')}</h3>

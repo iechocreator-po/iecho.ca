@@ -1,0 +1,7 @@
+{
+  "genere_par": "manuel",
+  "genere_le": "2026-07-14T00:00:00.000Z",
+  "produit": "iecho.ca (hub)",
+  "note": "Créé à la main — la Console de bilbao ne peut pas encore cibler le hub (mapping.js/console.js ne connaissent que les codes produit). Voir roadmap bilbao R17 « Support du hub dans la Console ». Une fois R17 livré, ce fichier devrait être régénéré via PUT /api/console/iecho.ca/flags pour rester cohérent avec le reste du portfolio.",
+  "flags": {}
+}

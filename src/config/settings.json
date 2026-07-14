@@ -1,0 +1,7 @@
+{
+  "_note": "Scaffold — le composant FeedbackWidget.astro a encore FORMSPREE_ID codé en dur, pas encore branché sur ce fichier. Voir feedback bilbao « brancher src/config/settings.json ».",
+  "feedback": {
+    "formspree_form_id": "mwvdgqgy",
+    "enabled": true
+  }
+}

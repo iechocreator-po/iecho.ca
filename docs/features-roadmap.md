@@ -7,14 +7,14 @@
 
 ## Fonctionnalités
 
-| # | Fonctionnalité | Statut | Notes |
-|---|---|---|---|
-| 1 | Vitrine produits trilingue (FR/EN/ES) | ✅ | `ProductExplorer.astro`, données `src/data/produits/{fr,en,es}.json`. |
-| 2 | Sélecteur de produits + fiche détaillée | ✅ | Onglets, bouton « Essayer » conditionnel à la présence d'un `lien`. |
-| 3 | Roadmap publique par produit (issue de bilbao) | 🔲 | Correspond à R13 de la roadmap bilbao — intégration de `roadmap.bilbao.json` dans la vitrine, pas encore branchée côté Astro. |
-| 4 | Bouton de feedback « Partager une idée » (Formspree) | ✅ | `FeedbackWidget.astro` — bouton flottant, `<dialog>` modal, contexte auto (page + produit affiché), envoi Formspree. `FORMSPREE_ID` codé en dur dans le composant — à extraire vers `src/config/settings.json` (voir feedback bilbao). |
-| 5 | Mission / À propos | 🔲 | Textes pas encore rédigés (en attente contenu de Jean-Pierre). |
-| 6 | Section « Logos en gestation » (votes visiteurs) | 🔲 | Idée du brief initial, pas commencée. |
+| # | ID | Fonctionnalité | Statut | Notes |
+| --- | --- | --- | --- | --- |
+| 1 | 99 | Vitrine produits trilingue (FR/EN/ES) | ✅ | `ProductExplorer.astro`, données `src/data/produits/{fr,en,es}.json`. |
+| 2 | 100 | Sélecteur de produits + fiche détaillée | ✅ | Onglets, bouton « Essayer » conditionnel à la présence d'un `lien`. |
+| 3 | 101 | Roadmap publique par produit (issue de bilbao) | 🔲 | Correspond à R13 de la roadmap bilbao — intégration de `roadmap.bilbao.json` dans la vitrine, pas encore branchée côté Astro. |
+| 4 | 102 | Bouton de feedback « Partager une idée » (Formspree) | ✅ | `FeedbackWidget.astro` — bouton flottant, `<dialog>` modal, contexte auto (page + produit affiché), envoi Formspree. `FORMSPREE_ID` codé en dur dans le composant — à extraire vers `src/config/settings.json` (voir feedback bilbao). |
+| 5 | 103 | Mission / À propos | 🔲 | Textes pas encore rédigés (en attente contenu de Jean-Pierre). |
+| 6 | 104 | Section « Logos en gestation » (votes visiteurs) | 🔲 | Idée du brief initial, pas commencée. |
 
 ## Idées à explorer
 

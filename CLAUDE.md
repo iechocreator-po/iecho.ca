@@ -28,7 +28,7 @@
   produits affichant la section technique (`afficherTechnique`).
 - `src/data/roadmap.bilbao.json` — **artefact émis par bilbao** (feature-factory),
   committé manuellement, pas encore lu par le build Astro (voir roadmap R13 de
-  bilbao et item #3 de `docs/features-roadmap.md` de ce produit).
+  bilbao et `feature-factory/data/iecho.ca/features.json` pour le détail).
 - `src/components/ProductExplorer.astro` — rend génériquement les données
   ci-dessus (tabs + panneau détail). **Ajouter un produit ne touche jamais ce
   composant**, uniquement les fichiers de données.
@@ -44,8 +44,16 @@ Voir la section dédiée du `CLAUDE.md` racine — résumé : éditer
 `produits.config.json > ordre` + déposer les captures dans `public/captures/`.
 Aucune modification de composant nécessaire.
 
-## Roadmap
+## Source de données bilbao — features & releases
 
-Voir [docs/features-roadmap.md](docs/features-roadmap.md) — inclut aussi les
-idées à explorer (ex. produit `test-factory`, cockpit de synchronisation des
-tests du portfolio).
+Les features et la roadmap du hub ne sont plus suivies dans un fichier local :
+**bilbao** (`feature-factory`) en est l'unique source de vérité, pour tous
+les produits du portfolio (le hub y compris).
+
+- **Lecture** (pas besoin que bilbao tourne) : `../feature-factory/data/iecho.ca/features.json`
+  et `.../releases.json` — inclut aussi les idées à explorer (ex. produit
+  `test-factory`, cockpit de synchronisation des tests du portfolio).
+- **Écriture** (marquer une feature complétée, en ajouter une nouvelle,
+  assembler une release) : nécessite `npm start` dans `feature-factory/`
+  (127.0.0.1:4600) — passer par son API (`GET/POST/PATCH /api/feedbacks`,
+  `POST /api/release-notes`). Ne jamais éditer les JSON à la main.

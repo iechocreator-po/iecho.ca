@@ -5,6 +5,31 @@
 > `CLAUDE.md` racine (`2000_DigitalProducts/CLAUDE.md`) pour le contexte complet
 > du portfolio et la mécanique d'intégration produit → vitrine.
 
+## Démarrage de session — features en attente
+
+Depuis R24 (2026-07-20), **bilbao** (`../feature-factory/`) est l'unique
+source de vérité des features/roadmap du hub — pas de
+`docs/features-roadmap.md` local. À chaque nouvelle session sur iecho.ca,
+présenter d'emblée la liste des features/idées/questions dont le statut
+n'est ni `Livre` ni `Rejete`, lue directement dans l'export JSON (pas besoin
+que bilbao tourne) :
+
+```bash
+python3 -c "
+import json
+d = json.load(open('../feature-factory/data/iecho.ca/features.json'))
+for f in d['features']:
+    if f['statut'] not in ('Livre', 'Rejete'):
+        print(f['id'], f['statut'], f['votes'], f['titre'])
+"
+```
+
+Pour marquer une feature complétée, en ajouter une nouvelle, ou assembler une
+release note, passer par l'API de bilbao (`npm start` dans
+`feature-factory/`, 127.0.0.1:4600, cible `iecho.ca` — support hub depuis
+R17) — jamais éditer `features.json` à la main (régénéré à chaque mutation,
+toute édition manuelle serait écrasée).
+
 ## Stack
 
 - **Générateur** : Astro (build statique), i18n natif.

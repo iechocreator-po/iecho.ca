@@ -69,16 +69,3 @@ Voir la section dédiée du `CLAUDE.md` racine — résumé : éditer
 `produits.config.json > ordre` + déposer les captures dans `public/captures/`.
 Aucune modification de composant nécessaire.
 
-## Source de données bilbao — features & releases
-
-Les features et la roadmap du hub ne sont plus suivies dans un fichier local :
-**bilbao** (`feature-factory`) en est l'unique source de vérité, pour tous
-les produits du portfolio (le hub y compris).
-
-- **Lecture** (pas besoin que bilbao tourne) : `../feature-factory/data/iecho.ca/features.json`
-  et `.../releases.json` — inclut aussi les idées à explorer (ex. produit
-  `test-factory`, cockpit de synchronisation des tests du portfolio).
-- **Écriture** (marquer une feature complétée, en ajouter une nouvelle,
-  assembler une release) : nécessite `npm start` dans `feature-factory/`
-  (127.0.0.1:4600) — passer par son API (`GET/POST/PATCH /api/feedbacks`,
-  `POST /api/release-notes`). Ne jamais éditer les JSON à la main.

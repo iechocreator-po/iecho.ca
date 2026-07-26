@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { t, type Langue } from '../i18n/ui';
 import config from '../data/produits.config.json';
+import dimensionsCaptures from '../data/captures-dimensions.json';
 
 interface Produit {
   id: string;
@@ -20,12 +21,27 @@ interface Produit {
   roadmap: { titre: string; statut: 'proposee' | 'encours' | 'livree' }[];
 }
 
+interface Nouveaute {
+  date: string;
+  texte: string;
+}
+
 interface Props {
   lang: Langue;
   produits: Produit[];
+  nouveautes?: Record<string, Nouveaute[]>;
 }
-const { lang, produits: produitsBruts } = Astro.props;
+const { lang, produits: produitsBruts, nouveautes = {} } = Astro.props;
 const tr = t(lang);
+
+// Dimensions connues des captures (générées par scripts/optimize-images.mjs) —
+// permet de fixer width/height sur les <img> et d'éviter un layout shift. Un
+// fichier absent de ce mapping s'affiche simplement sans ces attributs.
+const dimensions = dimensionsCaptures as Record<string, { width: number; height: number }>;
+function dimensionsPour(src: string): { width?: number; height?: number } {
+  const nom = src.replace(/^\/captures\//, '');
+  return dimensions[nom] ?? {};
+}
 
 // Ordre d'affichage piloté par produits.config.json ; un produit absent de la
 // liste est placé à la fin (ordre stable d'origine).
@@ -68,6 +84,12 @@ const libelleStatut = {
       data-produit={p.id}
     >
       {captures[p.id].length > 0 ? (
+        // Pas de width/height ici : cette image est recadrée par le CSS
+        // (aspect-ratio: 16/10, object-fit: cover) — poser les attributs
+        // HTML width/height casse ce recadrage (le navigateur les utilise
+        // à la place du ratio CSS et affiche l'image à sa hauteur native,
+        // bien plus grande que la carte). Sans risque de CLS ici : la
+        // hauteur de la carte est fixée par aspect-ratio, pas par l'image.
         <img class="vignette" src={captures[p.id][0]} alt="" loading="lazy" />
       ) : (
         <span class="vignette vignette-vide" aria-hidden="true">
@@ -111,7 +133,12 @@ const libelleStatut = {
         <div class="captures">
           {captures[p.id].map((src, n) => (
             <a href={src} target="_blank" rel="noopener">
-              <img src={src} alt={`${p.nom} — ${tr('produit.captures')} ${n + 1}`} loading="lazy" />
+              <img
+                src={src}
+                alt={`${p.nom} — ${tr('produit.captures')} ${n + 1}`}
+                loading="lazy"
+                {...dimensionsPour(src)}
+              />
             </a>
           ))}
         </div>
@@ -125,6 +152,17 @@ const libelleStatut = {
         <h3>{tr('produit.technique')}</h3>
         <ul class="pastilles">
           {p.stack.map((tech) => <li>{tech}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {nouveautes[p.id]?.length > 0 && (
+      <div class="section-produit">
+        <h3>{tr('produit.quoidneuf')}</h3>
+        <ul class="quoi-de-neuf">
+          {nouveautes[p.id].map((n) => (
+            <li><time datetime={n.date}>{n.date}</time> — {n.texte}</li>
+          ))}
         </ul>
       </div>
     )}

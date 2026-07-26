@@ -1,0 +1,167 @@
+{
+  "_doc": "Généré par scripts/optimize-images.mjs — largeur/hauteur réelle de chaque fichier dans public/captures/, utilisée par ProductExplorer.astro pour fixer width/height sur les <img> (évite le layout shift). Ne jamais éditer à la main ; régénéré à chaque exécution du script. Un fichier absent de ce mapping (ex. déposé à la main sans lancer le script) affiche simplement sans width/height, sans erreur.",
+  "barcelona-1.webp": {
+    "width": 1049,
+    "height": 888
+  },
+  "barcelona-2.webp": {
+    "width": 1049,
+    "height": 888
+  },
+  "barcelona-3.webp": {
+    "width": 1049,
+    "height": 888
+  },
+  "madrid-1.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-2.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-3.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-4.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-5.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-6.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "marbella-1.webp": {
+    "width": 842,
+    "height": 806
+  },
+  "marbella-2.webp": {
+    "width": 848,
+    "height": 764
+  },
+  "marbella-3.webp": {
+    "width": 840,
+    "height": 406
+  },
+  "marbella-4.webp": {
+    "width": 834,
+    "height": 632
+  },
+  "toledo-1.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "toledo-2.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "toledo-3.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-7.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-8.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "madrid-9.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "valencia-1.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "valencia-2.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "valencia-3.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-1.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-10.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-11.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-12.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-2.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-3.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-4.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-5.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-6.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-7.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-8.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "bilbao-9.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-1.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-2.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-3.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-4.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-5.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-6.webp": {
+    "width": 1041,
+    "height": 760
+  },
+  "castellana-7.webp": {
+    "width": 1041,
+    "height": 760
+  }
+}

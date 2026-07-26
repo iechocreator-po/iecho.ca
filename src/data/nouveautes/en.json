@@ -1,0 +1,23 @@
+{
+  "_doc": "Per-product \"what's new\" — inline text, never a clickable link (product repos are private on GitHub, a link would break for a public visitor). Hand-maintained from releases marked publique=\"Oui\" in feature-factory/data/<id>/releases.json. Order: most recent first, ~2-3 entries max per product.",
+  "barcelona": [
+    {
+      "date": "2026-07-08",
+      "texte": "New Training Path mode: 55 multiple-choice questions organized into campaigns unlocked at a 70% pass score."
+    },
+    {
+      "date": "2026-07-02",
+      "texte": "Configurable password screen to protect access during playtesting."
+    },
+    {
+      "date": "2026-06-20",
+      "texte": "Three learning tiers for the options wheel strategy."
+    }
+  ],
+  "madrid": [
+    {
+      "date": "2026-07-21",
+      "texte": "New per-stock analysis panel (winners/losers, dividends, invested vs. recovered, country/sector breakdown) and an Auto/Light/Dark theme switch now fully aligned with the shared design system."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "_doc": "« Quoi de neuf » par produit — texte inline, jamais de lien cliquable (les repos produits sont privés sur GitHub, un lien casserait pour un visiteur public). Alimenté à la main à partir des releases marquées publique=\"Oui\" dans feature-factory/data/<id>/releases.json. Ordre : plus récent en premier, ~2-3 entrées max par produit.",
+  "barcelona": [
+    {
+      "date": "2026-07-08",
+      "texte": "Nouveau mode Parcours de formation : 55 questions à choix multiples, organisées en campagnes débloquées à 70 % de réussite."
+    },
+    {
+      "date": "2026-07-02",
+      "texte": "Écran de mot de passe configurable pour protéger l'accès en playtest."
+    },
+    {
+      "date": "2026-06-20",
+      "texte": "Trois paliers pédagogiques pour apprendre la stratégie de la roue."
+    }
+  ],
+  "madrid": [
+    {
+      "date": "2026-07-21",
+      "texte": "Nouveau panneau d'analyse par titre (gagnants/perdants, dividendes, investi vs récupéré, répartition pays/secteur) et bascule de thème Auto/Clair/Sombre pleinement conforme au design system partagé."
+    }
+  ]
+}

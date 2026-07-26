@@ -6,8 +6,12 @@ import { t, type Langue } from '../i18n/ui';
 import produitsFr from '../data/produits/fr.json';
 import produitsEn from '../data/produits/en.json';
 import produitsEs from '../data/produits/es.json';
+import nouveautesFr from '../data/nouveautes/fr.json';
+import nouveautesEn from '../data/nouveautes/en.json';
+import nouveautesEs from '../data/nouveautes/es.json';
 
 const parLangue = { fr: produitsFr, en: produitsEn, es: produitsEs } as const;
+const parLangueNouveautes = { fr: nouveautesFr, en: nouveautesEn, es: nouveautesEs } as const;
 
 interface Props {
   lang: Langue;
@@ -15,11 +19,12 @@ interface Props {
 const { lang } = Astro.props;
 const tr = t(lang);
 const produits = parLangue[lang];
+const nouveautes = parLangueNouveautes[lang];
 ---
 <Base lang={lang} page="produits" titre={tr('produits.titre')}>
   <div class="hero hero-centre">
     <h1>iecho</h1>
     <p>{tr('site.tagline')}</p>
   </div>
-  <ProductExplorer lang={lang} produits={produits} />
+  <ProductExplorer lang={lang} produits={produits} nouveautes={nouveautes} />
 </Base>

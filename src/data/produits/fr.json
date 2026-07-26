@@ -130,5 +130,72 @@
         "statut": "proposee"
       }
     ]
+  },
+  {
+    "id": "castellana",
+    "nom": "castellana",
+    "sousTitre": "assistant de swing trading — écran de sélection, sizing, journal",
+    "resume": "Filtrer des titres selon des critères techniques précis, discipliner sa taille de position et journaliser chaque trade.",
+    "besoin": "Le swing trading exige de croiser plusieurs indicateurs (flottant, volume, VWAP, bêta) avant d'entrer en position, puis de garder une trace rigoureuse de chaque trade. castellana centralise l'écran de sélection, calcule les indicateurs maison et tient le journal, avec un sidecar optionnel pour les données de marché en direct.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "Sidecar Python (TradingView)",
+      "Yahoo Finance"
+    ],
+    "roadmap": [
+      {
+        "titre": "Écran de screening (flottant, volume, VWAP, bêta)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Indicateurs techniques maison (ATR, OBV, SMMA, volume)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Journal de trades et cache de screening",
+        "statut": "livree"
+      },
+      {
+        "titre": "Thème clair/sombre et glossaire des indicateurs",
+        "statut": "livree"
+      },
+      {
+        "titre": "Données de marché en direct via sidecar (VIX, RSI, Golden Cross)",
+        "statut": "proposee"
+      }
+    ]
+  },
+  {
+    "id": "bilbao",
+    "nom": "bilbao",
+    "sousTitre": "le centre de commande des idées du portfolio",
+    "resume": "Centraliser les idées, les votes et la feuille de route de chaque produit iecho — sans tableur ni post-its.",
+    "besoin": "Suivre l'avancement de plusieurs produits en parallèle devient vite ingérable sans un endroit unique. bilbao recueille les retours, priorise par vote, suit la livraison et synchronise les feuilles de route publiques, y compris celle d'iecho.ca lui-même.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "GitHub API (Octokit)"
+    ],
+    "roadmap": [
+      {
+        "titre": "Suivi des retours et fonctionnalités pour tous les produits",
+        "statut": "livree"
+      },
+      {
+        "titre": "Tableau de bord (livraisons par produit)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Synchronisation avec les Issues et Releases GitHub",
+        "statut": "livree"
+      },
+      {
+        "titre": "Notes de version affichées pour chaque produit",
+        "statut": "proposee"
+      }
+    ]
   }
 ]

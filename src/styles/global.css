@@ -398,6 +398,28 @@ a:hover {
 .statut-encours { color: var(--ambre); background: var(--ambre-doux); }
 .statut-livree { color: var(--vert); background: var(--vert-doux); }
 
+/* Quoi de neuf — releases publiques récentes, texte inline (jamais de lien) */
+.quoi-de-neuf {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 42rem;
+}
+.quoi-de-neuf li {
+  color: var(--texte);
+  padding: 0.55rem 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+}
+.quoi-de-neuf time {
+  color: var(--texte-3);
+  font-family: var(--police-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
 /* ---------- Pages Mission / À propos ---------- */
 
 .prose {

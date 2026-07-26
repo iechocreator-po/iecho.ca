@@ -1,0 +1,23 @@
+{
+  "_doc": "«Novedades» por producto — texto en línea, nunca un enlace clicable (los repos de los productos son privados en GitHub, un enlace fallaría para un visitante público). Mantenido a mano a partir de las releases marcadas publique=\"Oui\" en feature-factory/data/<id>/releases.json. Orden: más reciente primero, ~2-3 entradas máx. por producto.",
+  "barcelona": [
+    {
+      "date": "2026-07-08",
+      "texte": "Nuevo modo Recorrido de formación: 55 preguntas de opción múltiple organizadas en campañas que se desbloquean con un 70 % de aciertos."
+    },
+    {
+      "date": "2026-07-02",
+      "texte": "Pantalla de contraseña configurable para proteger el acceso durante las pruebas."
+    },
+    {
+      "date": "2026-06-20",
+      "texte": "Tres niveles de aprendizaje para la estrategia de la rueda."
+    }
+  ],
+  "madrid": [
+    {
+      "date": "2026-07-21",
+      "texte": "Nuevo panel de análisis por título (ganadores/perdedores, dividendos, invertido vs. recuperado, distribución por país/sector) y un selector de tema Auto/Claro/Oscuro ya totalmente alineado con el design system compartido."
+    }
+  ]
+}

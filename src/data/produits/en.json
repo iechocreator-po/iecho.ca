@@ -130,5 +130,72 @@
         "statut": "proposee"
       }
     ]
+  },
+  {
+    "id": "castellana",
+    "nom": "castellana",
+    "sousTitre": "swing-trading assistant — screening, sizing, journal",
+    "resume": "Filter stocks against precise technical criteria, size positions with discipline, and log every trade.",
+    "besoin": "Swing trading means cross-checking several indicators (float, volume, VWAP, beta) before entering a position, then keeping a rigorous log of each trade. castellana centralizes the screening screen, computes the home-grown indicators, and keeps the journal, with an optional sidecar for live market data.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "Python sidecar (TradingView)",
+      "Yahoo Finance"
+    ],
+    "roadmap": [
+      {
+        "titre": "Screening screen (float, volume, VWAP, beta)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Home-grown technical indicators (ATR, OBV, SMMA, volume)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Trade journal and screening cache",
+        "statut": "livree"
+      },
+      {
+        "titre": "Light/dark theme and indicator glossary",
+        "statut": "livree"
+      },
+      {
+        "titre": "Live market data via sidecar (VIX, RSI, Golden Cross)",
+        "statut": "proposee"
+      }
+    ]
+  },
+  {
+    "id": "bilbao",
+    "nom": "bilbao",
+    "sousTitre": "the portfolio's idea command center",
+    "resume": "Centralize feedback, votes, and the roadmap for every iecho product — no spreadsheets, no sticky notes.",
+    "besoin": "Tracking progress across several products at once quickly becomes unmanageable without a single place to look. bilbao collects feedback, prioritizes it by vote, tracks delivery, and syncs public roadmaps — including iecho.ca's own.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "GitHub API (Octokit)"
+    ],
+    "roadmap": [
+      {
+        "titre": "Feedback and feature tracking for every product",
+        "statut": "livree"
+      },
+      {
+        "titre": "Dashboard (deliveries by product)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Sync with GitHub Issues and Releases",
+        "statut": "livree"
+      },
+      {
+        "titre": "Release notes shown for each product",
+        "statut": "proposee"
+      }
+    ]
   }
 ]

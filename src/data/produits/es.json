@@ -130,5 +130,72 @@
         "statut": "proposee"
       }
     ]
+  },
+  {
+    "id": "castellana",
+    "nom": "castellana",
+    "sousTitre": "asistente de swing trading — cribado, dimensionamiento, diario",
+    "resume": "Filtrar acciones según criterios técnicos precisos, dimensionar posiciones con disciplina y registrar cada operación.",
+    "besoin": "El swing trading exige cruzar varios indicadores (flotante, volumen, VWAP, beta) antes de entrar en una posición, y luego llevar un registro riguroso de cada operación. castellana centraliza la pantalla de cribado, calcula los indicadores propios y mantiene el diario, con un sidecar opcional para datos de mercado en vivo.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "Sidecar en Python (TradingView)",
+      "Yahoo Finance"
+    ],
+    "roadmap": [
+      {
+        "titre": "Pantalla de cribado (flotante, volumen, VWAP, beta)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Indicadores técnicos propios (ATR, OBV, SMMA, volumen)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Diario de operaciones y caché de cribado",
+        "statut": "livree"
+      },
+      {
+        "titre": "Tema claro/oscuro y glosario de indicadores",
+        "statut": "livree"
+      },
+      {
+        "titre": "Datos de mercado en vivo vía sidecar (VIX, RSI, Golden Cross)",
+        "statut": "proposee"
+      }
+    ]
+  },
+  {
+    "id": "bilbao",
+    "nom": "bilbao",
+    "sousTitre": "el centro de mando de las ideas del portafolio",
+    "resume": "Centralizar los comentarios, votos y la hoja de ruta de cada producto de iecho — sin hojas de cálculo ni notas adhesivas.",
+    "besoin": "Seguir el avance de varios productos a la vez se vuelve inmanejable sin un solo lugar de referencia. bilbao recopila comentarios, los prioriza por voto, sigue la entrega y sincroniza las hojas de ruta públicas, incluida la de iecho.ca.",
+    "stack": [
+      "Node.js",
+      "Express",
+      "SQLite",
+      "API de GitHub (Octokit)"
+    ],
+    "roadmap": [
+      {
+        "titre": "Seguimiento de comentarios y funcionalidades para todos los productos",
+        "statut": "livree"
+      },
+      {
+        "titre": "Panel de control (entregas por producto)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Sincronización con Issues y Releases de GitHub",
+        "statut": "livree"
+      },
+      {
+        "titre": "Notas de versión mostradas para cada producto",
+        "statut": "proposee"
+      }
+    ]
   }
 ]

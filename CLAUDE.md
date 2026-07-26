@@ -48,12 +48,31 @@ toute édition manuelle serait écrasée).
 ## Structure
 
 - `src/data/produits/{fr,en,es}.json` — un objet par produit (id, nom,
-  sousTitre, résumé, besoin, lien optionnel, stack, roadmap).
+  sousTitre, résumé, besoin, lien optionnel, stack, roadmap). **7 produits**
+  depuis le 26/7/2026 : marbella, toledo, madrid, valencia, barcelona (avec
+  `lien`), castellana, bilbao (ces deux derniers sans `lien`, même patron que
+  toledo/madrid/valencia — app locale, jamais déployée).
 - `src/data/produits.config.json` — ordre d'affichage (`ordre`) et liste des
   produits affichant la section technique (`afficherTechnique`).
-- `src/data/roadmap.bilbao.json` — **artefact émis par bilbao** (feature-factory),
-  committé manuellement, pas encore lu par le build Astro (voir roadmap R13 de
-  bilbao et `feature-factory/data/iecho.ca/features.json` pour le détail).
+- `src/data/nouveautes/{fr,en,es}.json` — « Quoi de neuf » par produit, texte
+  inline (jamais de lien cliquable — tous les repos produits sont **privés**
+  sur GitHub sauf toledo et iecho.ca lui-même, un lien casserait pour un
+  visiteur public). N'inclut que les releases marquées `publique: "Oui"`
+  dans `feature-factory/data/<id>/releases.json`. Maintenu à la main.
+- `src/data/captures-dimensions.json` — **généré par
+  `scripts/optimize-images.mjs`**, jamais à la main : largeur/hauteur réelle
+  de chaque capture, utilisée par `ProductExplorer.astro` pour fixer
+  `width`/`height` sur les `<img>` de la **galerie** (évite le layout shift).
+  ⚠️ **Ne jamais poser ces attributs `width`/`height` sur l'`<img class="vignette">`**
+  de la carte de sélection (`.onglet-produit`) : elle a un `aspect-ratio: 16/10`
+  CSS volontaire (recadrage `object-fit: cover`) pour garder des cartes de
+  taille homogène quelle que soit la capture source. Poser `width`/`height`
+  HTML dessus fait ignorer ce ratio par le navigateur, qui affiche l'image à
+  sa hauteur native (bien plus grande que la carte) — bug réel rencontré et
+  corrigé le 26/7/2026, gardait exactement le même symptôme peu importe
+  l'image (même une capture jamais modifiée en montrait les effets). Le
+  format original (attributs `width`/`height` sur la galerie **seulement**,
+  jamais sur la vignette) doit être conservé.
 - `src/components/ProductExplorer.astro` — rend génériquement les données
   ci-dessus (tabs + panneau détail). **Ajouter un produit ne touche jamais ce
   composant**, uniquement les fichiers de données.
@@ -61,6 +80,8 @@ toute édition manuelle serait écrasée).
   modale, envoi Formspree (`FORMSPREE_ID` codé en dur — à extraire vers
   `src/config/settings.json`).
 - `src/i18n/ui.ts` — langues, routes localisées, fonction de traduction `t()`.
+- `scripts/roadmap-diff.mjs`, `scripts/capture-screenshots.mjs`,
+  `scripts/optimize-images.mjs` — voir « Workflows » ci-dessous.
 
 ## Comment un produit s'intègre à la vitrine
 
@@ -68,4 +89,41 @@ Voir la section dédiée du `CLAUDE.md` racine — résumé : éditer
 `src/data/produits/{fr,en,es}.json` (un objet par produit) + ajouter l'`id` à
 `produits.config.json > ordre` + déposer les captures dans `public/captures/`.
 Aucune modification de composant nécessaire.
+
+## Workflows
+
+**Synchroniser la feuille de route avec bilbao** (source de vérité réelle,
+`feature-factory/data/<id>/features.json`) :
+```bash
+npm run roadmap-diff
+```
+Compare (heuristique de titres, best-effort) la roadmap actuelle de
+`produits/fr.json` avec les features actives côté bilbao et imprime un
+rapport (candidats à ajouter, changements de statut, entrées à vérifier) +
+l'écrit dans `scripts/.roadmap-diff/<date>.md` (gitignored). **Semi-
+automatique par choix** : recopier à la main, en traduisant, dans
+`produits/{fr,en,es}.json` — la qualité de traduction reste humaine, jamais
+d'écriture automatique de ce script.
+
+**Captures d'écran** (produits locaux uniquement — toledo, madrid, valencia,
+castellana, bilbao ; marbella et barcelona hors scope, voir en-tête du
+script) :
+```bash
+npm run captures            # démarrer d'abord chaque serveur local, voir
+                             # CONFIG_PRODUITS dans scripts/capture-screenshots.mjs
+npm run optimize-images      # convertit en .webp, écrit captures-dimensions.json
+# ou npm run captures:full pour enchaîner les deux
+```
+⚠️ castellana et bilbao affichent tes propres données réelles (watchlist,
+feedback) — nettoyer/réinitialiser avant de capturer, ces images deviennent
+publiques sur iecho.ca. `optimize-images` est idempotent, supprime les PNG/JPG
+sources après conversion (sauvegardés dans
+`scripts/.captures-originals-backup/`, gitignored) et ignore (sans y toucher)
+tout fichier dont le préfixe ne correspond à aucun id produit connu
+(actuellement : `iecho-1.png`/`iecho-2.png`, à revoir manuellement).
+
+**« Quoi de neuf »** : n'ajouter une entrée dans `nouveautes/{fr,en,es}.json`
+que si la release correspondante est `publique: "Oui"` dans
+`feature-factory/data/<id>/releases.json` — sinon elle reste interne
+(ex. castellana au 25/7/2026, release marquée `"Non"`).
 

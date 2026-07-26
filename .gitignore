@@ -9,3 +9,8 @@ dist/
 
 # Système
 .DS_Store
+
+# Fichiers de travail des scripts de captures/roadmap (voir scripts/README.md)
+scripts/.capture-tmp/
+scripts/.captures-originals-backup/
+scripts/.roadmap-diff/

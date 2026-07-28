@@ -197,5 +197,30 @@
         "statut": "proposee"
       }
     ]
+  },
+  {
+    "id": "porto",
+    "nom": "porto",
+    "sousTitre": "rapid-prototyping tricks workshop",
+    "resume": "Nine tricks for shipping safely and testing hypotheses, each one explained then demonstrated live.",
+    "besoin": "Going from gathering requirements to a working prototype fast, and testing hypotheses in production rather than in a meeting — tricks that are usually only explained verbally, here shown actually running.",
+    "stack": [
+      "Vanilla HTML / CSS / JS",
+      "Native ES modules"
+    ],
+    "roadmap": [
+      {
+        "titre": "9 tricks explained then demonstrated live",
+        "statut": "livree"
+      },
+      {
+        "titre": "Summary screen (market vs. technical risk)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Presentation mode (P key)",
+        "statut": "livree"
+      }
+    ]
   }
 ]

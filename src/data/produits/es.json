@@ -197,5 +197,30 @@
         "statut": "proposee"
       }
     ]
+  },
+  {
+    "id": "porto",
+    "nom": "porto",
+    "sousTitre": "taller de trucos de prototipado rápido",
+    "resume": "Nueve trucos para lanzar con seguridad y probar hipótesis, cada uno explicado y luego demostrado en vivo.",
+    "besoin": "Pasar de recoger requisitos a un prototipo funcional muy rápido, y probar hipótesis en producción en lugar de en una reunión — trucos que normalmente solo se explican de palabra, aquí mostrados funcionando de verdad.",
+    "stack": [
+      "HTML / CSS / JS vanilla",
+      "Módulos ES nativos"
+    ],
+    "roadmap": [
+      {
+        "titre": "9 trucos explicados y luego demostrados en vivo",
+        "statut": "livree"
+      },
+      {
+        "titre": "Pantalla de síntesis (riesgo de mercado vs técnico)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Modo presentación (tecla P)",
+        "statut": "livree"
+      }
+    ]
   }
 ]

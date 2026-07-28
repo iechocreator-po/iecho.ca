@@ -48,10 +48,10 @@ toute édition manuelle serait écrasée).
 ## Structure
 
 - `src/data/produits/{fr,en,es}.json` — un objet par produit (id, nom,
-  sousTitre, résumé, besoin, lien optionnel, stack, roadmap). **7 produits**
-  depuis le 26/7/2026 : marbella, toledo, madrid, valencia, barcelona (avec
-  `lien`), castellana, bilbao (ces deux derniers sans `lien`, même patron que
-  toledo/madrid/valencia — app locale, jamais déployée).
+  sousTitre, résumé, besoin, lien optionnel, stack, roadmap). **8 produits**
+  depuis le 28/7/2026 : marbella, toledo, madrid, valencia, barcelona (avec
+  `lien`), castellana, bilbao, porto (ces trois derniers sans `lien`, même
+  patron que toledo/madrid/valencia — app locale, jamais déployée).
 - `src/data/produits.config.json` — ordre d'affichage (`ordre`) et liste des
   produits affichant la section technique (`afficherTechnique`).
 - `src/data/nouveautes/{fr,en,es}.json` — « Quoi de neuf » par produit, texte

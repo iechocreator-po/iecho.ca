@@ -6,17 +6,21 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "roadmap-diff": "node scripts/roadmap-diff.mjs",
     "captures": "node scripts/capture-screenshots.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",
-    "captures:full": "npm run captures && npm run optimize-images"
+    "captures:full": "npm run captures && npm run optimize-images",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "astro": "^5.12.0"
   },
   "devDependencies": {
     "puppeteer": "^24.0.0",
-    "sharp": "^0.34.0"
+    "sharp": "^0.34.0",
+    "wrangler": "^4.114.0"
   }
 }

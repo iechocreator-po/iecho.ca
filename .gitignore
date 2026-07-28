@@ -14,3 +14,9 @@ dist/
 scripts/.capture-tmp/
 scripts/.captures-originals-backup/
 scripts/.roadmap-diff/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

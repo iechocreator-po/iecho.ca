@@ -204,6 +204,7 @@
     "sousTitre": "rapid-prototyping tricks workshop",
     "resume": "Nine tricks for shipping safely and testing hypotheses, each one explained then demonstrated live.",
     "besoin": "Going from gathering requirements to a working prototype fast, and testing hypotheses in production rather than in a meeting — tricks that are usually only explained verbally, here shown actually running.",
+    "lien": "https://learning-softengineer.iechocreator.workers.dev/",
     "stack": [
       "Vanilla HTML / CSS / JS",
       "Native ES modules"

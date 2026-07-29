@@ -204,6 +204,7 @@
     "sousTitre": "taller de trucos de prototipado rápido",
     "resume": "Nueve trucos para lanzar con seguridad y probar hipótesis, cada uno explicado y luego demostrado en vivo.",
     "besoin": "Pasar de recoger requisitos a un prototipo funcional muy rápido, y probar hipótesis en producción en lugar de en una reunión — trucos que normalmente solo se explican de palabra, aquí mostrados funcionando de verdad.",
+    "lien": "https://learning-softengineer.iechocreator.workers.dev/",
     "stack": [
       "HTML / CSS / JS vanilla",
       "Módulos ES nativos"

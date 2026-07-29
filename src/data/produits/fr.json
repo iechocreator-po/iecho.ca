@@ -204,6 +204,7 @@
     "sousTitre": "atelier des astuces de prototypage rapide",
     "resume": "Neuf astuces de mise en production et de test d'hypothèses, chacune présentée puis démontrée en direct.",
     "besoin": "Passer de la cueillette des besoins à un prototype fonctionnel très vite, et tester ses hypothèses en production plutôt qu'en réunion — des astuces habituellement expliquées à l'oral, ici montrées en train de tourner.",
+    "lien": "https://learning-softengineer.iechocreator.workers.dev/",
     "stack": [
       "HTML / CSS / JS vanilla",
       "Modules ES natifs"

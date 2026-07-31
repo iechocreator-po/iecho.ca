@@ -53,10 +53,22 @@
     "roadmap": [
       {
         "titre": "Savings and withdrawal projection",
-        "statut": "encours"
+        "statut": "livree"
       },
       {
-        "titre": "Scenario comparison",
+        "titre": "Calculation formulas viewable in the tool",
+        "statut": "livree"
+      },
+      {
+        "titre": "Contextual help on the retirement horizon",
+        "statut": "livree"
+      },
+      {
+        "titre": "Light / dark toggle",
+        "statut": "livree"
+      },
+      {
+        "titre": "Advanced parameters (inflation, multiple scenarios)",
         "statut": "proposee"
       }
     ]

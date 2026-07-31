@@ -53,10 +53,22 @@
     "roadmap": [
       {
         "titre": "Proyección de ahorros y retiros",
-        "statut": "encours"
+        "statut": "livree"
       },
       {
-        "titre": "Comparación de escenarios",
+        "titre": "Fórmulas de cálculo consultables en la herramienta",
+        "statut": "livree"
+      },
+      {
+        "titre": "Ayuda contextual sobre el horizonte de jubilación",
+        "statut": "livree"
+      },
+      {
+        "titre": "Alternancia claro / oscuro",
+        "statut": "livree"
+      },
+      {
+        "titre": "Parámetros avanzados (inflación, escenarios múltiples)",
         "statut": "proposee"
       }
     ]

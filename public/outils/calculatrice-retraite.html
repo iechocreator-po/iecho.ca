@@ -5,8 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculatrice de retraite — Safe Withdrawal Rate</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+  // Thème appliqué avant le premier rendu : sans ça, un choix « clair » stocké
+  // apparaîtrait après un flash sombre (ou l'inverse). Le reste de la logique
+  // de bascule vit en bas de page, avec le code applicatif.
+  try {
+    var choixStocke = localStorage.getItem('marbella-theme');
+    if (choixStocke === 'light' || choixStocke === 'dark') {
+      document.documentElement.setAttribute('data-theme', choixStocke);
+    }
+  } catch (e) { /* stockage indisponible : on reste en mode auto */ }
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* Thème : valeurs claires par défaut. Trois cas se superposent dans cet
+     ordre — (1) le défaut clair ci-dessous, (2) le repli automatique sur la
+     préférence système quand aucun choix explicite n'est posé, (3) le choix
+     explicite de l'utilisateur via data-theme sur <html>, qui gagne toujours. */
   :root {
     --bg: #f5f5f0;
     --surface: #ffffff;
@@ -22,9 +37,11 @@
     --red-bg: #fcebeb;
     --radius: 10px;
     --radius-sm: 6px;
+    --radius-pill: 999px;
   }
+  /* Palette sombre, définie une seule fois puis appliquée aux deux cas. */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme]) {
       --bg: #1c1c1a;
       --surface: #252523;
       --surface2: #2e2e2b;
@@ -38,6 +55,20 @@
       --red: #f09595;
       --red-bg: #791f1f;
     }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1c1a;
+    --surface: #252523;
+    --surface2: #2e2e2b;
+    --text: #f0ede8;
+    --text2: #9a9a94;
+    --border: rgba(255,255,255,0.1);
+    --green: #5dcaa5;
+    --green-bg: #085041;
+    --amber: #fac775;
+    --amber-bg: #633806;
+    --red: #f09595;
+    --red-bg: #791f1f;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -163,13 +194,120 @@
     color: var(--amber);
     line-height: 1.5;
   }
+  /* En-tête : titre à gauche, bascule de thème à droite. */
+  .page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .page-head .subtitle { margin-bottom: 0; }
+  /* Bascule de thème — reproduction locale de .ds-theme-switch du design
+     system (même markup, même logique). Copiée plutôt que vendorée : cette
+     page est un fichier autonome recopié tel quel dans iecho.ca, elle ne peut
+     pas dépendre d'un CSS externe. */
+  .theme-switch {
+    display: inline-flex;
+    gap: 2px;
+    padding: 2px;
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-pill);
+    flex-shrink: 0;
+  }
+  .theme-switch button {
+    margin: 0;
+    padding: 4px 10px;
+    font: inherit;
+    font-size: 12.5px;
+    line-height: 1;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+  }
+  .theme-switch button:hover { color: var(--text); }
+  .theme-switch button.is-active {
+    background: var(--surface);
+    color: var(--green);
+    font-weight: 600;
+  }
+  /* Infobulle d'aide sur un libellé de curseur. */
+  .hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: help;
+    vertical-align: middle;
+  }
+  .hint:hover, .hint:focus-visible { color: var(--green); border-color: var(--green); }
+  /* Panneau des formules, replié par défaut. */
+  .formulas-toggle {
+    font: inherit;
+    font-size: 12px;
+    color: var(--green);
+    background: transparent;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 5px 12px;
+    margin-top: 0.85rem;
+    cursor: pointer;
+  }
+  .formulas-toggle:hover { border-color: var(--green); }
+  .formulas {
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-top: 0.85rem;
+  }
+  .formulas[hidden] { display: none; }
+  .formula-item { margin-bottom: 0.9rem; }
+  .formula-item:last-child { margin-bottom: 0; }
+  .formula-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .formula-eq {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: var(--green);
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    margin-bottom: 3px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .formula-note { font-size: 11.5px; color: var(--text2); line-height: 1.5; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <h1>Calculatrice de retraite — Safe Withdrawal Rate</h1>
-  <p class="subtitle">Valeurs en dollars d'aujourd'hui, indexées à l'inflation</p>
+  <div class="page-head">
+    <div>
+      <h1>Calculatrice de retraite — Safe Withdrawal Rate</h1>
+      <p class="subtitle">Valeurs en dollars d'aujourd'hui, indexées à l'inflation</p>
+    </div>
+    <div class="theme-switch" id="theme-switch" role="group" aria-label="Thème d'affichage">
+      <button type="button" data-theme-choice="auto" title="Suivre le système">Auto</button>
+      <button type="button" data-theme-choice="light" title="Mode clair" aria-label="Mode clair">☀</button>
+      <button type="button" data-theme-choice="dark" title="Mode sombre" aria-label="Mode sombre">☾</button>
+    </div>
+  </div>
 
   <div class="header-banner">
     <div class="header-source">
@@ -216,7 +354,7 @@
       <span class="slider-val" id="wd-out">60 000 $</span>
     </div>
     <div class="slider-row">
-      <span class="slider-label">Horizon de retraite (années)</span>
+      <span class="slider-label">Horizon de retraite (années)<span class="hint" tabindex="0" role="img" aria-label="Aide sur l'horizon de retraite" title="Nombre d'années que le portefeuille doit soutenir une fois la retraite prise — pas le temps qu'il reste avant de la prendre. Un horizon plus long exige un portefeuille plus gros pour le même retrait annuel : c'est la durée sur laquelle l'argent doit durer. Repère courant : 30 ans pour une retraite à 65 ans, 40 à 50 ans pour une retraite anticipée.">?</span></span>
       <input type="range" id="hor" min="15" max="65" step="1" value="40" oninput="calc()">
       <span class="slider-val" id="hor-out">40 ans</span>
     </div>
@@ -260,6 +398,46 @@
 
   <div class="note">
     <strong>Méthodologie :</strong> Le portefeuille requis est calculé comme la valeur présente d'une rente croissante (indexée à l'inflation) sur l'horizon choisi, en utilisant le taux de rendement réel (rendement nominal − inflation). L'attente estimée est simulée mois par mois. Les calculs sont en dollars constants d'aujourd'hui. Cette calculatrice est à titre informatif seulement et ne constitue pas un conseil financier. Consultez un planificateur financier pour votre situation personnelle. Basée sur la recherche de <strong>earlyretirementnow.com</strong>.
+
+    <div>
+      <button type="button" class="formulas-toggle" id="formulas-toggle"
+              aria-expanded="false" aria-controls="formulas">Afficher les formules de calcul</button>
+    </div>
+
+    <!-- Les formules ci-dessous sont exactement celles appliquées par calc() ;
+         toute modification du calcul doit être répercutée ici. -->
+    <div class="formulas" id="formulas" hidden>
+      <div class="formula-item">
+        <div class="formula-name">Rendement réel</div>
+        <div class="formula-eq">r = (1 + rendement) / (1 + inflation) − 1</div>
+        <div class="formula-note">Le rendement débarrassé de l'inflation. C'est lui qui sert partout ailleurs, ce qui permet de raisonner en dollars d'aujourd'hui.</div>
+      </div>
+      <div class="formula-item">
+        <div class="formula-name">Portefeuille requis</div>
+        <div class="formula-eq">P = W × (1 − (1 + r)<sup>−H</sup>) / r</div>
+        <div class="formula-note">Valeur présente d'une rente de W dollars par an (le retrait souhaité), versée pendant H années (l'horizon), actualisée au rendement réel r. Si r est quasi nul, la formule dégénère en <code>P = W × H</code>.</div>
+      </div>
+      <div class="formula-item">
+        <div class="formula-name">Écart à combler</div>
+        <div class="formula-eq">écart = P − actifs actuels</div>
+        <div class="formula-note">Négatif ou nul : la retraite est déjà finançable.</div>
+      </div>
+      <div class="formula-item">
+        <div class="formula-name">Taux de retrait effectif</div>
+        <div class="formula-eq">SWR = W / P × 100</div>
+        <div class="formula-note">Le pourcentage du portefeuille retiré chaque année. Sous 3,5 % il est jugé très sécuritaire, jusqu'à 4,0 % acceptable, au-delà trop élevé sur un horizon long.</div>
+      </div>
+      <div class="formula-item">
+        <div class="formula-name">Attente estimée</div>
+        <div class="formula-eq">p ← p × (1 + r<sub>m</sub>) + épargne, avec r<sub>m</sub> = (1 + rendement)<sup>1/12</sup> − 1</div>
+        <div class="formula-note">Pas de formule fermée ici : le portefeuille est simulé mois par mois, capitalisé puis augmenté de l'épargne mensuelle, jusqu'à atteindre P. La simulation s'arrête à 600 mois (affiché « 50+ ans »).</div>
+      </div>
+      <div class="formula-item">
+        <div class="formula-name">Scénarios par taux de retrait cible</div>
+        <div class="formula-eq">P<sub>cible</sub> = W / (taux / 100)</div>
+        <div class="formula-note">Le raisonnement inverse : à taux de retrait fixé (3,0 / 3,5 / 4,0 %), quel portefeuille faut-il ? Cette forme ignore l'horizon — elle suppose un capital perpétuel, d'où l'écart avec le portefeuille requis ci-dessus.</div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -432,6 +610,36 @@ function calc() {
 }
 
 calc();
+
+// --- Bascule de thème (logique canonique du design system) -------------------
+// data-theme absent sur <html> = « auto », qui suit prefers-color-scheme.
+function appliquerTheme(choix) {
+  if (choix === 'light' || choix === 'dark') {
+    document.documentElement.setAttribute('data-theme', choix);
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    choix = 'auto';
+  }
+  document.querySelectorAll('#theme-switch button').forEach(b =>
+    b.classList.toggle('is-active', b.dataset.themeChoice === choix));
+  try { localStorage.setItem('marbella-theme', choix); } catch (e) { /* stockage indisponible */ }
+}
+document.querySelectorAll('#theme-switch button').forEach(b =>
+  b.addEventListener('click', () => appliquerTheme(b.dataset.themeChoice)));
+
+let themeInitial = 'auto';
+try { themeInitial = localStorage.getItem('marbella-theme') || 'auto'; } catch (e) { /* idem */ }
+appliquerTheme(themeInitial);
+
+// --- Panneau des formules ----------------------------------------------------
+const formulasToggle = document.getElementById('formulas-toggle');
+const formulasPanel = document.getElementById('formulas');
+formulasToggle.addEventListener('click', () => {
+  const ouvert = !formulasPanel.hidden;
+  formulasPanel.hidden = ouvert;
+  formulasToggle.setAttribute('aria-expanded', String(!ouvert));
+  formulasToggle.textContent = ouvert ? 'Afficher les formules de calcul' : 'Masquer les formules de calcul';
+});
 </script>
 </body>
 </html>

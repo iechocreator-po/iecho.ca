@@ -53,10 +53,22 @@
     "roadmap": [
       {
         "titre": "Projection d'épargne et de retraits",
-        "statut": "encours"
+        "statut": "livree"
       },
       {
-        "titre": "Comparaison de scénarios",
+        "titre": "Formules de calcul consultables dans l'outil",
+        "statut": "livree"
+      },
+      {
+        "titre": "Aide contextuelle sur l'horizon de retraite",
+        "statut": "livree"
+      },
+      {
+        "titre": "Bascule clair / sombre",
+        "statut": "livree"
+      },
+      {
+        "titre": "Paramètres avancés (inflation, scénarios multiples)",
         "statut": "proposee"
       }
     ]

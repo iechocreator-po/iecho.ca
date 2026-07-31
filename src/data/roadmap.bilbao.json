@@ -1,0 +1,809 @@
+{
+  "genere_par": "bilbao",
+  "genere_le": "2026-07-31T16:10:33.391Z",
+  "note": "Artefact généré par bilbao (cockpit). À committer dans iecho.ca — ne pas éditer à la main.",
+  "produits": {
+    "barcelona": [
+      {
+        "titre": "Amélioration de la navigation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 7,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ajouter des campagnes de formation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 6,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Export PDF du parcours de formation",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 5,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Interface 'Master Editor' CRUDL",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 3,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Ajouter la formation pour l'étape 2 de 4 de la Roue",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 2,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ajouter la formation pour l'étape 2 de 4 de la Roue",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Connecter bilbao.features.json au build Vite",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Enregistrer un fichier pour le glossaire",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Nettoyer « traductions planifités »",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Compteur de « Primes encaissées »",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Simulateur de stress (IV)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Jauge de Thêta",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Amélioration de la navigation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Ajouter des campagnes de formation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Feature flags pilotables (bilbao.features.json)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "App mobile (Expo/React Native)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Écran de mot de passe configurable",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mode Parcours de formation (55 questions)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mode Simulation (3 paliers pédagogiques)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Connecter bilbao.features.json au build Vite",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Enregistrer un fichier pour le glossaire",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Nettoyer 'traductions planifités'",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "compteur de \"Primes encaissées\"",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "simulateur de stress (IV)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "jauge de Thêta",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "bilbao": [
+      {
+        "titre": "Plusieurs améliorations UX et d'intérêt",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 8,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Refonte Feedbacks de Bilbao",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 5,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Eixample",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 2,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Ajouter démarrage castillana",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Cadrer le Mode avance : droits d'ecriture precis et garde-fous associes",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Explorer un portail feedback pour utilisateurs (GitHub Discussions vs solution bilbao maison)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mise en place des Releases notes",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Bilbao - dashboard v2",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ajout de killswitch",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "[iecho.ca] Brancher src/config/settings.json dans FeedbackWidget.astro",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Question"
+      },
+      {
+        "titre": "Etendre la Console pour cibler le hub iecho.ca (pas seulement les produits mappes)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Brancher server/settings.json (port/DB actuellement en dur)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Faire consommer son propre bilbao.features.json au demarrage du serveur",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      }
+    ],
+    "castellana": [
+      {
+        "titre": "Routes API du journal de trades, et un cache pour le screening",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 3,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Calculs maison (ATR réel, volume vs moyenne 20j, OBV réel, SMMA 9/21/100)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 3,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Amélioration de l'écran de screening",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 2,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Améliorations UI UX",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 2,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Phase 3",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 1,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "eixample": [
+      {
+        "titre": "Interface « Eixample » CRUDL (ex-« Master Editor »)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "iecho.ca": [
+      {
+        "titre": "Produit test-factory — cockpit de synchronisation des tests du portfolio",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Section « Logos en gestation » (votes visiteurs)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mission / À propos",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Bouton de feedback « Partager une idée » (Formspree)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roadmap publique par produit (issue de bilbao)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Sélecteur de produits + fiche détaillée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Vitrine produits trilingue (FR/EN/ES)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "madrid": [
+      {
+        "titre": "Permettre la création d'un nouveau produit",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mécanisme de feature flags",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 3,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Statistiques Stop Loss, limit vs ordre au marché",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Historique de trade pour une position",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Intégrer le design system",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Bascule de thème Auto/Clair/Sombre partagée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Répartition look-through par pays / secteur / type d'actif",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Analyse de concentration / risque du portefeuille",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Analyse v2 du portefolio",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Import direct des exports CSV WealthSimple",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Règles fiscales canadiennes (gains en capital)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Export/restauration JSON",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Vue d'ensemble du portefeuille (positions, répartition)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Creer un mecanisme de feature flags et le connecter a bilbao.features.json",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      }
+    ],
+    "marbella": [
+      {
+        "titre": "Bascule de thème auto/clair/sombre (design system)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Infobulle explicative sur l'horizon de retraite",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Panneau repliable des formules de calcul",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Amélioration v2",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Paramètres avancés (inflation, scénarios multiples)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Version 2",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Calculatrice de retraite (règle du 4%/SWR)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "toledo": [
+      {
+        "titre": "Voix TTS personnalisée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 7,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Gérer les images d'un pdf",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Sélection des chapitres dans Bibliothèque",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 3,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Transformation md vers html",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 3,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Problème sur l'opération traduire 1 chapitre d'un document",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 1,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Architecture cible : durabilite des etats et traitement differe",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Nouveau document / Vos traductions : infos persistantes pendant le job + minutage dynamique + suppression en cascade",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Mode relecture comparative (côte à côte)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Bouton « Supprimer » visible/actif pendant une traduction",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Parité macOS — section « Reprendre une traduction »",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Moteur de traduction unifié + reprise inter-session + nettoyage",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Sous-découpage des blocs code/tableau",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Anti-sommeil pendant un job (caffeinate)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Corriger l'ETA (temps écoulé en O(n²))",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Fiabilité des longues traductions (retry + statut honnête)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Renommage iTraducteur → toledo",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Sélection multi-chapitres pour le résumé & quiz",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Import par navigateur (Parcourir + glisser-déposer)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Nettoyer les artefacts VAD d'OpenVoice",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Glossaire de termes à ne pas traduire",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Journal d'erreurs/avertissements par section",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Estimation du temps total avant de lancer",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Détection automatique de la langue source",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Fiche d'étude par chapitres (points à retenir + questions)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Planification multi-fichiers avec liste et statuts",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Choix de fichier sans toggle PDF/Markdown",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Indicateur Ollama vert/rouge dans l'UI",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Analyse préliminaire des 5 premières pages",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Préservation des liens URL",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Programmation différée (traduction de nuit)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Langues anglais / français / espagnol (entrée + sortie)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Pause / reprise de traduction",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      }
+    ],
+    "valencia": [
+      {
+        "titre": "Sync Messenger doit permettre la création d'une fiche local",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Améliorations v2",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Intégration au design system partagé",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Formulaire d'ingestion de fiches",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Scraper Puppeteer automatique",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Lecteur Messenger (ingestion des partages)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Dashboard de fiches immobilières (filtres, tri)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Connecter bilbao.features.json au chargement des flags",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      }
+    ]
+  }
+}

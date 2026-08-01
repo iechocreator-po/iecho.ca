@@ -233,6 +233,10 @@
       {
         "titre": "Modo presentación (tecla P)",
         "statut": "livree"
+      },
+      {
+        "titre": "Código fuente de cada demo, descargable como archivo autónomo",
+        "statut": "livree"
       }
     ]
   }

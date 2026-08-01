@@ -233,6 +233,10 @@
       {
         "titre": "Presentation mode (P key)",
         "statut": "livree"
+      },
+      {
+        "titre": "Source code of each demo, downloadable as a standalone file",
+        "statut": "livree"
       }
     ]
   }

@@ -36,10 +36,6 @@
     "width": 1041,
     "height": 760
   },
-  "marbella-1.webp": {
-    "width": 842,
-    "height": 806
-  },
   "marbella-2.webp": {
     "width": 848,
     "height": 764
@@ -73,10 +69,6 @@
     "height": 760
   },
   "madrid-9.webp": {
-    "width": 1041,
-    "height": 760
-  },
-  "valencia-1.webp": {
     "width": 1041,
     "height": 760
   },
@@ -183,5 +175,13 @@
   "porto-5.webp": {
     "width": 1800,
     "height": 1171
+  },
+  "marbella-1.webp": {
+    "width": 844,
+    "height": 674
+  },
+  "valencia-1.webp": {
+    "width": 1268,
+    "height": 855
   }
 }

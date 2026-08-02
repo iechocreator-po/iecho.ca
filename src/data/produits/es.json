@@ -246,6 +246,7 @@
     "sousTitre": "hub de compañeros para juegos de mesa",
     "resume": "Un hub creciente de compañeros interactivos para juegos de mesa físicos — guías de ronda, referencias de reglas buscables — empezando por Nemesis: Lockdown.",
     "besoin": "Las reglas de un juego de mesa denso se olvidan rápido entre partidas — en lugar de sacar el manual cada ronda, essen ofrece un compañero interactivo por juego: guía paso a paso de la secuencia de juego, referencia de reglas buscable, funciona sin conexión una vez cargado (PWA). Primer juego cubierto: Nemesis: Lockdown (Awaken Realms), cuya Fase de Evento en 7 pasos y sus numerosos casos particulares lo convierten en una buena primera prueba de este formato. Vendrán más juegos, cada uno con su propia estructura de reglas.",
+    "lien": "https://essen-hub.iechocreator.workers.dev/",
     "stack": [
       "HTML/CSS/JS vanilla (hub)",
       "React",

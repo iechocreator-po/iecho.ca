@@ -246,6 +246,7 @@
     "sousTitre": "hub de companions pour jeux de société",
     "resume": "Un hub grandissant de companions interactifs pour jeux de société physiques — guides de manche, références de règles cherchables — en commençant par Nemesis: Lockdown.",
     "besoin": "Les règles d'un jeu de plateau dense s'oublient vite entre deux parties — plutôt que ressortir le livret à chaque manche, essen propose un companion interactif par jeu : guide pas-à-pas de la séquence de jeu, référence cherchable des règles, hors-ligne une fois chargé (PWA). Premier jeu couvert : Nemesis: Lockdown (Awaken Realms), dont la Phase Événement en 7 étapes et les nombreux cas particuliers en font un bon premier test de ce format. D'autres jeux suivent, chacun avec sa propre structure de règles.",
+    "lien": "https://essen-hub.iechocreator.workers.dev/",
     "stack": [
       "HTML/CSS/JS vanilla (hub)",
       "React",

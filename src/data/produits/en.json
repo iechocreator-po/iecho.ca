@@ -246,6 +246,7 @@
     "sousTitre": "hub for board-game companions",
     "resume": "A growing hub of interactive companions for physical board games — round guides, searchable rules references — starting with Nemesis: Lockdown.",
     "besoin": "A dense board game's rules are easy to forget between sessions — instead of pulling out the rulebook every round, essen offers one interactive companion per game: a step-by-step round guide, a searchable rules reference, working offline once loaded (PWA). First game covered: Nemesis: Lockdown (Awaken Realms), whose 7-step Event Phase and many edge cases make it a good first test of this format. More games are coming, each with its own rules structure.",
+    "lien": "https://essen-hub.iechocreator.workers.dev/",
     "stack": [
       "HTML/CSS/JS vanilla (hub)",
       "React",

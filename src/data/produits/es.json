@@ -239,5 +239,36 @@
         "statut": "livree"
       }
     ]
+  },
+  {
+    "id": "essen",
+    "nom": "essen",
+    "sousTitre": "companion para el juego de mesa Nemesis: Lockdown",
+    "resume": "Guía de ronda interactiva y referencia buscable para acompañar una partida física de Nemesis: Lockdown, en el teléfono o la tableta.",
+    "besoin": "Las reglas de Nemesis: Lockdown son densas (una Fase de Evento en 7 pasos, muchos casos particulares) — en lugar de sacar el manual cada ronda, essen guía paso a paso la secuencia de juego con recordatorios contextuales, y sirve de referencia buscable para salas, acciones y combate. Funciona sin conexión una vez cargada (PWA), pensada para acoger las expansiones del juego más adelante.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "PWA"
+    ],
+    "roadmap": [
+      {
+        "titre": "Guía de ronda interactiva (Fase de Jugadores + los 7 pasos de la Fase de Evento)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Referencia buscable (salas, acciones, combate, momentos críticos)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Funciona sin conexión (PWA)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Expansiones del juego (Chytrid, Void Seeders, Carnomorphs, Aftermath)",
+        "statut": "proposee"
+      }
+    ]
   }
 ]

@@ -59,6 +59,13 @@ const CONFIG_PRODUITS = {
     commande: 'cd feature-factory && npm start',
     shots: [{}],
   },
+  essen: {
+    // Companion mobile-first — capturé en viewport téléphone, pas le défaut desktop.
+    url: 'http://localhost:5173',
+    commande: 'cd nemesis-prototype && npm run dev',
+    viewport: { width: 390, height: 844, deviceScaleFactor: 2 },
+    shots: [{}],
+  },
 };
 
 const VIEWPORT_DEFAUT = { width: 1440, height: 900, deviceScaleFactor: 2 };

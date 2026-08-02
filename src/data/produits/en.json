@@ -239,5 +239,36 @@
         "statut": "livree"
       }
     ]
+  },
+  {
+    "id": "essen",
+    "nom": "essen",
+    "sousTitre": "companion for the Nemesis: Lockdown board game",
+    "resume": "Interactive round guide and searchable reference to accompany a physical game of Nemesis: Lockdown, on phone or tablet.",
+    "besoin": "Nemesis: Lockdown's rules are dense (a 7-step Event Phase, many edge cases) — instead of pulling out the rulebook every round, essen walks through the round sequence step by step with contextual reminders, and doubles as a searchable reference for rooms, actions, and combat. Works offline once loaded (PWA), built to accommodate the game's expansions later.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "PWA"
+    ],
+    "roadmap": [
+      {
+        "titre": "Interactive round guide (Player Phase + the Event Phase's 7 steps)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Searchable reference (rooms, actions, combat, critical moments)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Works offline (PWA)",
+        "statut": "livree"
+      },
+      {
+        "titre": "Game expansions (Chytrid, Void Seeders, Carnomorphs, Aftermath)",
+        "statut": "proposee"
+      }
+    ]
   }
 ]

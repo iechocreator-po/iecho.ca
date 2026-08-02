@@ -243,10 +243,11 @@
   {
     "id": "essen",
     "nom": "essen",
-    "sousTitre": "companion for the Nemesis: Lockdown board game",
-    "resume": "Interactive round guide and searchable reference to accompany a physical game of Nemesis: Lockdown, on phone or tablet.",
-    "besoin": "Nemesis: Lockdown's rules are dense (a 7-step Event Phase, many edge cases) — instead of pulling out the rulebook every round, essen walks through the round sequence step by step with contextual reminders, and doubles as a searchable reference for rooms, actions, and combat. Works offline once loaded (PWA), built to accommodate the game's expansions later.",
+    "sousTitre": "hub for board-game companions",
+    "resume": "A growing hub of interactive companions for physical board games — round guides, searchable rules references — starting with Nemesis: Lockdown.",
+    "besoin": "A dense board game's rules are easy to forget between sessions — instead of pulling out the rulebook every round, essen offers one interactive companion per game: a step-by-step round guide, a searchable rules reference, working offline once loaded (PWA). First game covered: Nemesis: Lockdown (Awaken Realms), whose 7-step Event Phase and many edge cases make it a good first test of this format. More games are coming, each with its own rules structure.",
     "stack": [
+      "HTML/CSS/JS vanilla (hub)",
       "React",
       "TypeScript",
       "Vite",
@@ -254,19 +255,19 @@
     ],
     "roadmap": [
       {
-        "titre": "Interactive round guide (Player Phase + the Event Phase's 7 steps)",
+        "titre": "Multi-game selector screen (essen-hub)",
         "statut": "livree"
       },
       {
-        "titre": "Searchable reference (rooms, actions, combat, critical moments)",
+        "titre": "Nemesis: Lockdown — round guide + reference",
         "statut": "livree"
       },
       {
-        "titre": "Works offline (PWA)",
-        "statut": "livree"
+        "titre": "Aeon Trespass: Odyssey — companion",
+        "statut": "proposee"
       },
       {
-        "titre": "Game expansions (Chytrid, Void Seeders, Carnomorphs, Aftermath)",
+        "titre": "On Mars — companion",
         "statut": "proposee"
       }
     ]

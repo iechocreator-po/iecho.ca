@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>Écosystème iecho — schéma technique & fonctionnel</title>
+  <style>
+    :root{
+      color-scheme:light;
+      --bg:#f4f6f5;
+      --surface:#ffffff;
+      --surface-2:#eef1f0;
+      --surface-3:#e4e9e7;
+      --text:#131a1f;
+      --text-2:#5b6a73;
+      --text-3:#89959d;
+      --border:#d7ddda;
+      --border-strong:#c2cac6;
+      --accent:#1a8f88;
+      --accent-soft:#e2f2f0;
+      --green:#2f8f5c;
+      --green-soft:#e5f3ec;
+      --amber:#b8822a;
+      --amber-soft:#f7ecd9;
+      --red:#b8452e;
+      --red-soft:#f8e6e1;
+      --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, Menlo, monospace;
+      --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
+      --radius: 10px;
+      --shadow: 0 1px 2px rgba(20,30,28,0.04), 0 8px 24px -12px rgba(20,30,28,0.10);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#10141a;
+        --surface:#171d24;
+        --surface-2:#1d242c;
+        --surface-3:#242c35;
+        --text:#e8edf0;
+        --text-2:#8b98a3;
+        --text-3:#5f6d78;
+        --border:#2a333c;
+        --border-strong:#3a454f;
+        --accent:#3fc9c0;
+        --accent-soft:#193733;
+        --green:#5cbb8b;
+        --green-soft:#173226;
+        --amber:#e0ac54;
+        --amber-soft:#332a15;
+        --red:#e0806a;
+        --red-soft:#3a2018;
+        --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.55);
+      }
+    }
+    *{box-sizing:border-box;}
+    body{
+      background:linear-gradient(var(--bg), var(--bg)), repeating-linear-gradient(0deg, transparent, transparent 39px, var(--border) 39px, var(--border) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, var(--border) 39px, var(--border) 40px);
+      background-blend-mode: normal, overlay, overlay;
+      background-attachment: fixed;
+      color:var(--text);
+      font-family:var(--sans);
+      margin:0;
+      padding: 48px 20px 96px;
+      line-height:1.5;
+    }
+    @media (prefers-color-scheme: dark){ body{ background-blend-mode:normal, soft-light, soft-light; } }
+    .page{ max-width: 1040px; margin:0 auto; }
+    header{ margin-bottom: 40px; }
+    .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+    h1{ font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing:-0.01em; margin:0 0 10px; text-wrap: balance; }
+    .lede{ max-width: 62ch; color:var(--text-2); font-size:15.5px; margin: 0 0 4px; }
+    .verified{ font-family:var(--mono); font-size:12px; color:var(--text-3); }
+    section{ margin-bottom: 44px; }
+    .section-head{ display:flex; align-items:baseline; gap:10px; margin-bottom: 18px; }
+    .section-num{ font-family:var(--mono); font-size:12px; color:var(--text-3); border:1px solid var(--border-strong); border-radius:4px; padding:2px 6px; }
+    .section-head h2{ font-size:18px; margin:0; font-weight:650; }
+    .section-note{ font-size:13px; color:var(--text-2); margin: -8px 0 18px; max-width: 68ch; }
+    .hub{ background: linear-gradient(160deg, var(--accent-soft), var(--surface) 70%); border:1px solid var(--border); border-radius: var(--radius); padding: 26px 28px; box-shadow: var(--shadow); }
+    .hub-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; }
+    .hub-name{ font-family:var(--mono); font-size: 22px; font-weight:600; color:var(--accent); }
+    .hub-desc{ color:var(--text-2); font-size:14px; max-width:52ch; margin-top:6px; }
+    .hub-meta{ display:flex; flex-direction:column; gap:6px; font-family:var(--mono); font-size:12.5px; color:var(--text-2); text-align:right; }
+    .hub-meta a{ color:var(--text); }
+    .hub-langs{ display:flex; gap:6px; margin-top:14px; }
+    .lang-chip{ font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:999px; border:1px solid var(--border-strong); color:var(--text-2); }
+    .flow{ display:flex; align-items:center; gap:14px; margin: 0 auto; padding: 14px 0; width: fit-content; color:var(--text-2); font-family:var(--mono); font-size:12px; }
+    .flow-line{ width:1px; height:34px; background: repeating-linear-gradient(to bottom, var(--border-strong) 0 4px, transparent 4px 8px); }
+    .flow-label{ text-align:center; max-width: 46ch; margin: 6px auto 0; font-size:12.5px; color:var(--text-2); }
+    .flow-label b{ color:var(--text); font-weight:600; }
+    .grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
+    @media (max-width: 700px){ .grid{ grid-template-columns: 1fr; } }
+    .card{ background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display:flex; flex-direction:column; gap:12px; }
+    .card.meta{ grid-column: 1 / -1; border-color: var(--accent); background: linear-gradient(180deg, var(--accent-soft), var(--surface) 55%); }
+    .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+    .code{ font-family:var(--mono); font-size:17px; font-weight:600; }
+    .folder{ font-family:var(--mono); font-size:12px; color:var(--text-3); margin-top:2px; }
+    .chip{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.03em; text-transform:uppercase; padding:3px 8px; border-radius:999px; white-space:nowrap; border:1px solid transparent; }
+    .chip.ok{ background:var(--green-soft); color:var(--green); }
+    .chip.dev{ background:var(--amber-soft); color:var(--amber); }
+    .chip.warn{ background:var(--red-soft); color:var(--red); }
+    .row{ display:flex; font-size:12.5px; gap:8px; }
+    .row .k{ color:var(--text-3); min-width: 74px; flex-shrink:0; }
+    .row .v{ color:var(--text); }
+    .row .v a{ color:var(--accent); text-decoration:none; }
+    .row .v a:hover{ text-decoration:underline; }
+    .stack-tags{ display:flex; flex-wrap:wrap; gap:5px; }
+    .tag{ font-family:var(--mono); font-size:11px; background:var(--surface-2); border:1px solid var(--border); border-radius:5px; padding:1px 6px; color:var(--text-2); }
+    .card-foot{ margin-top:auto; padding-top:10px; border-top:1px dashed var(--border); display:flex; justify-content:space-between; align-items:center; font-size:12px; }
+    .ds-badge{ display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11.5px; color:var(--text-2); }
+    .dot{ width:7px; height:7px; border-radius:50%; background:var(--text-3); flex-shrink:0; }
+    .dot.vendored{ background:var(--accent); }
+    .dot.direct{ background:var(--green); }
+    .dot.none{ background:var(--text-3); }
+    .idea-note{ display:flex; gap:10px; align-items:flex-start; border-top:1px dashed var(--border); padding-top:14px; font-size:12.5px; color:var(--text-2); }
+    .idea-badge{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.03em; color:var(--accent); background:var(--accent-soft); padding:2px 7px; border-radius:999px; flex-shrink:0; }
+    .files-row{ display:flex; gap:6px; font-family:var(--mono); font-size:10px; }
+    .file-pill{ display:flex; align-items:center; gap:4px; padding:2px 6px 2px 5px; border-radius:5px; background:var(--surface-2); border:1px solid var(--border); color:var(--text-2); }
+    .file-pill .dot{ background:var(--text-3); }
+    .file-pill.ok .dot{ background:var(--green); }
+    .legend{ display:flex; flex-wrap:wrap; gap:22px; font-size:12.5px; color:var(--text-2); border-top:1px solid var(--border); padding-top:18px; }
+    .legend-item{ display:flex; align-items:center; gap:7px; }
+    footer{ margin-top: 40px; font-family:var(--mono); font-size:11.5px; color:var(--text-3); text-align:center; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <p class="eyebrow">2000_DigitalProducts — schéma de référence</p>
+    <h1>L'écosystème iecho : produits, stacks, et raccordement à iecho.ca</h1>
+    <p class="lede">Neuf dépôts indépendants + un conteneur (essen, hub multi-jeux) + eixample (sous-composant dev-only de barcelona), un dossier de contexte partagé, et une vitrine centrale qui ne parle jamais en direct aux produits — seulement à des fichiers de données qu'on lui commit. Depuis R24 (20/7/2026), <b style="color:var(--text)">bilbao est l'unique source de vérité locale</b> des features & releases de chaque produit — 3 fichiers standards par produit, plus un export JSON versionné dans le propre repo de bilbao.</p>
+    <p class="verified">dernière vérification factuelle : 2026-08-01 · 8 produits + essen deployés, feature #333 live</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>Le hub</h2>
+    </div>
+    <div class="hub">
+      <div class="hub-top">
+        <div>
+          <div class="hub-name">iecho.ca</div>
+          <div class="hub-desc">Vitrine publique trilingue. Une fiche par produit : résumé, pourquoi, captures, roadmap, et un bouton « Essayer » si — et seulement si — le produit a une URL publique.</div>
+          <div class="hub-langs">
+            <span class="lang-chip">FR</span><span class="lang-chip">EN</span><span class="lang-chip">ES</span>
+          </div>
+        </div>
+        <div class="hub-meta">
+          <span>Astro · statique · Cloudflare Pages</span>
+          <a href="https://iecho.ca">iecho.ca ↗</a>
+          <a href="https://github.com/iechocreator-po/iecho.ca">github/iecho.ca ↗</a>
+        </div>
+      </div>
+      <div class="files-row" style="margin-top:16px">
+        <span class="file-pill ok"><span class="dot"></span>CLAUDE.md</span>
+        <span class="file-pill ok"><span class="dot"></span>bilbao.features.json</span>
+        <span class="file-pill ok"><span class="dot"></span>produits.config.json</span>
+        <span class="file-pill ok"><span class="dot"></span>data bilbao</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow">
+    <div style="text-align:center">
+      <div style="font-size:16px">▲</div>
+      <div class="flow-line"></div>
+      <div class="flow-label"><b>Contrat d'intégration : données, jamais services vivants.</b><br>Chaque produit alimente iecho.ca via fr/en/es.json + produits.config.json, committés à la main — aucun appel réseau en temps réel.</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Les produits</h2>
+    </div>
+    <p class="section-note">Nom de code (ville ES/PT) → dossier fonctionnel distinct → dépôt GitHub indépendant sous <span class="tag" style="display:inline">iechocreator-po</span>. Chaque carte : statut, stack, déploiement, design system.</p>
+
+    <div class="grid">
+
+      <!-- toledo -->
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">toledo</div><div class="folder">traducteur-pdf/</div></div>
+          <span class="chip ok">livré</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Traduction de PDF 100% locale, zéro cloud</span></div>
+        <div class="stack-tags">
+          <span class="tag">Python/FastAPI</span><span class="tag">Ollama</span><span class="tag">Piper/Kokoro</span><span class="tag">Tesseract</span><span class="tag">Swift</span>
+        </div>
+        <div class="row"><span class="k">Déploiement</span><span class="v">aucun — app locale</span></div>
+        <div class="files-row">
+          <span class="file-pill ok"><span class="dot"></span>3/3 + bilbao</span>
+        </div>
+        <div class="card-foot">
+          <div class="ds-badge"><span class="dot vendored"></span>vendorée</div>
+        </div>
+      </div>
+
+      <!-- barcelona -->
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">barcelona</div><div class="folder">learning-finance/</div></div>
+          <span class="chip ok">déployé</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Stratégies d'options apprises par simulation</span></div>
+        <div class="stack-tags"><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Vite</span><span class="tag">Cloudflare</span></div>
+        <div class="row"><span class="k">Accès</span><span class="v">Mot de passe (<code style="font-family:var(--mono)">ami</code>)</span></div>
+        <div class="files-row">
+          <span class="file-pill ok"><span class="dot"></span>3/3 + bilbao</span>
+        </div>
+        <div class="card-foot">
+          <div class="ds-badge"><span class="dot vendored"></span>vendorée</div>
+          <a href="https://learning-finance.iechocreator.workers.dev/" style="color:var(--accent);text-decoration:none;font-family:var(--mono)">app ↗</a>
+        </div>
+      </div>
+
+      <!-- porto -->
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">porto</div><div class="folder">learning-softengineer/</div></div>
+          <span class="chip ok">déployé</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Atelier : 9 astuces de prototypage rapide & test d'hypothèses</span></div>
+        <div class="stack-tags">
+          <span class="tag">vanilla HTML/CSS/JS</span><span class="tag">modules ES</span><span class="tag">Cloudflare</span>
+        </div>
+        <div class="row"><span class="k">Accès</span><span class="v">Mot de passe (<code style="font-family:var(--mono)">ami</code>)</span></div>
+        <div class="files-row">
+          <span class="file-pill ok"><span class="dot"></span>3/3 + bilbao</span>
+        </div>
+        <div class="card-foot">
+          <div class="ds-badge"><span class="dot vendored"></span>vendorée</div>
+          <a href="https://learning-softengineer.iechocreator.workers.dev/" style="color:var(--accent);text-decoration:none;font-family:var(--mono)">app ↗</a>
+        </div>
+        <div class="idea-note" style="margin-top:2px">
+          <span class="idea-badge">#333</span>
+          <span>Code source de chaque démo affiché et téléchargeable ; démos autonomes (.html, ~110 Ko) s'ouvrant par double-clic hors ligne (conversion en vanilla JS pour contourner le bloquage des modules ES sous file://).</span>
+        </div>
+      </div>
+
+      <!-- essen -->
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">essen</div><div class="folder">boardgame-companions/ (hub de sous-repos)</div></div>
+          <span class="chip ok">hub + nemesis déployés</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Companions pour jeux de société — essen-hub (sélecteur) + nemesis-prototype (deployed)</span></div>
+        <div class="stack-tags">
+          <span class="tag">vanilla (hub)</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">PWA</span>
+        </div>
+        <div class="row"><span class="k">État</span><span class="v">Nemesis: Lockdown live ; Aeon Trespass & On Mars à venir</span></div>
+        <div class="files-row">
+          <span class="file-pill ok"><span class="dot"></span>hub + nemesis : 3/3 chacun</span>
+        </div>
+        <div class="card-foot">
+          <div class="ds-badge"><span class="dot vendored"></span>vendorées (par jeu)</div>
+          <a href="https://essen-hub.iechocreator.workers.dev/" style="color:var(--accent);text-decoration:none;font-family:var(--mono)">hub ↗</a>
+        </div>
+      </div>
+
+      <!-- autres produits en contexte comprimé -->
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">marbella</div><div class="folder">calc-retirement/</div></div>
+          <span class="chip ok">livré</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Calculatrice retraite · page unique, copie dans iecho.ca</span></div>
+        <div class="stack-tags"><span class="tag">vanilla</span></div>
+        <div class="row"><span class="k">Unique</span><span class="v">Seul produit sans repo Git dédié (versionné dans portfolio-meta)</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">madrid</div><div class="folder">investment-dashboard/</div></div>
+          <span class="chip dev">en dev</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Vue unifiée du portefeuille d'investissement</span></div>
+        <div class="stack-tags"><span class="tag">vanilla</span><span class="tag">Chart.js CDN</span><span class="tag">localStorage</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">valencia</div><div class="folder">Espagne_Immo/</div></div>
+          <span class="chip dev">MVP</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Agrégateur fiches immobilières Espagne/Portugal/FR/IT</span></div>
+        <div class="stack-tags"><span class="tag">Express</span><span class="tag">React+Vite</span><span class="tag">SQLite</span><span class="tag">Puppeteer</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">castellana</div><div class="folder">trading-assistant/</div></div>
+          <span class="chip dev">cadrage</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Assistant swing trading — screening, sizing, journal</span></div>
+        <div class="stack-tags"><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">TradingView</span><span class="tag">Yahoo Finance</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div><div class="code">bilbao</div><div class="folder">feature-factory/</div></div>
+          <span class="chip warn">jamais déployé</span>
+        </div>
+        <div class="row"><span class="k">Rôle</span><span class="v">Cockpit local — édite flags, configs, release notes des autres produits</span></div>
+        <div class="stack-tags"><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">vanilla front</span></div>
+        <div class="row"><span class="k">Accès</span><span class="v">Jamais déployé ; résout code→dossier via table de mapping strict</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Légende & design system</h2>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="chip ok">livré / déployé</span></div>
+      <div class="legend-item"><span class="chip dev">MVP / en dev</span></div>
+      <div class="legend-item"><span class="chip warn">jamais déployé — garde-fou</span></div>
+      <div class="legend-item"><span class="dot vendored"></span> copie vendorée (tokens.css)</div>
+      <div class="legend-item"><span class="dot direct"></span> lien direct (app statique)</div>
+    </div>
+  </section>
+
+  <footer>portfolio-meta · CLAUDE.md · iechocreator-po · Archéologie produit 2026-08-01</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<svg viewBox="0 0 1200 2320" xmlns="http://www.w3.org/2000/svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap');
+.display{font-family:'Space Grotesk',sans-serif;}
+.body{font-family:'Inter',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+</style>
+
+<!-- Fond -->
+<rect x="0" y="0" width="1200" height="2320" fill="#0D0B14"/>
+
+<!-- Halo décoratif d'ambiance (motif écho, très discret) -->
+<circle cx="1280" cy="180" r="260" fill="none" stroke="#9B87D6" stroke-width="1" opacity="0.05"/>
+<circle cx="1280" cy="180" r="400" fill="none" stroke="#9B87D6" stroke-width="1" opacity="0.035"/>
+
+<!-- Marque -->
+<circle cx="55" cy="75" r="9" fill="none" stroke="#9B87D6" stroke-width="2" opacity="1"/>
+<circle cx="55" cy="75" r="16" fill="none" stroke="#9B87D6" stroke-width="1.5" opacity="0.55"/>
+<circle cx="55" cy="75" r="23" fill="none" stroke="#9B87D6" stroke-width="1.5" opacity="0.3"/>
+<text x="88" y="82" class="display" font-size="24" font-weight="700" fill="#F3F0F9">iecho</text>
+
+<!-- Eyebrow -->
+<text x="80" y="175" class="mono" font-size="15" letter-spacing="3" fill="#B9A6E8">PROCESSUS DE CRÉATION</text>
+
+<!-- Titre -->
+<text x="80" y="240" class="display" font-size="54" font-weight="700" fill="#F3F0F9">Transformer vos idées</text>
+<text x="80" y="300" class="display" font-size="54" font-weight="700" fill="#F3F0F9">en réalités numériques</text>
+
+<line x1="80" y1="332" x2="1120" y2="332" stroke="#9B87D6" stroke-width="1" opacity="0.25"/>
+
+<!-- Bloc Contexte -->
+<rect x="80" y="362" width="1040" height="190" rx="16" fill="#17131F" stroke="#9B87D6" stroke-width="1" opacity="1" fill-opacity="1" stroke-opacity="0.3"/>
+<text x="112" y="400" class="mono" font-size="14" letter-spacing="2" fill="#B9A6E8">CONTEXTE</text>
+<text x="112" y="432" class="body" font-size="19" fill="#C9C2D9">
+  <tspan x="112" dy="0">iecho n'est pas une agence traditionnelle, mais un service de</tspan>
+  <tspan x="112" dy="28">co-conception utilisant la méthodologie de développement rapide (RAD).</tspan>
+  <tspan x="112" dy="28">Cette approche privilégie l'expérimentation concrète et l'agilité pour</tspan>
+  <tspan x="112" dy="28">transformer des enjeux d'affaires en solutions numériques « faites maison ».</tspan>
+</text>
+
+<!-- Titre section cycle -->
+<text x="80" y="612" class="mono" font-size="15" letter-spacing="3" fill="#B9A6E8">LE CYCLE DE CO-CONCEPTION</text>
+
+<!-- Ligne de connexion verticale (fil conducteur) -->
+<line x1="110" y1="720" x2="110" y2="1530" stroke="#9B87D6" stroke-width="2" opacity="0.35"/>
+
+<!-- ===== ÉTAPE 01 : DIAGNOSTIC ===== -->
+<circle cx="110" cy="720" r="58" fill="none" stroke="#7C93D9" stroke-width="1" opacity="0.12"/>
+<circle cx="110" cy="720" r="44" fill="none" stroke="#7C93D9" stroke-width="1" opacity="0.2"/>
+<circle cx="110" cy="720" r="30" fill="#7C93D9"/>
+<text x="110" y="727" class="mono" font-size="18" font-weight="500" fill="#0D0B14" text-anchor="middle">01</text>
+
+<g transform="translate(185,692)" stroke="#7C93D9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="10" cy="28" r="3" fill="#7C93D9" stroke="none"/>
+  <path d="M18,28 A10,10 0 0 1 24,18"/>
+  <path d="M18,28 A18,18 0 0 1 30,9"/>
+  <path d="M18,28 A26,26 0 0 1 36,0" opacity="0.6"/>
+</g>
+
+<text x="275" y="675" class="mono" font-size="14" letter-spacing="2" fill="#7C93D9">ÉTAPE 01</text>
+<text x="275" y="715" class="display" font-size="29" font-weight="700" fill="#F3F0F9">DIAGNOSTIC ET ÉCOUTE STRATÉGIQUE</text>
+<text x="275" y="755" class="body" font-size="19" fill="#A9A0BE">
+  <tspan x="275" dy="0">Analyse approfondie de vos enjeux d'affaires pour</tspan>
+  <tspan x="275" dy="27">cibler précisément la problématique à résoudre.</tspan>
+</text>
+
+<!-- ===== ÉTAPE 02 : PROTOTYPAGE ===== -->
+<circle cx="110" cy="990" r="58" fill="none" stroke="#D9A15C" stroke-width="1" opacity="0.12"/>
+<circle cx="110" cy="990" r="44" fill="none" stroke="#D9A15C" stroke-width="1" opacity="0.2"/>
+<circle cx="110" cy="990" r="30" fill="#D9A15C"/>
+<text x="110" y="997" class="mono" font-size="18" font-weight="500" fill="#0D0B14" text-anchor="middle">02</text>
+
+<g transform="translate(185,962)" stroke="#D9A15C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="34" height="34" rx="3"/>
+  <path d="M10,32 L34,8"/>
+  <path d="M28,6 L34,4 L36,10" fill="none"/>
+</g>
+
+<text x="275" y="945" class="mono" font-size="14" letter-spacing="2" fill="#D9A15C">ÉTAPE 02</text>
+<text x="275" y="985" class="display" font-size="29" font-weight="700" fill="#F3F0F9">PROTOTYPAGE SUR MESURE</text>
+<text x="275" y="1025" class="body" font-size="19" fill="#A9A0BE">
+  <tspan x="275" dy="0">Développement rapide d'une solution numérique</tspan>
+  <tspan x="275" dy="27">fait maison, plutôt qu'un logiciel tiers imposé.</tspan>
+</text>
+
+<!-- ===== ÉTAPE 03 : EXPÉRIMENTATION ===== -->
+<circle cx="110" cy="1260" r="58" fill="none" stroke="#5FBE9B" stroke-width="1" opacity="0.12"/>
+<circle cx="110" cy="1260" r="44" fill="none" stroke="#5FBE9B" stroke-width="1" opacity="0.2"/>
+<circle cx="110" cy="1260" r="30" fill="#5FBE9B"/>
+<text x="110" y="1267" class="mono" font-size="18" font-weight="500" fill="#0D0B14" text-anchor="middle">03</text>
+
+<g transform="translate(190,1230)" stroke="#5FBE9B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14,2 h12"/>
+  <path d="M17,2 v16 l-11,20 a6,6 0 0 0 5,9 h12 a6,6 0 0 0 5,-9 l-11,-20"/>
+  <circle cx="16" cy="38" r="2" fill="#5FBE9B" stroke="none"/>
+  <circle cx="24" cy="42" r="1.5" fill="#5FBE9B" stroke="none"/>
+</g>
+
+<text x="275" y="1215" class="mono" font-size="14" letter-spacing="2" fill="#5FBE9B">ÉTAPE 03</text>
+<text x="275" y="1255" class="display" font-size="29" font-weight="700" fill="#F3F0F9">EXPÉRIMENTATION TERRAIN</text>
+<text x="275" y="1295" class="body" font-size="19" fill="#A9A0BE">
+  <tspan x="275" dy="0">Mise en main du prototype par vos équipes pour</tspan>
+  <tspan x="275" dy="27">valider sa valeur ajoutée dans l'usage réel.</tspan>
+</text>
+
+<!-- ===== ÉTAPE 04 : RÉTROACTION ===== -->
+<circle cx="110" cy="1530" r="58" fill="none" stroke="#A57CD9" stroke-width="1" opacity="0.12"/>
+<circle cx="110" cy="1530" r="44" fill="none" stroke="#A57CD9" stroke-width="1" opacity="0.2"/>
+<circle cx="110" cy="1530" r="30" fill="#A57CD9"/>
+<text x="110" y="1537" class="mono" font-size="18" font-weight="500" fill="#0D0B14" text-anchor="middle">04</text>
+
+<g transform="translate(185,1502)" stroke="#A57CD9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M32,10 A18,18 0 1 0 36,26"/>
+  <path d="M32,3 L32,10 L25,9" fill="none"/>
+</g>
+
+<text x="275" y="1485" class="mono" font-size="14" letter-spacing="2" fill="#A57CD9">ÉTAPE 04</text>
+<text x="275" y="1525" class="display" font-size="29" font-weight="700" fill="#F3F0F9">RÉTROACTION EN CYCLES COURTS</text>
+<text x="275" y="1565" class="body" font-size="19" fill="#A9A0BE">
+  <tspan x="275" dy="0">Ajustements et itérations continues, fondés</tspan>
+  <tspan x="275" dy="27">sur vos retours d'expérience terrain.</tspan>
+</text>
+
+<line x1="80" y1="1665" x2="1120" y2="1665" stroke="#9B87D6" stroke-width="1" opacity="0.25"/>
+
+<!-- Fondations et partenariat -->
+<text x="80" y="1715" class="mono" font-size="15" letter-spacing="3" fill="#B9A6E8">FONDATIONS ET PARTENARIAT</text>
+
+<!-- Colonne 1 -->
+<g transform="translate(80,1758)" stroke="#9B87D6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14,40 L14,20 a10,14 0 0 1 10,-14 a10,14 0 0 1 10,14 l0,20 z"/>
+  <path d="M14,32 l-8,10" />
+  <path d="M34,32 l8,10" />
+</g>
+<text x="80" y="1848" class="display" font-size="21" font-weight="700" fill="#F3F0F9">MÉTHODOLOGIE RAD</text>
+<text x="80" y="1883" class="body" font-size="18" fill="#A9A0BE">
+  <tspan x="80" dy="0">Plus de 20 ans d'expertise en</tspan>
+  <tspan x="80" dy="26">développement rapide, pour transformer</tspan>
+  <tspan x="80" dy="26">vos concepts en solutions concrètes.</tspan>
+</text>
+
+<!-- Colonne 2 -->
+<g transform="translate(600,1758)" stroke="#9B87D6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="8" y="20" width="24" height="20" rx="3"/>
+  <path d="M14,20 v-6 a6,6 0 0 1 12,0 v6"/>
+  <path d="M32,30 h16" />
+  <path d="M44,24 l6,6 l-6,6" />
+</g>
+<text x="600" y="1848" class="display" font-size="21" font-weight="700" fill="#F3F0F9">PROPRIÉTÉ PARTAGÉE</text>
+<text x="600" y="1883" class="body" font-size="18" fill="#A9A0BE">
+  <tspan x="600" dy="0">Liberté totale d'exploitation et</tspan>
+  <tspan x="600" dy="26">d'évolution — les droits sur le code</tspan>
+  <tspan x="600" dy="26">sont partagés, sans contrainte contractuelle.</tspan>
+</text>
+
+<!-- Bandeau de clôture : slogan -->
+<rect x="80" y="1985" width="1040" height="205" rx="20" fill="#17131F" stroke="#9B87D6" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="600" cy="2035" r="8" fill="none" stroke="#9B87D6" stroke-width="1.5" opacity="1"/>
+<circle cx="600" cy="2035" r="15" fill="none" stroke="#9B87D6" stroke-width="1.5" opacity="0.5"/>
+<circle cx="600" cy="2035" r="22" fill="none" stroke="#9B87D6" stroke-width="1.5" opacity="0.25"/>
+
+<text x="600" y="2100" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="#F3F0F9">« Expérimenter, apprendre, faire résonner</text>
+<text x="600" y="2145" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="#F3F0F9">des idées en produits numériques »</text>
+
+<!-- Pied de page -->
+<text x="600" y="2255" text-anchor="middle" class="mono" font-size="14" fill="#6B6480">iecho — construit à la main, hébergé sobrement</text>
+
+</svg>

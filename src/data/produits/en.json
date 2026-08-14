@@ -5,6 +5,12 @@
     "sousTitre": "PDF translation, 100% local",
     "resume": "Translate entire PDF books and documents on your own machine — no data ever sent to the cloud.",
     "besoin": "Read a document in your language without handing it to an online service. toledo splits the PDF into chapters, translates it with a local LLM (Ollama), and can also convert it to Markdown, generate per-chapter study sheets or read it aloud.",
+    "demarche": {
+      "declencheur": "As a teacher, I regularly translate my own documents. The usual online tools raised one simple, non-negotiable question: where does this information go once it is handed to an outside service?",
+      "question": "Can a document be translated and summarized properly, at zero cost, without the content ever leaving the machine — and can the same logic serve something other than translation?",
+      "conception": "toledo runs on Ollama for the prototype — a local LLM rather than a cloud API —, but the architecture is built so another model can be plugged in later: nothing goes outside. Once that base was in place, the same mechanics made it possible to add two teaching features to try with my students: a document summary and a quiz generator. Going local was not only about cost — the privacy constraint dictated the whole architecture. It is also why toledo remains an application you install on your own machine, with no online version to try.",
+      "revele": "Privacy is paid for in speed and in quality: a local model translates more slowly and needs more passes than a cloud one, and the trade-off only pays off when the document really is sensitive. The other surprise came from reuse — translation, summary and quizzes all rest on the same chapter-splitting brick: most of the work was in the pipeline, not in the features themselves."
+    },
     "stack": [
       "Python",
       "FastAPI",
@@ -46,6 +52,12 @@
     "sousTitre": "retirement calculator",
     "resume": "Project your retirement from a few parameters, without an intimidating spreadsheet.",
     "besoin": "Answer the simple question “does this hold up?”: savings, returns, horizon, withdrawals — and see how each assumption changes the outcome.",
+    "demarche": {
+      "declencheur": "Several friends were each going through a major change of course — and all landed on the same question: “How much do I need in order to retire?” Not a financial planner's answer with twenty assumptions, just a number to start thinking with.",
+      "question": "How do you give a reliable order of magnitude, in a few minutes, with no financial jargon — and without forcing someone to book a consultation before they even know whether the subject is worth digging into?",
+      "conception": "marbella stays deliberately simple: six sliders — current assets, annual savings, return, inflation, horizon, target withdrawals —, a transparent calculation whose formulas can be read inside the tool, and one clear result. No dashboard, no fifteen-scenario simulation. The goal was never to replace an adviser, but to give an honest starting point to a conversation that often never happens for lack of a first number.",
+      "revele": "A “good enough” calculation people actually open beats an exact one they never do. The real obstacle was not the model's precision but intimidation: the first version hid its formulas, and making them visible — together with help on the retirement horizon, the notion everyone was conflating — did more for trust than any refinement of the maths."
+    },
     "lien": "/outils/calculatrice-retraite.html",
     "stack": [
       "Web"

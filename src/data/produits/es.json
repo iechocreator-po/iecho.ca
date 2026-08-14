@@ -5,6 +5,12 @@
     "sousTitre": "traducción de PDF, 100 % local",
     "resume": "Traducir libros y documentos PDF completos en tu propia máquina — ningún dato se envía a la nube.",
     "besoin": "Leer un documento en tu idioma sin confiarlo a un servicio en línea. toledo divide el PDF en capítulos, lo traduce con un LLM local (Ollama), y también puede convertirlo a Markdown, generar fichas de estudio por capítulo o leerlo en voz alta.",
+    "demarche": {
+      "declencheur": "Como docente, traduzco con frecuencia mis propios documentos. Las herramientas en línea habituales planteaban una pregunta simple pero innegociable: ¿adónde va esta información una vez enviada a un servicio externo?",
+      "question": "¿Se puede traducir y resumir un documento correctamente, a coste cero, sin que el contenido salga de la máquina — y puede la misma lógica servir para algo más que traducir?",
+      "conception": "toledo funciona con Ollama en el prototipo — un LLM local en vez de una API en la nube —, pero la arquitectura está pensada para conectar otro modelo más adelante: nada se envía al exterior. Con esa base en pie, la misma mecánica permitió añadir dos funciones pedagógicas para probar con mis estudiantes: un resumen de documento y un generador de cuestionarios. Elegir lo «local» no era solo una cuestión de coste: fue la exigencia de confidencialidad la que dictó toda la arquitectura. Por eso mismo toledo sigue siendo una aplicación que se instala en la propia máquina, sin versión en línea que probar.",
+      "revele": "La confidencialidad se paga en velocidad y en calidad: un modelo local traduce más despacio y exige más repasos que uno en la nube, y el compromiso solo vale la pena cuando el documento es realmente sensible. La otra sorpresa vino de la reutilización — traducción, resumen y cuestionarios se apoyan en la misma pieza de división por capítulos: lo esencial del trabajo estaba en el pipeline, no en las funciones."
+    },
     "stack": [
       "Python",
       "FastAPI",
@@ -46,6 +52,12 @@
     "sousTitre": "calculadora para la jubilación",
     "resume": "Proyectar tu jubilación con unos pocos parámetros, sin hojas de cálculo intimidantes.",
     "besoin": "Responder a la pregunta «¿esto se sostiene?»: ahorros, rendimiento, horizonte, retiros — y ver el efecto de cada supuesto en el resultado.",
+    "demarche": {
+      "declencheur": "Varios amigos atravesaban cada uno un cambio de rumbo importante — y se hacían todos la misma pregunta: «¿Cuánto necesito para jubilarme?» No una respuesta de planificador financiero con veinte supuestos, solo una cifra para empezar a pensar.",
+      "question": "¿Cómo dar un orden de magnitud fiable, en unos minutos, sin jerga financiera y sin obligar a la persona a consultar a alguien antes incluso de saber si el tema merece profundizarse?",
+      "conception": "marbella se mantiene deliberadamente simple: seis controles — patrimonio actual, ahorro anual, rendimiento, inflación, horizonte, retiros previstos —, un cálculo transparente cuyas fórmulas pueden consultarse en la propia herramienta, y un único resultado claro. Sin panel de control, sin simulaciones de quince escenarios. El objetivo no era sustituir a un asesor, sino dar un punto de partida honesto a una conversación que, a menudo, no ocurre por falta de una primera cifra.",
+      "revele": "Un cálculo «suficientemente bueno» que se abre vale más que uno exacto que nadie abre nunca. El verdadero obstáculo no era la precisión del modelo sino la intimidación: la primera versión ocultaba sus fórmulas, y hacerlas visibles — junto con una ayuda sobre el horizonte de jubilación, la noción que todo el mundo confundía — hizo más por la confianza que cualquier refinamiento del cálculo."
+    },
     "lien": "/outils/calculatrice-retraite.html",
     "stack": [
       "Web"

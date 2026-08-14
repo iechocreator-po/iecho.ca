@@ -420,7 +420,7 @@ a:hover {
   white-space: nowrap;
 }
 
-/* ---------- Pages Mission / À propos ---------- */
+/* ---------- Pages Processus de création / Bio ---------- */
 
 .prose {
   max-width: 42rem;
@@ -435,6 +435,73 @@ a:hover {
   border-radius: 0 var(--rayon) var(--rayon) 0;
   padding: 0.9rem 1.2rem;
   color: var(--texte-2);
+  font-style: italic;
+}
+
+.prose .intro-processus {
+  color: var(--texte);
+  font-size: 1.05rem;
+}
+
+/* L'infographie est rendue hors de .prose (voir ProcessusView) pour occuper la
+   largeur utile de <main> plutôt que la colonne de texte de 42rem — un
+   débordement par margin/transform faisait scroller la page horizontalement.
+   Elle disparaît sous 720 px : son
+   texte est dessiné à taille fixe dans un viewBox de 1200 px, il y tomberait
+   sous 6 px. La liste .etapes-processus prend alors le relais — elle reste
+   affichée dans tous les cas, et c'est elle la version accessible. */
+.infographie {
+  width: 100%;
+  margin: 2.2rem 0 2.5rem;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-grand);
+  overflow: hidden;
+}
+.infographie svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 720px) {
+  .infographie { display: none; }
+}
+
+.etapes-processus {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.4rem 0 2rem;
+  padding: 0;
+}
+.etapes-processus li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-grand);
+  padding: 1.1rem 1.3rem 1.1rem 4.2rem;
+}
+.etape-numero {
+  position: absolute;
+  left: 1.3rem;
+  top: 1.15rem;
+  font-family: var(--police-mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+.etapes-processus h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+.prose .etapes-processus p {
+  margin: 0;
+}
+
+.prose .cloture-processus {
+  border-left: 2px solid var(--accent);
+  background: var(--accent-doux);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  padding: 0.9rem 1.2rem;
+  color: var(--texte);
   font-style: italic;
 }
 

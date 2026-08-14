@@ -10,12 +10,23 @@ import { t, type Langue } from '../i18n/ui';
 import config from '../data/produits.config.json';
 import dimensionsCaptures from '../data/captures-dimensions.json';
 
+// Le gabarit « démarche » en 4 blocs est optionnel : une exploration qui l'a
+// rédigé l'affiche à la place de la section « Le besoin » (« Le déclencheur »
+// et « La question posée » la répéteraient). Les autres gardent « Le besoin ».
+interface Demarche {
+  declencheur: string;
+  question: string;
+  conception: string;
+  revele: string;
+}
+
 interface Produit {
   id: string;
   nom: string;
   sousTitre: string;
   resume: string;
   besoin: string;
+  demarche?: Demarche;
   lien?: string;
   stack: string[];
   roadmap: { titre: string; statut: 'proposee' | 'encours' | 'livree' }[];
@@ -66,6 +77,14 @@ function capturesPour(id: string): string[] {
     .map((f) => `/captures/${f}`);
 }
 const captures = Object.fromEntries(produits.map((p) => [p.id, capturesPour(p.id)]));
+
+// Ordre des 4 blocs de la démarche, avec la clé i18n de leur titre.
+const blocsDemarche = [
+  { cle: 'declencheur', libelle: 'demarche.declencheur' },
+  { cle: 'question', libelle: 'demarche.question' },
+  { cle: 'conception', libelle: 'demarche.conception' },
+  { cle: 'revele', libelle: 'demarche.revele' },
+] as const;
 
 const libelleStatut = {
   proposee: tr('statut.proposee'),
@@ -122,10 +141,19 @@ const libelleStatut = {
       </a>
     )}
 
-    <div class="section-produit">
-      <h3>{tr('produit.besoin')}</h3>
-      <p>{p.besoin}</p>
-    </div>
+    {p.demarche ? (
+      blocsDemarche.map((bloc) => (
+        <div class="section-produit">
+          <h3>{tr(bloc.libelle)}</h3>
+          <p>{p.demarche![bloc.cle]}</p>
+        </div>
+      ))
+    ) : (
+      <div class="section-produit">
+        <h3>{tr('produit.besoin')}</h3>
+        <p>{p.besoin}</p>
+      </div>
+    )}
 
     <div class="section-produit">
       <h3>{tr('produit.captures')}</h3>

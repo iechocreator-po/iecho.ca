@@ -1,0 +1,10 @@
+# Anciennes URL, conservées après la refonte de navigation (14/8/2026).
+# « Mission » est devenue « Processus de création », « À propos » est devenue
+# « Bio » — ces six chemins sont déjà indexés et partagés, ils doivent survivre.
+# Format Cloudflare Pages : <source> <destination> <code>.
+/fr/mission/     /fr/processus-de-creation/   301
+/en/mission/     /en/creation-process/        301
+/es/mision/      /es/proceso-de-creacion/     301
+/fr/a-propos/    /fr/bio/                     301
+/en/about/       /en/bio/                     301
+/es/acerca-de/   /es/bio/                     301

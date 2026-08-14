@@ -1,11 +1,13 @@
 ---
-// Logos en gestation : les planches déposées dans public/logos/ (nommées
-// logo-n<niveau>-<planche>-<quadrant>.png par le script de découpe, ou
-// directement logo-n<niveau>-<n>.png pour un logo simple) sont groupées par
-// niveau et affichées en rangées horizontales, une rangée par niveau.
+// Processus de création. Ancienne page « Mission » : elle en conserve la
+// galerie « Logos en gestation » (les planches déposées dans public/logos/,
+// nommées logo-n<niveau>-<planche>-<quadrant>.png par le script de découpe, ou
+// directement logo-n<niveau>-<n>.png pour un logo simple) — groupées par niveau
+// et affichées en rangées horizontales, une rangée par niveau.
 import fs from 'node:fs';
 import path from 'node:path';
 import Base from '../layouts/Base.astro';
+import InfographieProcessus from '../components/InfographieProcessus.astro';
 import { t, type Langue } from '../i18n/ui';
 
 interface Props {
@@ -13,6 +15,13 @@ interface Props {
 }
 const { lang } = Astro.props;
 const tr = t(lang);
+
+const etapes = [
+  { n: '01', titre: tr('processus.etape.1.titre'), texte: tr('processus.etape.1.texte') },
+  { n: '02', titre: tr('processus.etape.2.titre'), texte: tr('processus.etape.2.texte') },
+  { n: '03', titre: tr('processus.etape.3.titre'), texte: tr('processus.etape.3.texte') },
+  { n: '04', titre: tr('processus.etape.4.titre'), texte: tr('processus.etape.4.texte') },
+];
 
 const dossierLogos = path.resolve('./public/logos');
 const motif = /^logo-n(\d+)-.+\.(png|jpe?g|webp|svg)$/i;
@@ -41,14 +50,37 @@ niveaux.set(4, []); // s'assure que le niveau 4 existe même sans image déposé
 
 const ordreNiveaux = Array.from(niveaux.keys()).sort((a, b) => a - b);
 ---
-<Base lang={lang} page="mission" titre={tr('mission.titre')}>
+<Base lang={lang} page="processus" titre={tr('processus.titre')}>
   <div class="prose">
-    <h1>{tr('mission.titre')}</h1>
-    <p>{tr('mission.intro.1')}</p>
-    <p>{tr('mission.intro.2')}</p>
+    <h1>{tr('processus.titre')}</h1>
+    <p class="intro-processus">{tr('processus.intro')}</p>
+  </div>
 
-    <h2>{tr('mission.logos.titre')}</h2>
-    <p>{tr('mission.logos.intro')}</p>
+  {/* Hors de .prose (colonne de texte de 42rem) pour occuper la largeur utile
+      de <main>. L'infographie porte visuellement l'essentiel ; elle est
+      aria-hidden et masquée sous 720 px, où son texte deviendrait illisible.
+      La liste des étapes ci-dessous en est la version lisible et traduite. */}
+  <figure class="infographie">
+    <InfographieProcessus lang={lang} />
+  </figure>
+
+  <div class="prose">
+    <h2>{tr('processus.etapes.titre')}</h2>
+    <ol class="etapes-processus">
+      {etapes.map((e) => (
+        <li>
+          <span class="etape-numero" aria-hidden="true">{e.n}</span>
+          <h3>{e.titre}</h3>
+          <p>{e.texte}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="cloture-processus">{tr('site.tagline')}</p>
+    <p>{tr('processus.echo')}</p>
+
+    <h2>{tr('processus.logos.titre')}</h2>
+    <p>{tr('processus.logos.intro')}</p>
 
     {ordreNiveaux.map((niveau) => (
       <div class="niveau-logos">

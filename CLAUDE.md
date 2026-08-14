@@ -39,6 +39,12 @@ toute édition manuelle serait écrasée).
 - **Langues** : français (défaut), anglais, espagnol — routing par chemin
   (`iecho.ca/fr`, `/en`, `/es`), slugs localisés définis dans `src/i18n/ui.ts`
   (`routes`).
+- **Trois sections** depuis la refonte du 14/8/2026 : **Explorations**
+  (l'accueil, ex-« Produits »), **Processus de création** (ex-« Mission ») et
+  **Bio** (ex-« À propos »). Les six anciennes URL (`/fr/mission/`,
+  `/en/mission/`, `/es/mision/`, `/fr/a-propos/`, `/en/about/`,
+  `/es/acerca-de/`) sont redirigées en 301 par `public/_redirects` — ne pas le
+  supprimer, ces adresses sont déjà indexées et partagées.
 - **Identité visuelle propre** : thème sombre, accent sarcelle/ambre, motif
   « ondes concentriques » — variables CSS françaises (`--fond`, `--texte`,
   `--accent`…) dans `src/styles/global.css`. **Ne consomme volontairement pas**
@@ -48,10 +54,17 @@ toute édition manuelle serait écrasée).
 ## Structure
 
 - `src/data/produits/{fr,en,es}.json` — un objet par produit (id, nom,
-  sousTitre, résumé, besoin, lien optionnel, stack, roadmap). **8 produits**
-  depuis le 28/7/2026 : marbella, toledo, madrid, valencia, barcelona (avec
-  `lien`), castellana, bilbao, porto (ces trois derniers sans `lien`, même
-  patron que toledo/madrid/valencia — app locale, jamais déployée).
+  sousTitre, résumé, besoin, `demarche` optionnel, lien optionnel, stack,
+  roadmap). **8 produits** depuis le 28/7/2026 : marbella, toledo, madrid,
+  valencia, barcelona (avec `lien`), castellana, bilbao, porto (ces trois
+  derniers sans `lien`, même patron que toledo/madrid/valencia — app locale,
+  jamais déployée).
+  Le champ **`demarche`** (14/8/2026) porte le gabarit de fiche en 4 blocs —
+  `declencheur`, `question`, `conception`, `revele` — rendu par
+  `ProductExplorer.astro` **à la place** de la section « Le besoin » (les deux
+  premiers blocs la répéteraient). Rédigé pour marbella et toledo ; les 7
+  autres explorations gardent « Le besoin » jusqu'à ce que leur fiche soit
+  écrite. Ajouter le champ suffit, aucun composant à toucher.
 - `src/data/produits.config.json` — ordre d'affichage (`ordre`) et liste des
   produits affichant la section technique (`afficherTechnique`).
 - `src/data/nouveautes/{fr,en,es}.json` — « Quoi de neuf » par produit, texte
@@ -76,6 +89,17 @@ toute édition manuelle serait écrasée).
 - `src/components/ProductExplorer.astro` — rend génériquement les données
   ci-dessus (tabs + panneau détail). **Ajouter un produit ne touche jamais ce
   composant**, uniquement les fichiers de données.
+- `src/components/InfographieProcessus.astro` — l'infographie des 4 étapes de
+  la page Processus, **inlinée** (pas un `<img>`) pour que les variables CSS du
+  thème s'appliquent et que son texte reste indexable. Source d'origine :
+  `docs/iecho-processus-de-creation.svg`, dont elle s'écarte sur deux points
+  assumés — les couleurs de chrome sont branchées sur les jetons iecho (les 4
+  teintes d'étape, elles, sont conservées : elles distinguent les étapes) et
+  l'`@import` Google Fonts est retiré au profit de `--police`. Les trois
+  langues vivent dans un seul objet `textes` en tête du fichier : une retouche
+  de mise en page profite aux trois. Le SVG est `aria-hidden` et masqué sous
+  720 px ; c'est la liste `.etapes-processus` de `ProcessusView` qui en est la
+  version accessible, et elle reste affichée dans tous les cas.
 - `src/components/FeedbackWidget.astro` — bouton flottant « Partager une idée »,
   modale, envoi Formspree (`FORMSPREE_ID` codé en dur — à extraire vers
   `src/config/settings.json`).

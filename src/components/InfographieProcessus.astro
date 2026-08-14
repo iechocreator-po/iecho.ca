@@ -1,0 +1,269 @@
+---
+// Infographie du processus de création (source : docs/iecho-processus-de-creation.svg).
+//
+// Deux écarts assumés par rapport au fichier source :
+//   1. Les couleurs de « chrome » (fond, cartes, filets, marque, libellés mono,
+//      textes) sont branchées sur les variables du thème iecho plutôt que sur les
+//      violets du fichier d'origine. Les 4 teintes d'étape sont conservées telles
+//      quelles : elles portent une information (elles distinguent les étapes) et
+//      les aplatir en sarcelle la ferait perdre.
+//   2. L'@import Google Fonts du fichier source est retiré — requête externe
+//      inutile, et le site a déjà sa pile --police / --police-mono.
+//
+// Le SVG est inliné (pas un <img>) pour que les variables CSS s'appliquent et que
+// le texte reste sélectionnable et indexable. Il est aria-hidden : la version
+// accessible est le texte HTML de ProcessusView, juste en dessous.
+import { type Langue } from '../i18n/ui';
+
+interface Props {
+  lang: Langue;
+}
+const { lang } = Astro.props;
+
+const textes = {
+  fr: {
+    eyebrow: 'PROCESSUS DE CRÉATION',
+    titre1: 'Transformer vos idées',
+    titre2: 'en réalités numériques',
+    contexteLabel: 'CONTEXTE',
+    contexte: [
+      "iecho n'est pas une agence traditionnelle, mais un service de",
+      'co-conception utilisant la méthodologie de développement rapide (RAD).',
+      "Cette approche privilégie l'expérimentation concrète et l'agilité pour",
+      "transformer des enjeux d'affaires en solutions numériques « faites maison ».",
+    ],
+    cycle: 'LE CYCLE DE CO-CONCEPTION',
+    etape: 'ÉTAPE',
+    etapes: [
+      {
+        titre: 'DIAGNOSTIC ET ÉCOUTE STRATÉGIQUE',
+        lignes: ["Analyse approfondie de vos enjeux d'affaires pour", 'cibler précisément la problématique à résoudre.'],
+      },
+      {
+        titre: 'PROTOTYPAGE SUR MESURE',
+        lignes: ["Développement rapide d'une solution numérique", "fait maison, plutôt qu'un logiciel tiers imposé."],
+      },
+      {
+        titre: 'EXPÉRIMENTATION TERRAIN',
+        lignes: ['Mise en main du prototype par vos équipes pour', "valider sa valeur ajoutée dans l'usage réel."],
+      },
+      {
+        titre: 'RÉTROACTION EN CYCLES COURTS',
+        lignes: ['Ajustements et itérations continues, fondés', "sur vos retours d'expérience terrain."],
+      },
+    ],
+    fondations: 'FONDATIONS ET PARTENARIAT',
+    rad: 'MÉTHODOLOGIE RAD',
+    radLignes: ["Plus de 20 ans d'expertise en", 'développement rapide, pour transformer', 'vos concepts en solutions concrètes.'],
+    propriete: 'PROPRIÉTÉ PARTAGÉE',
+    proprieteLignes: ["Liberté totale d'exploitation et", "d'évolution — les droits sur le code", 'sont partagés, sans contrainte contractuelle.'],
+    citation1: '« Expérimenter, apprendre, faire résonner',
+    citation2: 'des idées en produits numériques »',
+    pied: 'iecho — construit à la main, hébergé sobrement',
+  },
+  en: {
+    eyebrow: 'CREATION PROCESS',
+    titre1: 'Turning your ideas',
+    titre2: 'into digital realities',
+    contexteLabel: 'CONTEXT',
+    contexte: [
+      'iecho is not a traditional agency, but a co-design service',
+      'built on the rapid application development (RAD) methodology.',
+      'The approach favours concrete experimentation and agility, to turn',
+      'business challenges into homemade digital solutions.',
+    ],
+    cycle: 'THE CO-DESIGN CYCLE',
+    etape: 'STEP',
+    etapes: [
+      {
+        titre: 'STRATEGIC DIAGNOSIS AND LISTENING',
+        lignes: ['In-depth analysis of your business challenges,', 'to pinpoint exactly the problem worth solving.'],
+      },
+      {
+        titre: 'TAILOR-MADE PROTOTYPING',
+        lignes: ['Rapid development of a homemade digital solution,', 'rather than an imposed third-party tool.'],
+      },
+      {
+        titre: 'FIELD EXPERIMENTATION',
+        lignes: ['Your teams get the prototype in hand, to validate', 'its added value in real use.'],
+      },
+      {
+        titre: 'SHORT FEEDBACK CYCLES',
+        lignes: ['Continuous adjustments and iterations, grounded', 'in your own experience in the field.'],
+      },
+    ],
+    fondations: 'FOUNDATIONS AND PARTNERSHIP',
+    rad: 'RAD METHODOLOGY',
+    radLignes: ['Over 20 years of expertise in rapid', 'development, to turn your concepts', 'into concrete solutions.'],
+    propriete: 'SHARED OWNERSHIP',
+    proprieteLignes: ['Full freedom to use and evolve the', 'work — rights over the code are', 'shared, with no contractual strings.'],
+    citation1: '“Experiment, learn, make ideas echo',
+    citation2: 'into digital products”',
+    pied: 'iecho — handmade, soberly hosted',
+  },
+  es: {
+    eyebrow: 'PROCESO DE CREACIÓN',
+    titre1: 'Transformar tus ideas',
+    titre2: 'en realidades digitales',
+    contexteLabel: 'CONTEXTO',
+    contexte: [
+      'iecho no es una agencia tradicional, sino un servicio de',
+      'co-diseño que utiliza la metodología de desarrollo rápido (RAD).',
+      'Este enfoque privilegia la experimentación concreta y la agilidad para',
+      'transformar retos de negocio en soluciones digitales «hechas en casa».',
+    ],
+    cycle: 'EL CICLO DE CO-DISEÑO',
+    etape: 'ETAPA',
+    etapes: [
+      {
+        titre: 'DIAGNÓSTICO Y ESCUCHA ESTRATÉGICA',
+        lignes: ['Análisis profundo de tus retos de negocio para', 'identificar con precisión el problema a resolver.'],
+      },
+      {
+        titre: 'PROTOTIPADO A MEDIDA',
+        lignes: ['Desarrollo rápido de una solución digital hecha', 'en casa, en vez de un software ajeno impuesto.'],
+      },
+      {
+        titre: 'EXPERIMENTACIÓN SOBRE EL TERRENO',
+        lignes: ['Tus equipos prueban el prototipo para validar', 'su valor añadido en el uso real.'],
+      },
+      {
+        titre: 'RETROALIMENTACIÓN EN CICLOS CORTOS',
+        lignes: ['Ajustes e iteraciones continuas, basados', 'en tus comentarios sobre el terreno.'],
+      },
+    ],
+    fondations: 'FUNDAMENTOS Y COLABORACIÓN',
+    rad: 'METODOLOGÍA RAD',
+    radLignes: ['Más de 20 años de experiencia en', 'desarrollo rápido, para transformar', 'tus conceptos en soluciones concretas.'],
+    propriete: 'PROPIEDAD COMPARTIDA',
+    proprieteLignes: ['Libertad total de explotación y', 'evolución — los derechos sobre el código', 'son compartidos, sin ataduras contractuales.'],
+    citation1: '«Experimentar, aprender, hacer resonar',
+    citation2: 'las ideas en productos digitales»',
+    pied: 'iecho — hecho a mano, alojado con sobriedad',
+  },
+} as const;
+
+const s = textes[lang];
+
+// Teintes propres à chaque étape, conservées du fichier source.
+const etapes = [
+  { n: '01', couleur: '#7c93d9', y: 720 },
+  { n: '02', couleur: '#d9a15c', y: 990 },
+  { n: '03', couleur: '#5fbe9b', y: 1260 },
+  { n: '04', couleur: '#a57cd9', y: 1530 },
+];
+---
+<svg viewBox="0 0 1200 2320" xmlns="http://www.w3.org/2000/svg" class="svg-processus" aria-hidden="true">
+  <style>
+    .svg-processus .display { font-family: var(--police); }
+    .svg-processus .body { font-family: var(--police); }
+    .svg-processus .mono { font-family: var(--police-mono); }
+  </style>
+
+  <!-- Fond -->
+  <rect x="0" y="0" width="1200" height="2320" fill="var(--fond)" />
+
+  <!-- Halo décoratif d'ambiance (motif écho, très discret) -->
+  <circle cx="1280" cy="180" r="260" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.05" />
+  <circle cx="1280" cy="180" r="400" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.035" />
+
+  <!-- Marque -->
+  <circle cx="55" cy="75" r="9" fill="none" stroke="var(--accent)" stroke-width="2" />
+  <circle cx="55" cy="75" r="16" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.55" />
+  <circle cx="55" cy="75" r="23" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.3" />
+  <text x="88" y="82" class="display" font-size="24" font-weight="700" fill="var(--texte)">iecho</text>
+
+  <text x="80" y="175" class="mono" font-size="15" letter-spacing="3" fill="var(--accent-vif)">{s.eyebrow}</text>
+
+  <text x="80" y="240" class="display" font-size="54" font-weight="700" fill="var(--texte)">{s.titre1}</text>
+  <text x="80" y="300" class="display" font-size="54" font-weight="700" fill="var(--texte)">{s.titre2}</text>
+
+  <line x1="80" y1="332" x2="1120" y2="332" stroke="var(--accent)" stroke-width="1" opacity="0.25" />
+
+  <!-- Bloc Contexte -->
+  <rect x="80" y="362" width="1040" height="190" rx="16" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" stroke-opacity="0.3" />
+  <text x="112" y="400" class="mono" font-size="14" letter-spacing="2" fill="var(--accent-vif)">{s.contexteLabel}</text>
+  <text x="112" y="432" class="body" font-size="19" fill="var(--texte-2)">
+    {s.contexte.map((ligne, i) => <tspan x="112" dy={i === 0 ? 0 : 28}>{ligne}</tspan>)}
+  </text>
+
+  <text x="80" y="612" class="mono" font-size="15" letter-spacing="3" fill="var(--accent-vif)">{s.cycle}</text>
+
+  <!-- Fil conducteur reliant les 4 étapes -->
+  <line x1="110" y1="720" x2="110" y2="1530" stroke="var(--accent)" stroke-width="2" opacity="0.35" />
+
+  {etapes.map((e, i) => (
+    <>
+      <circle cx="110" cy={e.y} r="58" fill="none" stroke={e.couleur} stroke-width="1" opacity="0.12" />
+      <circle cx="110" cy={e.y} r="44" fill="none" stroke={e.couleur} stroke-width="1" opacity="0.2" />
+      <circle cx="110" cy={e.y} r="30" fill={e.couleur} />
+      <text x="110" y={e.y + 7} class="mono" font-size="18" font-weight="500" fill="var(--fond)" text-anchor="middle">{e.n}</text>
+
+      <text x="275" y={e.y - 45} class="mono" font-size="14" letter-spacing="2" fill={e.couleur}>{s.etape} {e.n}</text>
+      <text x="275" y={e.y - 5} class="display" font-size="29" font-weight="700" fill="var(--texte)">{s.etapes[i].titre}</text>
+      <text x="275" y={e.y + 35} class="body" font-size="19" fill="var(--texte-2)">
+        {s.etapes[i].lignes.map((ligne, j) => <tspan x="275" dy={j === 0 ? 0 : 27}>{ligne}</tspan>)}
+      </text>
+    </>
+  ))}
+
+  <!-- Pictogrammes des étapes (uniques, donc hors de la boucle) -->
+  <g transform="translate(185,692)" stroke="#7c93d9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="28" r="3" fill="#7c93d9" stroke="none" />
+    <path d="M18,28 A10,10 0 0 1 24,18" />
+    <path d="M18,28 A18,18 0 0 1 30,9" />
+    <path d="M18,28 A26,26 0 0 1 36,0" opacity="0.6" />
+  </g>
+  <g transform="translate(185,962)" stroke="#d9a15c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="34" height="34" rx="3" />
+    <path d="M10,32 L34,8" />
+    <path d="M28,6 L34,4 L36,10" />
+  </g>
+  <g transform="translate(190,1230)" stroke="#5fbe9b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14,2 h12" />
+    <path d="M17,2 v16 l-11,20 a6,6 0 0 0 5,9 h12 a6,6 0 0 0 5,-9 l-11,-20" />
+    <circle cx="16" cy="38" r="2" fill="#5fbe9b" stroke="none" />
+    <circle cx="24" cy="42" r="1.5" fill="#5fbe9b" stroke="none" />
+  </g>
+  <g transform="translate(185,1502)" stroke="#a57cd9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32,10 A18,18 0 1 0 36,26" />
+    <path d="M32,3 L32,10 L25,9" />
+  </g>
+
+  <line x1="80" y1="1665" x2="1120" y2="1665" stroke="var(--accent)" stroke-width="1" opacity="0.25" />
+
+  <!-- Fondations et partenariat -->
+  <text x="80" y="1715" class="mono" font-size="15" letter-spacing="3" fill="var(--accent-vif)">{s.fondations}</text>
+
+  <g transform="translate(80,1758)" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14,40 L14,20 a10,14 0 0 1 10,-14 a10,14 0 0 1 10,14 l0,20 z" />
+    <path d="M14,32 l-8,10" />
+    <path d="M34,32 l8,10" />
+  </g>
+  <text x="80" y="1848" class="display" font-size="21" font-weight="700" fill="var(--texte)">{s.rad}</text>
+  <text x="80" y="1883" class="body" font-size="18" fill="var(--texte-2)">
+    {s.radLignes.map((ligne, i) => <tspan x="80" dy={i === 0 ? 0 : 26}>{ligne}</tspan>)}
+  </text>
+
+  <g transform="translate(600,1758)" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="20" width="24" height="20" rx="3" />
+    <path d="M14,20 v-6 a6,6 0 0 1 12,0 v6" />
+    <path d="M32,30 h16" />
+    <path d="M44,24 l6,6 l-6,6" />
+  </g>
+  <text x="600" y="1848" class="display" font-size="21" font-weight="700" fill="var(--texte)">{s.propriete}</text>
+  <text x="600" y="1883" class="body" font-size="18" fill="var(--texte-2)">
+    {s.proprieteLignes.map((ligne, i) => <tspan x="600" dy={i === 0 ? 0 : 26}>{ligne}</tspan>)}
+  </text>
+
+  <!-- Bandeau de clôture -->
+  <rect x="80" y="1985" width="1040" height="205" rx="20" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" stroke-opacity="0.3" />
+  <circle cx="600" cy="2035" r="8" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+  <circle cx="600" cy="2035" r="15" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5" />
+  <circle cx="600" cy="2035" r="22" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.25" />
+
+  <text x="600" y="2100" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="var(--texte)">{s.citation1}</text>
+  <text x="600" y="2145" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="var(--texte)">{s.citation2}</text>
+
+  <text x="600" y="2255" text-anchor="middle" class="mono" font-size="14" fill="var(--texte-3)">{s.pied}</text>
+</svg>

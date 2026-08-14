@@ -5,6 +5,12 @@
     "sousTitre": "traduction de PDF, 100 % locale",
     "resume": "Traduire des livres et documents PDF entiers sur sa propre machine — aucune donnée envoyée vers le cloud.",
     "besoin": "Lire un document dans sa langue sans le confier à un service en ligne. toledo découpe le PDF en chapitres, le traduit avec un modèle LLM local (Ollama), et peut aussi le convertir en Markdown, générer des fiches d'étude par chapitre ou le lire à voix haute.",
+    "demarche": {
+      "declencheur": "Comme enseignant, je traduis régulièrement mes propres documents. Les outils en ligne habituels posaient une question simple mais non négociable : où va cette information une fois envoyée à un service externe ?",
+      "question": "Peut-on traduire et résumer un document correctement, à coût nul, sans faire sortir le contenu de la machine — et est-ce que la même logique peut servir à autre chose qu'à la traduction ?",
+      "conception": "toledo tourne sur Ollama pour le prototype — un LLM local plutôt qu'une API infonuagique —, mais l'architecture est pensée pour y brancher un autre modèle plus tard : rien n'est envoyé à l'extérieur. Une fois cette base en place, la même mécanique a permis d'ajouter deux fonctions pédagogiques à tester avec mes étudiants : un résumé de document et un générateur de quiz. Le choix du « local » n'était pas qu'une question de coût — c'est la contrainte de confidentialité qui a dicté toute l'architecture. C'est aussi pour ça que toledo reste une application qui s'installe sur sa propre machine, sans version en ligne à essayer.",
+      "revele": "La confidentialité se paie en vitesse et en qualité : un modèle local traduit plus lentement et demande plus de reprises qu'un modèle infonuagique, et le compromis ne vaut le coup que quand le document est réellement sensible. L'autre surprise est venue de la réutilisation — traduction, résumé et quiz reposent sur la même brique de découpage par chapitres : l'essentiel du travail était dans le pipeline, pas dans les fonctions elles-mêmes."
+    },
     "stack": [
       "Python",
       "FastAPI",
@@ -46,6 +52,12 @@
     "sousTitre": "calculatrice pour la retraite",
     "resume": "Projeter sa retraite en quelques paramètres, sans tableur intimidant.",
     "besoin": "Répondre simplement à la question « est-ce que ça tient la route ? » : épargne, rendement, horizon, retraits — et voir l'effet de chaque hypothèse sur le résultat.",
+    "demarche": {
+      "declencheur": "Plusieurs amis traversaient chacun un changement de cap important — et se posaient tous la même question : « De combien j'ai besoin pour prendre ma retraite ? » Pas une réponse de planificateur financier avec vingt hypothèses, juste un chiffre pour commencer à réfléchir.",
+      "question": "Comment donner un ordre de grandeur fiable, en quelques minutes, sans jargon financier et sans obliger la personne à consulter quelqu'un avant même de savoir si le sujet vaut la peine d'être approfondi ?",
+      "conception": "marbella reste volontairement simple : six curseurs — avoirs actuels, épargne annuelle, rendement, inflation, horizon, retraits visés —, un calcul transparent dont les formules sont consultables dans l'outil, et un seul résultat clair. Pas de tableau de bord, pas de simulation à quinze scénarios. L'objectif n'était pas de remplacer un conseiller, mais de donner un point de départ honnête à une conversation qui, souvent, ne se fait pas faute d'un premier chiffre.",
+      "revele": "Un calcul « suffisamment bon » qu'on ouvre vaut mieux qu'un calcul exact qu'on n'ouvre jamais. Le vrai obstacle n'était pas la précision du modèle, mais l'intimidation : la première version cachait ses formules, et les rendre visibles — avec une aide sur l'horizon de retraite, la notion que tout le monde confondait — a plus fait pour la confiance que n'importe quel raffinement du calcul."
+    },
     "lien": "/outils/calculatrice-retraite.html",
     "stack": [
       "Web"

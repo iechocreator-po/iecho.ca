@@ -10,10 +10,17 @@ export const nomsLangues: Record<Langue, string> = {
 };
 
 // Slugs localisés de chaque page, pour le routing et le sélecteur de langue.
+// Les anciens slugs (mission / a-propos / about / mision / acerca-de) sont
+// redirigés en 301 par public/_redirects — ne pas les retirer de ce fichier
+// sans retirer aussi les règles correspondantes.
 export const routes = {
-  produits: { fr: '', en: '', es: '' },
-  mission: { fr: 'mission', en: 'mission', es: 'mision' },
-  apropos: { fr: 'a-propos', en: 'about', es: 'acerca-de' },
+  explorations: { fr: '', en: '', es: '' },
+  processus: {
+    fr: 'processus-de-creation',
+    en: 'creation-process',
+    es: 'proceso-de-creacion',
+  },
+  bio: { fr: 'bio', en: 'bio', es: 'bio' },
 } as const;
 
 export type PageKey = keyof typeof routes;
@@ -28,11 +35,11 @@ export const ui = {
     'site.tagline': 'Expérimenter, apprendre, faire résonner des idées en produits numériques.',
     'site.description':
       "iecho — un atelier de produits numériques : des outils locaux et personnels, construits pour apprendre.",
-    'nav.produits': 'Produits',
-    'nav.mission': 'Mission',
-    'nav.apropos': 'À propos',
-    'produits.titre': 'Produits',
-    'produits.intro':
+    'nav.explorations': 'Explorations',
+    'nav.processus': 'Processus de création',
+    'nav.bio': 'Bio',
+    'explorations.titre': 'Explorations',
+    'explorations.intro':
       "Des outils construits d'abord pour un besoin réel, partagés ensuite. Chaque produit est une exploration.",
     'produit.besoin': 'Le besoin',
     'produit.essayer': 'Essayer',
@@ -41,30 +48,40 @@ export const ui = {
     'produit.captures.bientot': 'Captures à venir — le produit évolue encore.',
     'produit.quoidneuf': 'Quoi de neuf',
     'produit.roadmap': 'Fonctionnalités & feuille de route',
+    'demarche.declencheur': 'Le déclencheur',
+    'demarche.question': 'La question posée',
+    'demarche.conception': 'Le choix de conception',
+    'demarche.revele': 'Ce que ça a révélé',
     'statut.proposee': 'proposée',
     'statut.encours': 'en cours',
     'statut.livree': 'livrée',
-    'mission.titre': 'Mission',
-    'mission.intro.1': "Un echo symbolise l'impact, l'expression, le reflet, la résonance.",
-    'mission.intro.2':
-      "L'intention derrière iecho : expérimenter, apprendre et partager ce qui en sort.",
-    'mission.logos.titre': 'Logos en gestation',
-    'mission.logos.intro':
+    'processus.titre': 'Processus de création',
+    'processus.intro':
+      "iecho n'est pas une agence traditionnelle. C'est une démarche de co-conception numérique : transformer un problème réel en prototype concret, grâce à une méthodologie de développement rapide (RAD) fondée sur l'expérimentation et l'apprentissage terrain.",
+    'processus.etapes.titre': 'Le cycle de co-conception',
+    'processus.etape.1.titre': 'Diagnostic stratégique',
+    'processus.etape.1.texte':
+      'Cibler la vraie problématique avant de construire quoi que ce soit.',
+    'processus.etape.2.titre': 'Prototypage sur mesure',
+    'processus.etape.2.texte': 'Fait maison, sans sur-ingénierie.',
+    'processus.etape.3.titre': 'Expérimentation terrain',
+    'processus.etape.3.texte':
+      'Tester la valeur ajoutée avec de vraies personnes, pas dans le vide.',
+    'processus.etape.4.titre': 'Rétroaction en cycles courts',
+    'processus.etape.4.texte': "Ajuster rapidement selon ce qu'on apprend.",
+    'processus.echo': "Un echo symbolise l'impact, l'expression, le reflet, la résonance.",
+    'processus.logos.titre': 'Logos en gestation',
+    'processus.logos.intro':
       'Le logo iecho se cherche encore. Dites-nous lequel vous inspire via le bouton « Partager une idée ».',
-    'apropos.titre': 'À propos',
-    'apropos.bio.1':
-      'Consultant en développement de produits numériques et spécialiste en gestion de projet.',
-    'apropos.bio.2': 'Membre du conseil d’administration de Quatre-Chemins.org.',
-    'apropos.bio.3':
-      "Animé par un intérêt profond pour l'humain, le dialogue authentique et la transformation au sein des communautés professionnelles.",
-    'apropos.bio.4':
-      'Enseignant universitaire en gestion de projets, en développement rapide de produits numériques et en amélioration continue.',
-    'apropos.bio.5':
-      "iecho est né de son besoin constant d'expérimenter et d'apprendre par l'action.",
-    'apropos.collabs': 'Collaborations',
-    'apropos.collabs.brouillon': 'Section en préparation.',
-    'apropos.perso': 'Plus léger',
-    'apropos.perso.brouillon': 'Section en préparation.',
+    'bio.titre': 'Bio',
+    'bio.texte.1':
+      "Jean-Pierre Parra enseigne à l'Université, spécialisé en gestion de projet et développement de produits numériques. Il développe actuellement un cours de maîtrise sur la conception de produits d'affaires, avec une composante de littératie en IA.",
+    'bio.texte.2':
+      "Membre du conseil d'administration de Quatre-Chemins.org, il s'intéresse au dialogue authentique et à la transformation à travers différentes communautés professionnelles. iecho est né de son besoin d'expérimenter et d'apprendre en construisant.",
+    'bio.collabs': 'Collaborations',
+    'bio.collabs.brouillon': 'Section en préparation.',
+    'bio.perso': 'Plus léger',
+    'bio.perso.brouillon': 'Section en préparation.',
     'feedback.bouton': 'Partager une idée',
     'feedback.titre': 'Partager une idée',
     'feedback.intro':
@@ -84,11 +101,11 @@ export const ui = {
     'site.tagline': 'Experiment, learn, make ideas echo into digital products.',
     'site.description':
       'iecho — a digital product workshop: local, personal tools built to learn.',
-    'nav.produits': 'Products',
-    'nav.mission': 'Mission',
-    'nav.apropos': 'About',
-    'produits.titre': 'Products',
-    'produits.intro':
+    'nav.explorations': 'Explorations',
+    'nav.processus': 'Creation process',
+    'nav.bio': 'Bio',
+    'explorations.titre': 'Explorations',
+    'explorations.intro':
       'Tools built first for a real need, then shared. Each product is an exploration.',
     'produit.besoin': 'The need',
     'produit.essayer': 'Try it',
@@ -97,29 +114,38 @@ export const ui = {
     'produit.captures.bientot': 'Screenshots coming soon — the product is still evolving.',
     'produit.quoidneuf': "What's new",
     'produit.roadmap': 'Features & roadmap',
+    'demarche.declencheur': 'The trigger',
+    'demarche.question': 'The question',
+    'demarche.conception': 'The design choice',
+    'demarche.revele': 'What it revealed',
     'statut.proposee': 'proposed',
     'statut.encours': 'in progress',
     'statut.livree': 'shipped',
-    'mission.titre': 'Mission',
-    'mission.intro.1': 'An echo symbolizes impact, expression, reflection, resonance.',
-    'mission.intro.2':
-      'The intention behind iecho: experiment, learn, and share what comes out of it.',
-    'mission.logos.titre': 'Logos in gestation',
-    'mission.logos.intro':
+    'processus.titre': 'Creation process',
+    'processus.intro':
+      'iecho is not a traditional agency. It is a digital co-design approach: turning a real problem into a working prototype, through a rapid application development (RAD) methodology grounded in experimentation and field learning.',
+    'processus.etapes.titre': 'The co-design cycle',
+    'processus.etape.1.titre': 'Strategic diagnosis',
+    'processus.etape.1.texte': 'Pinpoint the real problem before building anything.',
+    'processus.etape.2.titre': 'Tailor-made prototyping',
+    'processus.etape.2.texte': 'Homemade, without over-engineering.',
+    'processus.etape.3.titre': 'Field experimentation',
+    'processus.etape.3.texte': 'Test the added value with real people, not in a vacuum.',
+    'processus.etape.4.titre': 'Short feedback cycles',
+    'processus.etape.4.texte': 'Adjust quickly, based on what we learn.',
+    'processus.echo': 'An echo symbolizes impact, expression, reflection, resonance.',
+    'processus.logos.titre': 'Logos in gestation',
+    'processus.logos.intro':
       'The iecho logo is still finding itself. Tell us which one inspires you via the “Share an idea” button.',
-    'apropos.titre': 'About',
-    'apropos.bio.1':
-      'Consultant in digital product development and project management specialist.',
-    'apropos.bio.2': 'Board member of Quatre-Chemins.org.',
-    'apropos.bio.3':
-      'Driven by a deep interest in people, authentic dialogue, and transformation within professional communities.',
-    'apropos.bio.4':
-      'University lecturer in project management, rapid digital product development, and continuous improvement.',
-    'apropos.bio.5': 'iecho was born from his constant need to experiment and learn by doing.',
-    'apropos.collabs': 'Collaborations',
-    'apropos.collabs.brouillon': 'Section in preparation.',
-    'apropos.perso': 'Lighter things',
-    'apropos.perso.brouillon': 'Section in preparation.',
+    'bio.titre': 'Bio',
+    'bio.texte.1':
+      "Jean-Pierre Parra teaches at university level, specializing in project management and digital product development. He is currently building a master's course on business product design, with an AI literacy component.",
+    'bio.texte.2':
+      'A board member of Quatre-Chemins.org, he is drawn to authentic dialogue and to transformation across different professional communities. iecho was born from his need to experiment and learn by building.',
+    'bio.collabs': 'Collaborations',
+    'bio.collabs.brouillon': 'Section in preparation.',
+    'bio.perso': 'Lighter things',
+    'bio.perso.brouillon': 'Section in preparation.',
     'feedback.bouton': 'Share an idea',
     'feedback.titre': 'Share an idea',
     'feedback.intro':
@@ -139,11 +165,11 @@ export const ui = {
     'site.tagline': 'Experimentar, aprender, hacer resonar las ideas en productos digitales.',
     'site.description':
       'iecho — un taller de productos digitales: herramientas locales y personales, construidas para aprender.',
-    'nav.produits': 'Productos',
-    'nav.mission': 'Misión',
-    'nav.apropos': 'Acerca de',
-    'produits.titre': 'Productos',
-    'produits.intro':
+    'nav.explorations': 'Exploraciones',
+    'nav.processus': 'Proceso de creación',
+    'nav.bio': 'Bio',
+    'explorations.titre': 'Exploraciones',
+    'explorations.intro':
       'Herramientas construidas primero para una necesidad real, compartidas después. Cada producto es una exploración.',
     'produit.besoin': 'La necesidad',
     'produit.essayer': 'Probarlo',
@@ -152,30 +178,38 @@ export const ui = {
     'produit.captures.bientot': 'Capturas próximamente — el producto sigue evolucionando.',
     'produit.quoidneuf': 'Novedades',
     'produit.roadmap': 'Funcionalidades y hoja de ruta',
+    'demarche.declencheur': 'El detonante',
+    'demarche.question': 'La pregunta',
+    'demarche.conception': 'La decisión de diseño',
+    'demarche.revele': 'Lo que reveló',
     'statut.proposee': 'propuesta',
     'statut.encours': 'en curso',
     'statut.livree': 'entregada',
-    'mission.titre': 'Misión',
-    'mission.intro.1': 'Un eco simboliza el impacto, la expresión, el reflejo, la resonancia.',
-    'mission.intro.2':
-      'La intención detrás de iecho: experimentar, aprender y compartir lo que surja.',
-    'mission.logos.titre': 'Logos en gestación',
-    'mission.logos.intro':
+    'processus.titre': 'Proceso de creación',
+    'processus.intro':
+      'iecho no es una agencia tradicional. Es un enfoque de co-diseño digital: transformar un problema real en un prototipo concreto, mediante una metodología de desarrollo rápido (RAD) basada en la experimentación y el aprendizaje sobre el terreno.',
+    'processus.etapes.titre': 'El ciclo de co-diseño',
+    'processus.etape.1.titre': 'Diagnóstico estratégico',
+    'processus.etape.1.texte': 'Identificar el verdadero problema antes de construir nada.',
+    'processus.etape.2.titre': 'Prototipado a medida',
+    'processus.etape.2.texte': 'Hecho en casa, sin sobreingeniería.',
+    'processus.etape.3.titre': 'Experimentación sobre el terreno',
+    'processus.etape.3.texte': 'Probar el valor añadido con personas reales, no en el vacío.',
+    'processus.etape.4.titre': 'Retroalimentación en ciclos cortos',
+    'processus.etape.4.texte': 'Ajustar rápido según lo que se aprende.',
+    'processus.echo': 'Un eco simboliza el impacto, la expresión, el reflejo, la resonancia.',
+    'processus.logos.titre': 'Logos en gestación',
+    'processus.logos.intro':
       'El logo de iecho aún se está buscando. Cuéntanos cuál te inspira con el botón «Compartir una idea».',
-    'apropos.titre': 'Acerca de',
-    'apropos.bio.1':
-      'Consultor en desarrollo de productos digitales y especialista en gestión de proyectos.',
-    'apropos.bio.2': 'Miembro del consejo de administración de Quatre-Chemins.org.',
-    'apropos.bio.3':
-      'Motivado por un profundo interés en las personas, el diálogo auténtico y la transformación dentro de las comunidades profesionales.',
-    'apropos.bio.4':
-      'Profesor universitario en gestión de proyectos, desarrollo rápido de productos digitales y mejora continua.',
-    'apropos.bio.5':
-      'iecho nació de su necesidad constante de experimentar y aprender mediante la acción.',
-    'apropos.collabs': 'Colaboraciones',
-    'apropos.collabs.brouillon': 'Sección en preparación.',
-    'apropos.perso': 'Cosas más ligeras',
-    'apropos.perso.brouillon': 'Sección en preparación.',
+    'bio.titre': 'Bio',
+    'bio.texte.1':
+      'Jean-Pierre Parra enseña en la Universidad, especializado en gestión de proyectos y desarrollo de productos digitales. Actualmente desarrolla un curso de maestría sobre el diseño de productos de negocio, con un componente de alfabetización en IA.',
+    'bio.texte.2':
+      'Miembro del consejo de administración de Quatre-Chemins.org, se interesa por el diálogo auténtico y la transformación a través de distintas comunidades profesionales. iecho nació de su necesidad de experimentar y aprender construyendo.',
+    'bio.collabs': 'Colaboraciones',
+    'bio.collabs.brouillon': 'Sección en preparación.',
+    'bio.perso': 'Cosas más ligeras',
+    'bio.perso.brouillon': 'Sección en preparación.',
     'feedback.bouton': 'Compartir una idea',
     'feedback.titre': 'Compartir una idea',
     'feedback.intro':

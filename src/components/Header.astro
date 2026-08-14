@@ -10,14 +10,14 @@ const { lang, page } = Astro.props;
 const tr = t(lang);
 
 const liens: { key: PageKey; libelle: string }[] = [
-  { key: 'produits', libelle: tr('nav.produits') },
-  { key: 'mission', libelle: tr('nav.mission') },
-  { key: 'apropos', libelle: tr('nav.apropos') },
+  { key: 'explorations', libelle: tr('nav.explorations') },
+  { key: 'processus', libelle: tr('nav.processus') },
+  { key: 'bio', libelle: tr('nav.bio') },
 ];
 ---
 <header class="entete">
   <div class="entete-inner">
-    <a href={cheminPage('produits', lang)} class="marque" aria-label="iecho — accueil">
+    <a href={cheminPage('explorations', lang)} class="marque" aria-label="iecho — accueil">
       <EchoMark />
       <span>iecho</span>
     </a>

@@ -103,6 +103,11 @@ toute édition manuelle serait écrasée).
 - `src/components/FeedbackWidget.astro` — bouton flottant « Partager une idée »,
   modale, envoi Formspree (`FORMSPREE_ID` codé en dur — à extraire vers
   `src/config/settings.json`).
+- `src/components/ProductExplorer.astro` — depuis le 6/9/2026, porte aussi le
+  bouton « Télécharger » (champ optionnel `telechargement` sur un produit) et
+  son dialogue de mot de passe partagé (`#telechargement-dialogue`, une seule
+  instance pour tous les produits). Voir « Téléchargement protégé par mot de
+  passe » ci-dessous.
 - `src/i18n/ui.ts` — langues, routes localisées, fonction de traduction `t()`.
 - `scripts/roadmap-diff.mjs`, `scripts/capture-screenshots.mjs`,
   `scripts/optimize-images.mjs` — voir « Workflows » ci-dessous.
@@ -113,6 +118,73 @@ Voir la section dédiée du `CLAUDE.md` racine — résumé : éditer
 `src/data/produits/{fr,en,es}.json` (un objet par produit) + ajouter l'`id` à
 `produits.config.json > ordre` + déposer les captures dans `public/captures/`.
 Aucune modification de composant nécessaire.
+
+## Téléchargement protégé par mot de passe (6/9/2026)
+
+JP veut donner accès à **castellana** (`trading-assistant`, un autre produit
+du portfolio) à deux testeurs (Louis, Guillaume) sans passer par un accès
+collaborateur GitHub privé — un lien de téléchargement direct sur iecho.ca,
+protégé par un mot de passe simple.
+
+**Ce n'est pas un produit hébergé** : castellana est Express +
+`better-sqlite3` + sidecar Python optionnel, incompatible avec le modèle
+Workers de ce hub (voir `trading-assistant/CLAUDE.md`, section « Paquet
+téléchargeable self-install » pour l'analyse complète). Ce qu'iecho.ca sert
+est un **zip du code source** (`public/telechargements/castellana.zip`,
+~3 Mo) que le testeur télécharge et installe lui-même via des scripts de
+lancement (`demarrer.command`/`demarrer.bat`, dans le zip) qui font
+l'installation (npm install, venv Python) au premier double-clic.
+
+**Mécanisme de gate — repris de `porto/gate.js`**, pas de barcelona
+(React) : iecho.ca est un site Astro statique sans build-time env
+injection pour ce cas, exactement la situation qui avait fait choisir la
+variante vanilla JS pour porto. Simplifié par rapport à porto (un seul
+bouton à protéger, pas toute l'app) : pas de `gate.config.js` généré au
+build, pas de 3 modes (`open`/`password`/`blocked`) — juste un mot de
+passe en dur (`tomate`) comparé au clic.
+
+- `src/data/produits/{fr,en,es}.json` — champ optionnel `telechargement`
+  (chemin vers le zip) sur l'entrée castellana **uniquement**. Absent
+  ailleurs → aucun bouton affiché pour les autres produits (no-op).
+- `src/components/ProductExplorer.astro` — bouton `.bouton-telecharger`
+  rendu si `p.telechargement` existe (juste après `.bouton-essayer`), UNE
+  seule `<dialog id="telechargement-dialogue">` partagée (pas dupliquée par
+  produit — rendue une fois après la boucle `produits.map()`). Au clic :
+  vérifie `localStorage['iecho.telechargement.<id>.unlocked']`, navigue
+  direct si déjà déverrouillé, sinon ouvre le dialogue. Comparaison
+  `value.trim().toLowerCase() === 'tomate'`.
+- `src/styles/global.css` — `.bouton-telecharger` (contour, distinct de
+  `.bouton-essayer` rempli) et `.telechargement-*` (dialogue, adapté de
+  `.feedback-dialogue` du même fichier — nouvelles classes pour rester
+  sémantiquement distinct).
+- `src/i18n/ui.ts` — clés `produit.telecharger*` (fr/en/es), réutilise
+  `feedback.fermer` existant pour le bouton Fermer (pas de doublon).
+
+**⚠️ Comme porto/barcelona : dissuasif, pas une vraie barrière de
+sécurité** — le mot de passe est visible en clair dans le JS livré. Le
+déverrouillage est permanent (localStorage, pas d'expiration), par produit
+(clé incluant l'`id`), pour que ce mécanisme reste réutilisable si un
+futur produit a aussi besoin d'un lien de téléchargement gated.
+
+**⚠️ Limite réelle non résolue — Gatekeeper macOS** : le script
+`demarrer.command` dans le zip téléchargé reçoit l'attribut
+`com.apple.quarantine` une fois passé par un navigateur — macOS peut
+refuser l'exécution au double-clic. Mitigation documentée dans
+`trading-assistant/SETUP.md` (clic droit → Ouvrir), mais **jamais testée
+avec un vrai téléchargement navigateur**. Voir `trading-assistant/
+CLAUDE.md` pour le détail complet.
+
+**Vérifié en direct** (serveur de dev Astro local, port 4322) : le bouton
+« Télécharger castellana » apparaît uniquement sur la fiche castellana
+(confirmé — aucun autre produit n'a ce bouton) ; mauvais mot de passe →
+erreur inline ; bon mot de passe (`tomate`, testé en majuscules pour
+confirmer l'insensibilité à la casse) → requête `GET
+/telechargements/castellana.zip` → 200 (le `net::ERR_ABORTED` qui suit est
+le comportement normal du navigateur quand une navigation devient un
+téléchargement de fichier) ; rechargement de la page → toujours
+déverrouillé (`localStorage` persisté) ; reclique sur le bouton → navigue
+direct sans redemander le mot de passe ; labels traduits confirmés en
+FR/EN/ES. Aucune erreur console à aucune étape.
 
 ## Workflows
 

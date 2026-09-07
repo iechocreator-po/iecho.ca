@@ -673,6 +673,62 @@ a:hover {
 }
 .bouton-essayer:hover { background: var(--accent-vif); }
 
+/* ---------- Bouton "Télécharger" + dialogue de mot de passe (6/9/2026) ---------- */
+/* Style secondaire (contour, pas rempli) pour se distinguer de
+   .bouton-essayer — ce n'est pas la même action (accès direct vs
+   téléchargement protégé). */
+.bouton-telecharger {
+  display: inline-block;
+  font-family: var(--police);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--texte);
+  background: transparent;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  margin: 0.8rem 0.6rem 0.4rem 0;
+  cursor: pointer;
+}
+.bouton-telecharger:hover { color: var(--texte); border-color: var(--bordure-vive); }
+
+/* Dialogue de mot de passe — adapté de .feedback-dialogue (même fichier),
+   nouvelles classes pour rester sémantiquement distinct (ce n'est pas un
+   formulaire de feedback). */
+.telechargement-dialogue {
+  border: 1px solid var(--bordure-vive);
+  border-radius: var(--rayon-grand);
+  background: var(--surface);
+  color: var(--texte);
+  padding: 0;
+  width: min(92vw, 24rem);
+}
+.telechargement-dialogue::backdrop {
+  background: rgba(5, 6, 8, 0.7);
+  backdrop-filter: blur(3px);
+}
+.telechargement-inner { padding: 1.6rem; }
+.telechargement-inner h2 { font-size: 1.2rem; }
+.telechargement-intro { color: var(--texte-2); font-size: 0.9rem; margin: 0.5rem 0 1.1rem; }
+.telechargement-champ {
+  width: 100%;
+  font-family: var(--police);
+  font-size: 0.95rem;
+  color: var(--texte);
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 0.7rem 0.9rem;
+}
+.telechargement-champ:focus { outline: none; border-color: var(--accent); }
+.telechargement-erreur { margin-top: 0.6rem; font-size: 0.85rem; color: var(--ambre); }
+.telechargement-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
 .feedback-message {
   margin-top: 0.9rem;
   font-size: 0.9rem;

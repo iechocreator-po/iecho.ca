@@ -161,6 +161,7 @@
     "sousTitre": "assistant de swing trading — écran de sélection, sizing, journal",
     "resume": "Filtrer des titres selon des critères techniques précis, discipliner sa taille de position et journaliser chaque trade.",
     "besoin": "Le swing trading exige de croiser plusieurs indicateurs (flottant, volume, VWAP, bêta) avant d'entrer en position, puis de garder une trace rigoureuse de chaque trade. castellana centralise l'écran de sélection, calcule les indicateurs maison et tient le journal, avec un sidecar optionnel pour les données de marché en direct.",
+    "telechargement": "/telechargements/castellana.zip",
     "stack": [
       "Node.js",
       "Express",

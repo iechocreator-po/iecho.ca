@@ -28,6 +28,7 @@ interface Produit {
   besoin: string;
   demarche?: Demarche;
   lien?: string;
+  telechargement?: string;
   stack: string[];
   roadmap: { titre: string; statut: 'proposee' | 'encours' | 'livree' }[];
 }
@@ -140,6 +141,16 @@ const libelleStatut = {
         {tr('produit.essayer')} {p.nom}
       </a>
     )}
+    {p.telechargement && (
+      <button
+        type="button"
+        class="bouton-telecharger"
+        data-href={p.telechargement}
+        data-produit={p.id}
+      >
+        {tr('produit.telecharger')} {p.nom}
+      </button>
+    )}
 
     {p.demarche ? (
       blocsDemarche.map((bloc) => (
@@ -209,6 +220,34 @@ const libelleStatut = {
   </section>
 ))}
 
+<!-- Dialogue de mot de passe pour les boutons "Télécharger" (6/9/2026) —
+     UNE seule instance, partagée par tous les produits qui ont un champ
+     `telechargement` (aujourd'hui, seulement castellana). Patron de gate
+     repris de porto/gate.js (mode simple, pas de config par variables
+     d'environnement ici — un seul bouton à protéger, pas toute l'app) :
+     dissuasif, PAS une vraie barrière de sécurité — le mot de passe est
+     visible en clair dans ce fichier une fois déployé, exactement comme
+     pour porto/barcelona. Déverrouillage persisté en localStorage, par
+     produit. -->
+<dialog id="telechargement-dialogue" class="telechargement-dialogue">
+  <form id="telechargement-form" class="telechargement-inner" method="dialog">
+    <h2>{tr('produit.telecharger.titre')}</h2>
+    <p class="telechargement-intro">{tr('produit.telecharger.intro')}</p>
+    <input
+      class="telechargement-champ"
+      type="password"
+      id="telechargement-motdepasse"
+      placeholder={tr('produit.telecharger.placeholder')}
+      autocomplete="off"
+    />
+    <p class="telechargement-erreur" id="telechargement-erreur" hidden>{tr('produit.telecharger.erreur')}</p>
+    <div class="telechargement-actions">
+      <button type="button" class="bouton-secondaire" id="telechargement-annuler">{tr('feedback.fermer')}</button>
+      <button type="submit" class="bouton-primaire">{tr('produit.telecharger.entrer')}</button>
+    </div>
+  </form>
+</dialog>
+
 <script>
   const onglets = document.querySelectorAll<HTMLButtonElement>('.onglet-produit');
 
@@ -252,5 +291,67 @@ const libelleStatut = {
       : (courant - 1 + liste.length) % liste.length;
     activer(liste[suivant]);
     liste[suivant].focus();
+  });
+
+  // ---- Gate de téléchargement (6/9/2026) ----
+  // Dissuasif, pas une vraie barrière de sécurité (mot de passe en clair
+  // dans ce fichier une fois déployé) — même framing que porto/gate.js et
+  // barcelona/PasswordGate.jsx. Suffisant pour partager un lien avec
+  // quelques testeurs sans l'ouvrir à n'importe qui.
+  const MOT_DE_PASSE_TELECHARGEMENT = 'tomate';
+  const dialogueTelechargement = document.getElementById('telechargement-dialogue') as HTMLDialogElement | null;
+  const formTelechargement = document.getElementById('telechargement-form') as HTMLFormElement | null;
+  const champTelechargement = document.getElementById('telechargement-motdepasse') as HTMLInputElement | null;
+  const erreurTelechargement = document.getElementById('telechargement-erreur');
+  let cibleTelechargement: { href: string; produit: string } | null = null;
+
+  function cleDeverrouillage(produit: string) {
+    return `iecho.telechargement.${produit}.unlocked`;
+  }
+
+  function estDeverrouille(produit: string) {
+    try {
+      return localStorage.getItem(cleDeverrouillage(produit)) === 'true';
+    } catch {
+      return false;
+    }
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.bouton-telecharger').forEach((bouton) => {
+    bouton.addEventListener('click', () => {
+      const href = bouton.dataset.href!;
+      const produit = bouton.dataset.produit!;
+      if (estDeverrouille(produit)) {
+        window.location.href = href;
+        return;
+      }
+      cibleTelechargement = { href, produit };
+      if (erreurTelechargement) erreurTelechargement.hidden = true;
+      if (champTelechargement) champTelechargement.value = '';
+      dialogueTelechargement?.showModal();
+      champTelechargement?.focus();
+    });
+  });
+
+  document.getElementById('telechargement-annuler')?.addEventListener('click', () => {
+    dialogueTelechargement?.close();
+  });
+
+  formTelechargement?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!cibleTelechargement || !champTelechargement) return;
+    if (champTelechargement.value.trim().toLowerCase() === MOT_DE_PASSE_TELECHARGEMENT) {
+      try {
+        localStorage.setItem(cleDeverrouillage(cibleTelechargement.produit), 'true');
+      } catch {
+        /* localStorage indisponible (navigation privée, etc.) — on télécharge quand même */
+      }
+      const href = cibleTelechargement.href;
+      dialogueTelechargement?.close();
+      window.location.href = href;
+    } else if (erreurTelechargement) {
+      erreurTelechargement.hidden = false;
+      champTelechargement.select();
+    }
   });
 </script>

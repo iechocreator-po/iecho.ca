@@ -160,12 +160,13 @@
     "nom": "castellana",
     "sousTitre": "swing-trading assistant — screening, sizing, journal",
     "resume": "Filter stocks against precise technical criteria, size positions with discipline, and log every trade.",
-    "besoin": "Swing trading means cross-checking several indicators (float, volume, VWAP, beta) before entering a position, then keeping a rigorous log of each trade. castellana centralizes the screening screen, computes the home-grown indicators, and keeps the journal, with an optional sidecar for live market data.",
+    "besoin": "Swing trading means cross-checking several indicators (float, volume, VWAP, beta) before entering a position, then keeping a rigorous log of each trade. castellana centralizes the screening screen, computes all its own indicators, and keeps the journal — multi-user, each with their own journal and watchlist.",
+    "lien": "https://castellana.iechocreator.workers.dev/",
     "telechargement": "/telechargements/castellana.zip",
     "stack": [
-      "Node.js",
-      "Express",
-      "SQLite",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Hono",
       "Yahoo Finance"
     ],
     "roadmap": [

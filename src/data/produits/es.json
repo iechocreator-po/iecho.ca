@@ -160,12 +160,13 @@
     "nom": "castellana",
     "sousTitre": "asistente de swing trading — cribado, dimensionamiento, diario",
     "resume": "Filtrar acciones según criterios técnicos precisos, dimensionar posiciones con disciplina y registrar cada operación.",
-    "besoin": "El swing trading exige cruzar varios indicadores (flotante, volumen, VWAP, beta) antes de entrar en una posición, y luego llevar un registro riguroso de cada operación. castellana centraliza la pantalla de cribado, calcula los indicadores propios y mantiene el diario, con un sidecar opcional para datos de mercado en vivo.",
+    "besoin": "El swing trading exige cruzar varios indicadores (flotante, volumen, VWAP, beta) antes de entrar en una posición, y luego llevar un registro riguroso de cada operación. castellana centraliza la pantalla de cribado, calcula todos sus propios indicadores y mantiene el diario — multiusuario, cada uno con su propio diario y su propia lista de seguimiento.",
+    "lien": "https://castellana.iechocreator.workers.dev/",
     "telechargement": "/telechargements/castellana.zip",
     "stack": [
-      "Node.js",
-      "Express",
-      "SQLite",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Hono",
       "Yahoo Finance"
     ],
     "roadmap": [

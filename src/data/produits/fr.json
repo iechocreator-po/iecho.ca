@@ -160,12 +160,13 @@
     "nom": "castellana",
     "sousTitre": "assistant de swing trading — écran de sélection, sizing, journal",
     "resume": "Filtrer des titres selon des critères techniques précis, discipliner sa taille de position et journaliser chaque trade.",
-    "besoin": "Le swing trading exige de croiser plusieurs indicateurs (flottant, volume, VWAP, bêta) avant d'entrer en position, puis de garder une trace rigoureuse de chaque trade. castellana centralise l'écran de sélection, calcule les indicateurs maison et tient le journal, avec un sidecar optionnel pour les données de marché en direct.",
+    "besoin": "Le swing trading exige de croiser plusieurs indicateurs (flottant, volume, VWAP, bêta) avant d'entrer en position, puis de garder une trace rigoureuse de chaque trade. castellana centralise l'écran de sélection, calcule tous les indicateurs maison et tient le journal — multi-utilisateur, chacun avec son propre journal et sa propre liste de suivi.",
+    "lien": "https://castellana.iechocreator.workers.dev/",
     "telechargement": "/telechargements/castellana.zip",
     "stack": [
-      "Node.js",
-      "Express",
-      "SQLite",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Hono",
       "Yahoo Finance"
     ],
     "roadmap": [

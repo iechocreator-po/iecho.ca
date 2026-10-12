@@ -126,8 +126,10 @@ Quatrième page du menu, **Journal** (`/fr/journal/`, `/en/journal/`, `/es/diari
   l'`@import` Google Fonts est retiré au profit de `--police`. Les trois
   langues vivent dans un seul objet `textes` en tête du fichier : une retouche
   de mise en page profite aux trois. Le SVG est `aria-hidden` et masqué sous
-  720 px ; c'est la liste `.etapes-processus` de `ProcessusView` qui en est la
-  version accessible, et elle reste affichée dans tous les cas.
+  720 px. La section « Le cycle de co-conception » (liste `.etapes-processus`, sa
+  version lisible) a été retirée de `ProcessusView` le 12/10/2026 : **sous 720 px et
+  pour un lecteur d'écran, la page ne présente donc plus les 4 étapes** (les clés
+  `processus.etape.*` et le CSS `.etapes-processus` sont restés, inutilisés).
 - `src/components/FeedbackWidget.astro` — bouton flottant « Partager une idée »,
   modale, envoi Formspree (`FORMSPREE_ID` codé en dur — à extraire vers
   `src/config/settings.json`).

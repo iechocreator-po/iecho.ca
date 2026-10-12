@@ -65,7 +65,6 @@ export const ui = {
     'processus.titre': 'Processus de création',
     'processus.intro':
       "iecho n'est pas une agence traditionnelle. C'est une démarche de co-conception numérique : transformer un problème réel en prototype concret, grâce à une méthodologie de développement rapide (RAD) fondée sur l'expérimentation et l'apprentissage terrain.",
-    'processus.etapes.titre': 'Le cycle de co-conception',
     'processus.etape.1.titre': 'Diagnostic stratégique',
     'processus.etape.1.texte':
       'Cibler la vraie problématique avant de construire quoi que ce soit.',
@@ -155,7 +154,6 @@ export const ui = {
     'processus.titre': 'Creation process',
     'processus.intro':
       'iecho is not a traditional agency. It is a digital co-design approach: turning a real problem into a working prototype, through a rapid application development (RAD) methodology grounded in experimentation and field learning.',
-    'processus.etapes.titre': 'The co-design cycle',
     'processus.etape.1.titre': 'Strategic diagnosis',
     'processus.etape.1.texte': 'Pinpoint the real problem before building anything.',
     'processus.etape.2.titre': 'Tailor-made prototyping',
@@ -243,7 +241,6 @@ export const ui = {
     'processus.titre': 'Proceso de creación',
     'processus.intro':
       'iecho no es una agencia tradicional. Es un enfoque de co-diseño digital: transformar un problema real en un prototipo concreto, mediante una metodología de desarrollo rápido (RAD) basada en la experimentación y el aprendizaje sobre el terreno.',
-    'processus.etapes.titre': 'El ciclo de co-diseño',
     'processus.etape.1.titre': 'Diagnóstico estratégico',
     'processus.etape.1.texte': 'Identificar el verdadero problema antes de construir nada.',
     'processus.etape.2.titre': 'Prototipado a medida',

@@ -10,13 +10,6 @@ interface Props {
 }
 const { lang } = Astro.props;
 const tr = t(lang);
-
-const etapes = [
-  { n: '01', titre: tr('processus.etape.1.titre'), texte: tr('processus.etape.1.texte') },
-  { n: '02', titre: tr('processus.etape.2.titre'), texte: tr('processus.etape.2.texte') },
-  { n: '03', titre: tr('processus.etape.3.titre'), texte: tr('processus.etape.3.texte') },
-  { n: '04', titre: tr('processus.etape.4.titre'), texte: tr('processus.etape.4.texte') },
-];
 ---
 <Base lang={lang} page="processus" titre={tr('processus.titre')}>
   <div class="prose">
@@ -26,24 +19,12 @@ const etapes = [
 
   {/* Hors de .prose (colonne de texte de 42rem) pour occuper la largeur utile
       de <main>. L'infographie porte visuellement l'essentiel ; elle est
-      aria-hidden et masquée sous 720 px, où son texte deviendrait illisible.
-      La liste des étapes ci-dessous en est la version lisible et traduite. */}
+      aria-hidden et masquée sous 720 px, où son texte deviendrait illisible. */}
   <figure class="infographie">
     <InfographieProcessus lang={lang} />
   </figure>
 
   <div class="prose">
-    <h2>{tr('processus.etapes.titre')}</h2>
-    <ol class="etapes-processus">
-      {etapes.map((e) => (
-        <li>
-          <span class="etape-numero" aria-hidden="true">{e.n}</span>
-          <h3>{e.titre}</h3>
-          <p>{e.texte}</p>
-        </li>
-      ))}
-    </ol>
-
     <p class="cloture-processus">{tr('site.tagline')}</p>
     <p>{tr('processus.echo')}</p>
   </div>

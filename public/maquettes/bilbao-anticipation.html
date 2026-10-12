@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette : console Anticipation de bilbao</title>
+<style>
+body{margin:0;background:#151618;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+button,select{font-family:inherit}
+button:focus-visible,select:focus-visible{outline:2px solid #7db3e8;outline-offset:2px}
+</style>
+</head>
+<body>
+<div style="font:700 11px/1 -apple-system,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#93a0b1;text-align:center;padding:8px;border-bottom:1px dashed #33404f;background:#151618">Maquette non fonctionnelle, chiffres et entrées d'exemple</div>
+<div style="width:100%;max-width:1000px;margin:0 auto;box-sizing:border-box;min-height:1000px;background:#151618;color:#e8e6e1;padding:20px 24px 48px;display:flex;flex-direction:column;gap:18px">
+
+<nav aria-label="Onglets bilbao" style="display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid #2e3135;padding-bottom:12px">
+<span style="font-size:13px;color:#a3a19a;padding:7px 12px">Feedbacks</span>
+<span style="font-size:13px;color:#a3a19a;padding:7px 12px">Console</span>
+<span style="font-size:13px;color:#a3a19a;padding:7px 12px">Journaux</span>
+<span style="font-size:13px;color:#a3a19a;padding:7px 12px">Télémétrie</span>
+<span style="font-size:13px;color:#a3a19a;padding:7px 12px">Comptes castellana</span>
+<span aria-current="page" style="font-size:13px;font-weight:600;color:#0f1a26;background:#7db3e8;padding:7px 12px;border-radius:8px">Anticipation</span>
+</nav>
+
+<!-- Accès par compte -->
+<section style="background:#1d1f22;border:1px solid #2e3135;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<h2 style="margin:0;font-size:15px;font-weight:650">Qui voit l'onglet Anticipation</h2>
+<p style="margin:0;font-size:12.5px;color:#a3a19a;line-height:1.5;max-width:70ch">Même mécanisme que les autres drapeaux : un défaut global, et une surcharge par compte. Le défaut est « désactivé ». Un compte sans surcharge hérite du global.</p>
+</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:560px">
+<thead><tr style="text-align:left;color:#a3a19a;font-size:12px"><th style="padding:8px;font-weight:500">Compte</th><th style="padding:8px;font-weight:500">Accès</th><th style="padding:8px;font-weight:500">Peut voter</th><th style="padding:8px;font-weight:500">Peut proposer</th><th style="padding:8px;font-weight:500">Votes utilisés</th></tr></thead>
+<tbody>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">compte-a</td><td style="padding:10px 8px"><select aria-label="Accès de compte-a" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Forcé activé</option><option>Hérite du global (désactivé)</option><option>Forcé désactivé</option></select></td><td style="padding:10px 8px">Oui</td><td style="padding:10px 8px">Oui</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">2 / 5</td></tr>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">compte-b</td><td style="padding:10px 8px"><select aria-label="Accès de compte-b" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Forcé activé</option><option>Hérite du global (désactivé)</option><option>Forcé désactivé</option></select></td><td style="padding:10px 8px">Oui</td><td style="padding:10px 8px">Oui</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">4 / 5</td></tr>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">compte-c</td><td style="padding:10px 8px"><select aria-label="Accès de compte-c" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Hérite du global (désactivé)</option><option>Forcé activé</option><option>Forcé désactivé</option></select></td><td style="padding:10px 8px;color:#a3a19a">—</td><td style="padding:10px 8px;color:#a3a19a">—</td><td style="padding:10px 8px;color:#a3a19a">—</td></tr>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">compte-d</td><td style="padding:10px 8px"><select aria-label="Accès de compte-d" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Forcé activé</option><option>Hérite du global (désactivé)</option><option>Forcé désactivé</option></select></td><td style="padding:10px 8px">Oui</td><td style="padding:10px 8px">Non, lecture seule</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">0 / 5</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- Boîte de réception -->
+<section style="background:#1d1f22;border:1px solid #2e3135;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:baseline">
+<h2 style="margin:0;font-size:15px;font-weight:650">Propositions reçues</h2>
+<span style="font-size:12.5px;color:#a3a19a">2 à traiter</span>
+</div>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+<li style="border:1px solid #2e3135;border-radius:8px;padding:12px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;background:#17181a">
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:3px">
+<span style="font-size:13.5px;font-weight:600">Afficher l'heure des résultats quand elle est connue</span>
+<span style="font-size:12px;color:#a3a19a">Proposée par compte-b, 12 oct. · onglet Option Lab · nouvelle</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px;cursor:pointer">Fusionner avec une carte</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #7db3e8;background:#22344a;color:#cfe3f7;font-size:12.5px;cursor:pointer">Créer une carte</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #2e3135;background:transparent;color:#a3a19a;font-size:12.5px;cursor:pointer">Décliner</button>
+</div>
+</li>
+<li style="border:1px solid #2e3135;border-radius:8px;padding:12px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;background:#17181a">
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:3px">
+<span style="font-size:13.5px;font-weight:600">Exporter le plan de match en PDF</span>
+<span style="font-size:12px;color:#a3a19a">Proposée par compte-d, 11 oct. · onglet Autre · nouvelle</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px;cursor:pointer">Fusionner avec une carte</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #7db3e8;background:#22344a;color:#cfe3f7;font-size:12.5px;cursor:pointer">Créer une carte</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:7px;border:1px solid #2e3135;background:transparent;color:#a3a19a;font-size:12.5px;cursor:pointer">Décliner</button>
+</div>
+</li>
+</ul>
+</section>
+
+<!-- Cartes et statuts -->
+<section style="background:#1d1f22;border:1px solid #2e3135;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<h2 style="margin:0;font-size:15px;font-weight:650">Cartes Anticipation</h2>
+<p style="margin:0;font-size:12.5px;color:#a3a19a;line-height:1.5;max-width:70ch">Une carte est une feature bilbao au statut « Idée » ou « Planifiée », avec une maquette attachée. Passer une carte à « Livrée » la relie à la note de version, ce qui l'envoie dans le journal de bord d'iecho.ca.</p>
+</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:560px">
+<thead><tr style="text-align:left;color:#a3a19a;font-size:12px"><th style="padding:8px;font-weight:500">Carte</th><th style="padding:8px;font-weight:500">Votes</th><th style="padding:8px;font-weight:500">Statut</th><th style="padding:8px;font-weight:500">Maquette</th></tr></thead>
+<tbody>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">Préparation de la semaine</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">7</td><td style="padding:10px 8px"><select aria-label="Statut : Préparation de la semaine" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Maquette</option><option>Planifiée</option><option>En construction</option><option>Livrée</option><option>Rejetée</option></select></td><td style="padding:10px 8px"><a href="Detail.dc.html" style="color:#7db3e8">Voir</a></td></tr>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">Feu des résultats</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">6</td><td style="padding:10px 8px"><select aria-label="Statut : Feu des résultats" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Planifiée</option><option>Maquette</option><option>En construction</option><option>Livrée</option><option>Rejetée</option></select></td><td style="padding:10px 8px"><a href="Detail.dc.html" style="color:#7db3e8">Voir</a></td></tr>
+<tr style="border-top:1px solid #2e3135"><td style="padding:10px 8px">Plan de match de la Roue</td><td style="padding:10px 8px;font-variant-numeric:tabular-nums">4</td><td style="padding:10px 8px"><select aria-label="Statut : Plan de match de la Roue" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid #2e3135;background:#151618;color:#e8e6e1;font-size:12.5px"><option>Maquette</option><option>Planifiée</option><option>En construction</option><option>Livrée</option><option>Rejetée</option></select></td><td style="padding:10px 8px"><a href="Detail.dc.html" style="color:#7db3e8">Voir</a></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette : journal de bord</title>
+<style>
+body{margin:0;background:#0b1417;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+button{font-family:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid #3fb8a5;outline-offset:2px}
+a{color:#5fd0bd}a:hover{color:#9be3d6}
+</style>
+</head>
+<body>
+<div style="font:700 11px/1 -apple-system,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#93a0b1;text-align:center;padding:8px;border-bottom:1px dashed #33404f;background:#0b1417">Maquette non fonctionnelle, chiffres et entrées d'exemple</div>
+<div style="width:100%;max-width:1280px;margin:0 auto;box-sizing:border-box;min-height:1560px;background:#0b1417;color:#e6efee;display:flex;flex-direction:column">
+
+<!-- navigation du hub -->
+<header style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid #1f3a40">
+<span style="font-size:20px;font-weight:700;letter-spacing:.02em">iecho</span>
+<nav aria-label="Navigation principale" style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px">
+<a href="#" style="color:#93aaa8;text-decoration:none">Explorations</a>
+<a href="#" style="color:#93aaa8;text-decoration:none">Processus de création</a>
+<a href="#" aria-current="page" style="color:#e6efee;text-decoration:none;border-bottom:2px solid #3fb8a5;padding-bottom:4px">Journal</a>
+<a href="#" style="color:#93aaa8;text-decoration:none">Bio</a>
+</nav>
+</header>
+
+<!-- en-tête de page -->
+<section style="position:relative;overflow:hidden;padding:56px 40px 40px;border-bottom:1px solid #1f3a40">
+<svg aria-hidden="true" width="420" height="420" viewBox="0 0 420 420" fill="none" stroke="#3fb8a5" style="position:absolute;right:-60px;top:-110px;opacity:.28">
+<circle cx="210" cy="210" r="50" stroke-width="1.5"/><circle cx="210" cy="210" r="95" stroke-width="1.5"/><circle cx="210" cy="210" r="140" stroke-width="1.5"/><circle cx="210" cy="210" r="185" stroke-width="1.5"/>
+</svg>
+<div style="position:relative;display:flex;flex-direction:column;gap:14px;max-width:62ch">
+<p style="margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e0a43a;font-weight:700">Journal de bord</p>
+<h1 style="margin:0;font-size:40px;line-height:1.15;font-weight:700">Ce qui est livré, ce qui s'annonce, ce qu'on y a appris</h1>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#b4c6c4">Chaque version d'un produit laisse une trace : les changements livrés, les maquettes qui les ont précédés, et ce qu'elles ont révélé. Les entrées sont rangées par date, du plus récent au plus ancien.</p>
+<p style="margin:0;font-size:13px"><a href="#">S'abonner par RSS</a></p>
+</div>
+</section>
+
+<div style="display:flex;flex-wrap:wrap;gap:40px;padding:36px 40px 64px;align-items:flex-start">
+
+<!-- fil des entrées -->
+<main style="flex:999 1 620px;min-width:0;display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+<div role="group" aria-label="Filtrer par produit" style="display:flex;flex-wrap:wrap;gap:6px">
+<button type="button" aria-pressed="true" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #3fb8a5;background:#14332f;color:#bff0e6;cursor:pointer">Tous</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">castellana</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">toledo</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">faro</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">bilbao</button>
+</div>
+<div role="group" aria-label="Filtrer par type" style="display:flex;flex-wrap:wrap;gap:6px">
+<button type="button" aria-pressed="true" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #e0a43a;background:#3a2d12;color:#f3d79a;cursor:pointer">Tout</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">Livré</button>
+<button type="button" aria-pressed="false" style="font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #1f3a40;background:transparent;color:#93aaa8;cursor:pointer">Anticipé</button>
+</div>
+</div>
+
+<h2 style="margin:0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#93aaa8;font-weight:600;border-bottom:1px solid #1f3a40;padding-bottom:10px">Octobre 2026</h2>
+
+<!-- Entrée livrée -->
+<article style="display:flex;flex-wrap:wrap;gap:20px">
+<div style="flex:0 0 120px;display:flex;flex-direction:column;gap:6px">
+<time datetime="2026-10-11" style="font-size:14px;font-weight:600">11 oct. 2026</time>
+<span style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7fe0a8;background:#12301f;padding:3px 8px;border-radius:5px;align-self:flex-start">Livré</span>
+</div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px;border-left:2px solid #1f3a40;padding-left:22px">
+<p style="margin:0;font-size:13px;color:#5fd0bd;font-weight:600">castellana</p>
+<h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:650">La trésorerie entre dans le score fondamental</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#b4c6c4;max-width:64ch">Une nouvelle tuile compare la trésorerie à la dette, et un sixième critère, la solidité du bilan, peut entrer dans le score. Il pèse zéro par défaut : l'ajouter à vingt pour cent aurait changé le verdict de tous les titres sans que personne l'ait demandé.</p>
+<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:#b4c6c4">
+<li>Tuile « Trésorerie » avec dette nette ou trésorerie nette</li>
+<li>Critère « Solidité du bilan », réglable dans les Réglages</li>
+<li>S&amp;P 500 équipondéré (RSP) dans le tableau et le graphique des secteurs</li>
+</ul>
+<p style="margin:0;font-size:13px;display:flex;flex-wrap:wrap;gap:16px"><a href="#">Note de version complète</a><a href="#">Maquette d'origine</a></p>
+</div>
+</article>
+
+<!-- Entrée anticipée -->
+<article style="display:flex;flex-wrap:wrap;gap:20px">
+<div style="flex:0 0 120px;display:flex;flex-direction:column;gap:6px">
+<time datetime="2026-10-12" style="font-size:14px;font-weight:600">12 oct. 2026</time>
+<span style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#f3d79a;background:#3a2d12;padding:3px 8px;border-radius:5px;align-self:flex-start">Anticipé</span>
+</div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px;border-left:2px solid #e0a43a;padding-left:22px">
+<p style="margin:0;font-size:13px;color:#5fd0bd;font-weight:600">castellana · maquette</p>
+<h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:650">Préparer la semaine avant l'ouverture des marchés</h3>
+<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+<div aria-hidden="true" style="flex:0 0 220px;height:140px;border:1px dashed #3a5a60;border-radius:10px;background:#0f1d21;padding:14px;box-sizing:border-box;display:flex;flex-direction:column;gap:9px">
+<div style="height:9px;width:50%;background:#2a4a50;border-radius:3px"></div>
+<div style="display:flex;gap:7px"><div style="flex:1;height:34px;background:#16292e;border-radius:5px"></div><div style="flex:1;height:34px;background:#16292e;border-radius:5px"></div><div style="flex:1;height:34px;background:#3a2d12;border-radius:5px"></div></div>
+<div style="height:7px;width:90%;background:#1b3338;border-radius:3px"></div>
+<div style="height:7px;width:65%;background:#1b3338;border-radius:3px"></div>
+</div>
+<div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:10px">
+<p style="margin:0;font-size:15px;line-height:1.65;color:#b4c6c4">Une page unique pour le dimanche soir : calendrier économique, décision probable de la Fed et largeur du marché. Rien n'est construit : la maquette est ouverte aux votes des utilisateurs invités.</p>
+<p style="margin:0;font-size:13.5px;color:#93aaa8">7 votes · 3 commentaires · statut : maquette</p>
+<p style="margin:0;font-size:13px"><a href="#">Voir la maquette</a></p>
+</div>
+</div>
+</div>
+</article>
+
+<h2 style="margin:8px 0 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#93aaa8;font-weight:600;border-bottom:1px solid #1f3a40;padding-bottom:10px">Septembre 2026</h2>
+
+<!-- Entrée appris -->
+<article style="display:flex;flex-wrap:wrap;gap:20px">
+<div style="flex:0 0 120px;display:flex;flex-direction:column;gap:6px">
+<time datetime="2026-09-27" style="font-size:14px;font-weight:600">27 sept. 2026</time>
+<span style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7fe0a8;background:#12301f;padding:3px 8px;border-radius:5px;align-self:flex-start">Livré</span>
+</div>
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:10px;border-left:2px solid #1f3a40;padding-left:22px">
+<p style="margin:0;font-size:13px;color:#5fd0bd;font-weight:600">castellana</p>
+<h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:650">Un repère pour chaque carte de l'application</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#b4c6c4;max-width:64ch">Pour signaler un endroit précis sans le décrire, chaque onglet reçoit une lettre et chaque carte un numéro. Les repères sont dérivés de la page elle-même, jamais d'une table écrite à la main, pour qu'ils ne dérivent pas.</p>
+<div style="background:#112126;border:1px solid #1f3a40;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;max-width:64ch">
+<span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#e0a43a;font-weight:700">Ce que ça a révélé</span>
+<span style="font-size:14px;line-height:1.6;color:#b4c6c4">Un bug de spécificité CSS aurait déformé l'interrupteur : seul un test dans le navigateur l'a montré.</span>
+</div>
+<p style="margin:0;font-size:13px"><a href="#">Note de version complète</a></p>
+</div>
+</article>
+
+</main>
+
+<!-- colonne latérale -->
+<aside style="flex:1 1 260px;min-width:240px;display:flex;flex-direction:column;gap:22px">
+<section style="background:#112126;border:1px solid #1f3a40;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:15px;font-weight:650">À venir</h2>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#93aaa8">Les maquettes ouvertes aux votes, classées par soutien.</p>
+<ol style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:#b4c6c4">
+<li>Préparation de la semaine <span style="color:#93aaa8">· 7</span></li>
+<li>Feu des résultats <span style="color:#93aaa8">· 6</span></li>
+<li>Plan de match de la Roue <span style="color:#93aaa8">· 4</span></li>
+</ol>
+</section>
+<section style="background:#112126;border:1px solid #1f3a40;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:15px;font-weight:650">Archives</h2>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px">
+<li><a href="#">Octobre 2026</a> <span style="color:#93aaa8">· 2</span></li>
+<li><a href="#">Septembre 2026</a> <span style="color:#93aaa8">· 14</span></li>
+<li><a href="#">Août 2026</a> <span style="color:#93aaa8">· 11</span></li>
+<li><a href="#">Juillet 2026</a> <span style="color:#93aaa8">· 9</span></li>
+</ul>
+</section>
+<section style="background:#112126;border:1px solid #1f3a40;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px">
+<h2 style="margin:0;font-size:15px;font-weight:650">Participer</h2>
+<p style="margin:0;font-size:13px;line-height:1.55;color:#93aaa8">Le vote et les propositions sont réservés aux utilisateurs invités, dans l'onglet Anticipation de chaque produit. Ce journal, lui, est public.</p>
+</section>
+</aside>
+
+</div>
+</div>
+</body>
+</html>

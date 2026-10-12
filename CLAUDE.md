@@ -30,6 +30,24 @@ release note, passer par l'API de bilbao (`npm start` dans
 R17) — jamais éditer `features.json` à la main (régénéré à chaque mutation,
 toute édition manuelle serait écrasée).
 
+## Journal de bord (12/10/2026, bilbao #432)
+
+Quatrième page du menu, **Journal** (`/fr/journal/`, `/en/journal/`, `/es/diario/`) : entrées datées de type
+**Livré** ou **Anticipé**, filtrables par produit et par type, avec un flux RSS (`/journal.xml`, français).
+**Travail sur la branche `journal-de-bord`, pas fusionné dans `main` : tant qu'il ne l'est pas, rien n'est en ligne.**
+
+- **Données** : `src/data/journal/entries.json`, une copie **éditoriale commitée**. Elle n'est jamais lue depuis bilbao
+  au build (bilbao est local, le build Cloudflare ne le voit pas), et ne reprend jamais la description brute d'une
+  feature : titre et résumé sont rédigés ici, en fr/en/es. Seules des entrées volontairement publiques s'y trouvent.
+  Les entrées sont rédigées en français d'abord ; les autres langues ne sont pas relues par JP.
+- **Maquettes** : fichiers HTML autonomes sous `public/maquettes/`, affichés dans une `<iframe sandbox="">` (aucune
+  permission). Publiques par construction : **aucun nom de testeur ni numéro de version inventé** n'y est toléré
+  (deux ont été retirés avant l'ajout). Les maquettes propres à castellana restent dans l'onglet Anticipation du produit.
+- **Mécanique** : `routes.journal` dans `src/i18n/ui.ts` (slugs `journal`/`journal`/`diario`), lien dans `Header.astro`,
+  vue `src/views/JournalView.astro` (filtres en JS minimal, mois groupés), `src/pages/journal.xml.ts` pour le RSS.
+- **À faire** : la sortie de bilbao vers `entries.json` reste un geste manuel (pas de script) ; une carte livrée devrait
+  basculer son entrée d'« Anticipé » à « Livré » ; la visibilité publique/privée par carte est la feature bilbao #431.
+
 ## Stack
 
 - **Générateur** : Astro (build statique), i18n natif.

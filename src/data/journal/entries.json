@@ -1,0 +1,77 @@
+{
+  "_note": "Entrées du journal de bord. Source de vérité des features : bilbao (feature-factory/data/<produit>/features.json) ; ce fichier est une copie éditoriale COMMITTÉE, jamais lue depuis bilbao au build (bilbao est local, le build Cloudflare ne le voit pas). Seules des entrées volontairement publiques s'y trouvent : titre et résumé rédigés ici, jamais la description brute d'une feature. `type` : livre | anticipe. `maquette` : chemin sous public/. `featureId` : identifiant bilbao, quand il existe.",
+  "entries": [
+    {
+      "id": "2026-10-12-bilbao-anticipation",
+      "date": "2026-10-12",
+      "produit": "bilbao",
+      "type": "anticipe",
+      "featureId": 430,
+      "maquette": "/maquettes/bilbao-anticipation.html",
+      "fr": { "titre": "Une console pour piloter l'onglet Anticipation", "resume": "Dans bilbao, un nouvel onglet décide qui voit l'onglet Anticipation de chaque produit, trie les propositions reçues (fusionner avec une carte, créer une carte, décliner) et fait avancer le statut des cartes. Rien n'est construit : la maquette est ouverte à la critique." },
+      "en": { "titre": "A console to run the Anticipation tab", "resume": "In bilbao, a new tab decides who sees each product's Anticipation tab, sorts incoming proposals (merge into a card, create a card, decline) and moves cards through their statuses. Nothing is built yet: the mockup is open to critique." },
+      "es": { "titre": "Una consola para gobernar la pestaña Anticipation", "resume": "En bilbao, una nueva pestaña decide quién ve la pestaña Anticipation de cada producto, clasifica las propuestas recibidas (fusionar con una tarjeta, crear una tarjeta, rechazar) y hace avanzar el estado de las tarjetas. Nada está construido: la maqueta está abierta a la crítica." }
+    },
+    {
+      "id": "2026-10-12-chemin-idee",
+      "date": "2026-10-12",
+      "produit": "bilbao",
+      "type": "anticipe",
+      "featureId": 431,
+      "maquette": "/maquettes/chemin-idee.html",
+      "fr": { "titre": "Le chemin d'une idée, de la maquette au journal", "resume": "Une seule source de vérité, bilbao : l'onglet du produit recueille votes et propositions, la console les trie, les fichiers versionnés gardent les cartes et les notes de version, et iecho.ca les lit au build. Chaque carte porte une visibilité, privée ou publique." },
+      "en": { "titre": "The path of an idea, from mockup to logbook", "resume": "A single source of truth, bilbao: the product tab collects votes and proposals, the console sorts them, versioned files keep cards and release notes, and iecho.ca reads them at build time. Each card carries a visibility, private or public." },
+      "es": { "titre": "El camino de una idea, de la maqueta al diario", "resume": "Una sola fuente de verdad, bilbao: la pestaña del producto recoge votos y propuestas, la consola los clasifica, los archivos versionados guardan tarjetas y notas de versión, e iecho.ca los lee al compilar. Cada tarjeta tiene una visibilidad, privada o pública." }
+    },
+    {
+      "id": "2026-10-12-journal-de-bord",
+      "date": "2026-10-12",
+      "produit": "iecho.ca",
+      "type": "anticipe",
+      "featureId": 432,
+      "maquette": "/maquettes/journal-de-bord.html",
+      "fr": { "titre": "Un journal de bord historisé pour tous les produits", "resume": "La maquette de la page que vous lisez : entrées datées, filtres par produit et par type, archives par mois. Elle est devenue cette page ; la maquette d'origine reste ici, pour mémoire." },
+      "en": { "titre": "A dated logbook for every product", "resume": "The mockup of the page you are reading: dated entries, filters by product and type, monthly archives. It became this page; the original mockup stays here for the record." },
+      "es": { "titre": "Un diario de a bordo con historial para todos los productos", "resume": "La maqueta de la página que está leyendo: entradas fechadas, filtros por producto y tipo, archivo por meses. Se convirtió en esta página; la maqueta original queda aquí como registro." }
+    },
+    {
+      "id": "2026-10-12-castellana-tresorerie",
+      "date": "2026-10-12",
+      "produit": "castellana",
+      "type": "livre",
+      "fr": { "titre": "La trésorerie entre dans le score fondamental", "resume": "Une tuile compare la trésorerie à la dette, et un sixième critère, la solidité du bilan, peut entrer dans le score. Il pèse zéro par défaut : l'ajouter à vingt pour cent aurait changé le verdict de tous les titres sans que personne l'ait demandé. Le S&P 500 équipondéré (RSP) rejoint aussi le tableau et le graphique des secteurs." },
+      "en": { "titre": "Cash joins the fundamental score", "resume": "A tile compares cash to debt, and a sixth criterion, balance-sheet strength, can enter the score. It weighs zero by default: adding it at twenty percent would have changed every stock's verdict without anyone asking. The equal-weight S&P 500 (RSP) also joins the sector table and chart." },
+      "es": { "titre": "La tesorería entra en la puntuación fundamental", "resume": "Una ficha compara la tesorería con la deuda, y un sexto criterio, la solidez del balance, puede entrar en la puntuación. Pesa cero por defecto: añadirlo al veinte por ciento habría cambiado el veredicto de todos los valores sin que nadie lo pidiera. El S&P 500 equiponderado (RSP) también se une a la tabla y al gráfico de sectores." }
+    },
+    {
+      "id": "2026-10-09-castellana-ia",
+      "date": "2026-10-09",
+      "produit": "castellana",
+      "type": "livre",
+      "featureId": 398,
+      "fr": { "titre": "Claude comme analyste de contexte, sans effet sur le score", "resume": "Première utilisation de l'IA dans castellana : un résumé structuré des actualités, des résultats et des risques d'un titre. Il ne change ni le score ni la taille de position, il cite ses sources, et il écrit « non disponible » plutôt que d'estimer." },
+      "en": { "titre": "Claude as a context analyst, with no effect on the score", "resume": "First use of AI in castellana: a structured summary of a stock's news, earnings and risks. It changes neither the score nor the position size, it cites its sources, and it writes \"not available\" rather than guess." },
+      "es": { "titre": "Claude como analista de contexto, sin efecto en la puntuación", "resume": "Primer uso de la IA en castellana: un resumen estructurado de las noticias, resultados y riesgos de un valor. No cambia la puntuación ni el tamaño de la posición, cita sus fuentes y escribe «no disponible» en lugar de estimar." }
+    },
+    {
+      "id": "2026-10-09-castellana-backtest",
+      "date": "2026-10-09",
+      "produit": "castellana",
+      "type": "livre",
+      "featureId": 402,
+      "fr": { "titre": "Un backtest qui compte les frais, et une vue sectorielle du S&P 500", "resume": "Le test du signal d'alignement tient maintenant compte des frais, du glissement et d'un filtre de régime de marché. Sur les sept grands titres, 3 ans : +0,30 R brut, +0,25 R avec frais, +0,23 R avec le filtre. Le filtre n'apporte rien ici." },
+      "en": { "titre": "A backtest that counts costs, and a sector view of the S&P 500", "resume": "The alignment-signal test now accounts for fees, slippage and a market-regime filter. On the seven mega-caps over 3 years: +0.30 R gross, +0.25 R after fees, +0.23 R with the filter. The filter adds nothing here." },
+      "es": { "titre": "Un backtest que cuenta los costes, y una vista sectorial del S&P 500", "resume": "La prueba de la señal de alineación ahora considera comisiones, deslizamiento y un filtro de régimen de mercado. Con las siete grandes, 3 años: +0,30 R bruto, +0,25 R con comisiones, +0,23 R con el filtro. El filtro no aporta nada aquí." }
+    },
+    {
+      "id": "2026-10-08-castellana-option-lab",
+      "date": "2026-10-08",
+      "produit": "castellana",
+      "type": "livre",
+      "featureId": 396,
+      "fr": { "titre": "L'Option Lab lit la vraie chaîne d'options", "resume": "Sous l'estimation de strike, une carte montre les vrais contrats : bid, ask, écart, intérêt ouvert et volatilité implicite. Un filtre de qualité écarte les cotes douteuses, et la corrélation réelle des positions entre dans le calcul de la taille." },
+      "en": { "titre": "The Option Lab reads the real options chain", "resume": "Below the strike estimate, a card shows the real contracts: bid, ask, spread, open interest and implied volatility. A quality filter drops dubious quotes, and the real correlation of open positions now feeds the position-size calculation." },
+      "es": { "titre": "El Option Lab lee la cadena de opciones real", "resume": "Bajo la estimación de strike, una ficha muestra los contratos reales: bid, ask, diferencial, interés abierto y volatilidad implícita. Un filtro de calidad descarta cotizaciones dudosas, y la correlación real de las posiciones entra en el cálculo del tamaño." }
+    }
+  ]
+}

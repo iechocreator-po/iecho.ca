@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../layouts/Base.astro';
 import { t, type Langue } from '../i18n/ui';
 import data from '../data/journal/entries.json';
@@ -26,6 +28,29 @@ for (const e of entrees) {
   }
   g.items.push(e);
 }
+
+// Galerie « Logos en gestation » : planches déposées dans public/logos/, nommées
+// logo-n<niveau>-<planche>-<quadrant>.png (script de découpe) ou logo-n<niveau>-<n>.png.
+// Groupées par niveau, une rangée horizontale par niveau.
+const dossierLogos = path.resolve('./public/logos');
+const motifLogo = /^logo-n(\d+)-.+\.(png|jpe?g|webp|svg)$/i;
+const fichiersLogos = fs.existsSync(dossierLogos)
+  ? fs.readdirSync(dossierLogos).filter((f) => motifLogo.test(f)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  : [];
+const niveaux = new Map<number, string[]>();
+for (const f of fichiersLogos) {
+  const n = Number(f.match(motifLogo)![1]);
+  if (!niveaux.has(n)) niveaux.set(n, []);
+  niveaux.get(n)!.push(`/logos/${f}`);
+}
+// Niveau 4 : trois pistes dessinées en SVG, indépendantes des fichiers déposés.
+const niveau4Svg = [
+  { id: 'logo-a', rayons: [4, 9, 14], opacites: [1, 0.5, 0.22] },
+  { id: 'logo-b', rayons: [3, 7, 11, 15], opacites: [1, 0.65, 0.38, 0.16] },
+  { id: 'logo-c', rayons: [5, 12], opacites: [1, 0.35] },
+];
+niveaux.set(4, niveaux.get(4) ?? []);
+const ordreNiveaux = Array.from(niveaux.keys()).sort((a, b) => a - b);
 const aVenir = entrees.filter((e) => e.type === 'anticipe');
 ---
 <Base lang={lang} page="journal" titre={tr('journal.titre')} description={tr('journal.intro')}>
@@ -50,22 +75,48 @@ const aVenir = entrees.filter((e) => e.type === 'anticipe');
           <button type="button" class="journal-chip journal-chip-ambre" aria-pressed="true" data-valeur="">{tr('journal.tout')}</button>
           <button type="button" class="journal-chip journal-chip-ambre" aria-pressed="false" data-valeur="livre">{tr('journal.type.livre')}</button>
           <button type="button" class="journal-chip journal-chip-ambre" aria-pressed="false" data-valeur="anticipe">{tr('journal.type.anticipe')}</button>
+          <button type="button" class="journal-chip journal-chip-ambre" aria-pressed="false" data-valeur="decouverte">{tr('journal.type.decouverte')}</button>
         </div>
       </div>
 
-      {groupes.map((g) => (
-        <section class="journal-mois" data-mois>
-          <h2>{g.libelle}</h2>
+      {groupes.map((g, i) => (
+        <details class="journal-mois" data-mois open={i === 0} data-defaut={i === 0 ? 'ouvert' : 'ferme'}>
+          <summary><h2>{g.libelle}</h2><span class="journal-compte">{g.items.length}</span></summary>
           {g.items.map((e) => (
             <article id={e.id} class={`journal-entree journal-${e.type}`} data-produit={e.produit} data-type={e.type}>
               <div class="journal-date">
                 <time datetime={e.date}>{jour.format(new Date(e.date + 'T12:00:00Z'))}</time>
-                <span class={`journal-badge journal-badge-${e.type}`}>{tr(e.type === 'livre' ? 'journal.type.livre' : 'journal.type.anticipe')}</span>
+                <span class={`journal-badge journal-badge-${e.type}`}>{tr(`journal.type.${e.type}` as any)}</span>
               </div>
               <div class="journal-contenu">
                 <p class="journal-produit">{e.produit}</p>
                 <h3>{texte(e).titre}</h3>
                 <p>{texte(e).resume}</p>
+                {(e as any).galerie === 'logos' && (
+                  <details class="journal-maquette">
+                    <summary>{tr('journal.logos.voir')}</summary>
+                    {ordreNiveaux.map((niveau) => (
+                      <div class="niveau-logos">
+                        <div class="logos-gestation">
+                          {niveaux.get(niveau)!.map((src) => (
+                            <div class="logo-carte"><img src={src} alt="" loading="lazy" /></div>
+                          ))}
+                          {niveau === 4 && niveau4Svg.map((v) => (
+                            <div class="logo-carte">
+                              <svg width="72" height="72" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                                {v.rayons.map((r, i) => (
+                                  i === 0
+                                    ? <circle cx="18" cy="18" r={r} fill="var(--accent)" fill-opacity={v.opacites[i]} />
+                                    : <circle cx="18" cy="18" r={r} stroke="var(--accent)" stroke-opacity={v.opacites[i]} stroke-width="1.5" />
+                                ))}
+                              </svg>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </details>
+                )}
                 {e.maquette && (
                   <details class="journal-maquette">
                     <summary>{tr('journal.maquette.voir')}</summary>
@@ -76,7 +127,7 @@ const aVenir = entrees.filter((e) => e.type === 'anticipe');
               </div>
             </article>
           ))}
-        </section>
+        </details>
       ))}
       <p class="journal-vide" id="journal-vide" hidden>{tr('journal.vide')}</p>
     </div>
@@ -100,7 +151,13 @@ const aVenir = entrees.filter((e) => e.type === 'anticipe');
   // Filtres : on masque les entrées qui ne correspondent pas, puis les mois devenus vides.
   const etat: Record<string, string> = { produit: '', type: '' };
   const entrees = document.querySelectorAll<HTMLElement>('.journal-entree');
+  function ouvrirCible() {
+    const cible = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const mois = cible && cible.closest('details');
+    if (mois) (mois as HTMLDetailsElement).open = true;
+  }
   function appliquer() {
+    const filtre = !!(etat.produit || etat.type);
     entrees.forEach((el) => {
       const ok = (!etat.produit || el.dataset.produit === etat.produit) && (!etat.type || el.dataset.type === etat.type);
       el.hidden = !ok;
@@ -110,10 +167,15 @@ const aVenir = entrees.filter((e) => e.type === 'anticipe');
       const n = m.querySelectorAll('.journal-entree:not([hidden])').length;
       m.hidden = n === 0;
       visibles += n;
+      // Filtre actif : on déplie les mois qui ont des résultats ; sinon, retour à l'état par défaut.
+      (m as HTMLDetailsElement).open = filtre ? n > 0 : m.dataset.defaut === 'ouvert';
     });
+    ouvrirCible();
     const vide = document.getElementById('journal-vide');
     if (vide) vide.hidden = visibles > 0;
   }
+  ouvrirCible();
+  window.addEventListener('hashchange', ouvrirCible);
   document.querySelectorAll<HTMLElement>('.journal-chips').forEach((groupe) => {
     groupe.addEventListener('click', (ev) => {
       const b = (ev.target as HTMLElement).closest('button');
@@ -138,13 +200,19 @@ const aVenir = entrees.filter((e) => e.type === 'anticipe');
   .journal-chip { font: inherit; font-size: 0.82rem; padding: 0.4rem 0.9rem; border-radius: 999px; border: 1px solid var(--bordure); background: transparent; color: var(--texte-2); cursor: pointer; }
   .journal-chip[aria-pressed='true'] { border-color: var(--accent); background: var(--accent-doux); color: var(--accent-vif); }
   .journal-chip-ambre[aria-pressed='true'] { border-color: var(--ambre); background: var(--ambre-doux); color: var(--ambre); }
-  .journal-mois { display: flex; flex-direction: column; gap: 1.6rem; }
-  .journal-mois > h2 { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texte-2); font-weight: 600; border-bottom: 1px solid var(--bordure); padding-bottom: 0.6rem; }
+  .journal-mois[open] { display: flex; flex-direction: column; gap: 1.6rem; }
+  .journal-mois > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; border-bottom: 1px solid var(--bordure); padding-bottom: 0.6rem; }
+  .journal-mois > summary::-webkit-details-marker { display: none; }
+  .journal-mois > summary::before { content: '▸'; color: var(--texte-3); margin-right: 0.5rem; transition: transform 0.15s; }
+  .journal-mois[open] > summary::before { transform: rotate(90deg); }
+  .journal-mois > summary h2 { flex: 1; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texte-2); font-weight: 600; }
+  .journal-compte { font-size: 0.75rem; color: var(--texte-3); }
   .journal-entree { display: flex; flex-wrap: wrap; gap: 1.2rem; }
   .journal-entree[hidden], .journal-mois[hidden] { display: none; }
   .journal-date { flex: 0 0 7.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-weight: 600; font-size: 0.9rem; }
   .journal-badge { align-self: flex-start; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 5px; }
   .journal-badge-livre { color: var(--vert); background: var(--vert-doux); }
+  .journal-badge-decouverte { color: var(--accent-vif); background: var(--accent-doux); }
   .journal-badge-anticipe { color: var(--ambre); background: var(--ambre-doux); }
   .journal-contenu { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 0.6rem; padding-left: 1.3rem; border-left: 2px solid var(--bordure); }
   .journal-anticipe .journal-contenu { border-left-color: var(--ambre); }

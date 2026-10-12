@@ -72,6 +72,16 @@
       "fr": { "titre": "L'Option Lab lit la vraie chaîne d'options", "resume": "Sous l'estimation de strike, une carte montre les vrais contrats : bid, ask, écart, intérêt ouvert et volatilité implicite. Un filtre de qualité écarte les cotes douteuses, et la corrélation réelle des positions entre dans le calcul de la taille." },
       "en": { "titre": "The Option Lab reads the real options chain", "resume": "Below the strike estimate, a card shows the real contracts: bid, ask, spread, open interest and implied volatility. A quality filter drops dubious quotes, and the real correlation of open positions now feeds the position-size calculation." },
       "es": { "titre": "El Option Lab lee la cadena de opciones real", "resume": "Bajo la estimación de strike, una ficha muestra los contratos reales: bid, ask, diferencial, interés abierto y volatilidad implícita. Un filtro de calidad descarta cotizaciones dudosas, y la correlación real de las posiciones entra en el cálculo del tamaño." }
+    },
+    {
+      "id": "2026-07-10-iecho-logos",
+      "date": "2026-07-10",
+      "produit": "iecho",
+      "type": "livre",
+      "galerie": "logos",
+      "fr": { "titre": "Logos en gestation", "resume": "Le logo iecho se cherche encore. Voici les pistes explorées, niveau par niveau. Dites-nous lequel vous inspire via le bouton « Partager une idée »." },
+      "en": { "titre": "Logos in gestation", "resume": "The iecho logo is still finding itself. Here are the directions explored, level by level. Tell us which one inspires you via the “Share an idea” button." },
+      "es": { "titre": "Logos en gestación", "resume": "El logo de iecho aún se está buscando. Estas son las pistas exploradas, nivel por nivel. Cuéntanos cuál te inspira con el botón «Compartir una idea»." }
     }
   ]
 }

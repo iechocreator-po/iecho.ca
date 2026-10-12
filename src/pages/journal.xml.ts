@@ -2,6 +2,7 @@
 import type { APIRoute } from 'astro';
 import data from '../data/journal/entries.json';
 
+const categories: Record<string, string> = { livre: 'Livré', anticipe: 'Anticipé', decouverte: 'Découverte' };
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c] as string));
 
 export const GET: APIRoute = ({ site }) => {
@@ -13,7 +14,7 @@ export const GET: APIRoute = ({ site }) => {
       <link>${base}/fr/journal/#${esc(e.id)}</link>
       <guid isPermaLink="false">${esc(e.id)}</guid>
       <pubDate>${new Date(e.date + 'T12:00:00Z').toUTCString()}</pubDate>
-      <category>${e.type === 'livre' ? 'Livré' : 'Anticipé'}</category>
+      <category>${categories[e.type] ?? e.type}</category>
       <description>${esc(e.fr.resume)}</description>
     </item>`).join('');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

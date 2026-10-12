@@ -45,7 +45,17 @@ Quatrième page du menu, **Journal** (`/fr/journal/`, `/en/journal/`, `/es/diari
   (deux ont été retirés avant l'ajout). Les maquettes propres à castellana restent dans l'onglet Anticipation du produit.
 - **Mécanique** : `routes.journal` dans `src/i18n/ui.ts` (slugs `journal`/`journal`/`diario`), lien dans `Header.astro`,
   vue `src/views/JournalView.astro` (filtres en JS minimal, mois groupés), `src/pages/journal.xml.ts` pour le RSS.
-- **À faire** : la sortie de bilbao vers `entries.json` reste un geste manuel (pas de script) ; une carte livrée devrait
+- **Types** : `livre`, `anticipe`, `decouverte` (clés `journal.type.*` dans `ui.ts`, catégorie RSS dans `journal.xml.ts`,
+  badge dans `JournalView.astro`). Un quatrième type s'ajoute aux trois mêmes endroits plus le bouton de filtre.
+- **Ajouter une entrée** : `npm run journal:add` (`scripts/journal-add.mjs`) pose les questions et **ajoute** le bloc en fin
+  de `entries.json` sans réécrire le fichier. Il ne demande que le français ; sans `en`/`es`, la vue retombe sur le français.
+  Il refuse un id déjà présent et n'écrit jamais un JSON invalide. Lire les réponses redirigées (stdin) est supporté.
+- **Affichage** : mois repliables (`<details>`) — le plus récent ouvert, les autres fermés avec leur compte ; un filtre actif
+  déplie les mois qui ont des résultats, un lien `#id` déplie le mois de l'entrée. **Rendu au clic non vérifié dans un navigateur.**
+- **Galerie** : une entrée peut porter `"galerie": "logos"` — « Logos en gestation » (entrée du 2026-07-10, déplacée depuis
+  Processus de création le 12/10/2026, placée à sa vraie date donc en bas). Les logos sont lus dans `public/logos/`
+  (`logo-n<niveau>-…`), une rangée par niveau, plus les trois pistes SVG du niveau 4.
+- **À faire** : la sortie de bilbao vers `entries.json` reste un geste manuel (le script ne lit pas bilbao) ; une carte livrée devrait
   basculer son entrée d'« Anticipé » à « Livré » ; la visibilité publique/privée par carte est la feature bilbao #431.
 
 ## Stack

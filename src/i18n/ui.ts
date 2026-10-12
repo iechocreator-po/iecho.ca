@@ -77,9 +77,6 @@ export const ui = {
     'processus.etape.4.titre': 'Rétroaction en cycles courts',
     'processus.etape.4.texte': "Ajuster rapidement selon ce qu'on apprend.",
     'processus.echo': "Un echo symbolise l'impact, l'expression, le reflet, la résonance.",
-    'processus.logos.titre': 'Logos en gestation',
-    'processus.logos.intro':
-      'Le logo iecho se cherche encore. Dites-nous lequel vous inspire via le bouton « Partager une idée ».',
     'bio.titre': 'Bio',
     'bio.texte.1':
       "Jean-Pierre Parra enseigne à l'Université, spécialisé en gestion de projet et développement de produits numériques. Il développe actuellement un cours de maîtrise sur la conception de produits d'affaires, avec une composante de littératie en IA.",
@@ -114,7 +111,9 @@ export const ui = {
     'journal.tout': 'Tout',
     'journal.type.livre': 'Livré',
     'journal.type.anticipe': 'Anticipé',
+    'journal.type.decouverte': 'Découverte',
     'journal.maquette.voir': 'Voir la maquette',
+    'journal.logos.voir': 'Voir les logos',
     'journal.maquette.fermer': 'Fermer la maquette',
     'journal.maquette.note': 'Maquette non fonctionnelle, chiffres d\'exemple.',
     'journal.rss': 'S\'abonner par RSS',
@@ -166,9 +165,6 @@ export const ui = {
     'processus.etape.4.titre': 'Short feedback cycles',
     'processus.etape.4.texte': 'Adjust quickly, based on what we learn.',
     'processus.echo': 'An echo symbolizes impact, expression, reflection, resonance.',
-    'processus.logos.titre': 'Logos in gestation',
-    'processus.logos.intro':
-      'The iecho logo is still finding itself. Tell us which one inspires you via the “Share an idea” button.',
     'bio.titre': 'Bio',
     'bio.texte.1':
       "Jean-Pierre Parra teaches at university level, specializing in project management and digital product development. He is currently building a master's course on business product design, with an AI literacy component.",
@@ -203,7 +199,9 @@ export const ui = {
     'journal.tout': 'All',
     'journal.type.livre': 'Shipped',
     'journal.type.anticipe': 'Previewed',
+    'journal.type.decouverte': 'Discovery',
     'journal.maquette.voir': 'View the mockup',
+    'journal.logos.voir': 'View the logos',
     'journal.maquette.fermer': 'Close the mockup',
     'journal.maquette.note': 'Non-functional mockup, sample figures.',
     'journal.rss': 'Subscribe by RSS',
@@ -255,9 +253,6 @@ export const ui = {
     'processus.etape.4.titre': 'Retroalimentación en ciclos cortos',
     'processus.etape.4.texte': 'Ajustar rápido según lo que se aprende.',
     'processus.echo': 'Un eco simboliza el impacto, la expresión, el reflejo, la resonancia.',
-    'processus.logos.titre': 'Logos en gestación',
-    'processus.logos.intro':
-      'El logo de iecho aún se está buscando. Cuéntanos cuál te inspira con el botón «Compartir una idea».',
     'bio.titre': 'Bio',
     'bio.texte.1':
       'Jean-Pierre Parra enseña en la Universidad, especializado en gestión de proyectos y desarrollo de productos digitales. Actualmente desarrolla un curso de maestría sobre el diseño de productos de negocio, con un componente de alfabetización en IA.',
@@ -292,7 +287,9 @@ export const ui = {
     'journal.tout': 'Todo',
     'journal.type.livre': 'Entregado',
     'journal.type.anticipe': 'Anticipado',
+    'journal.type.decouverte': 'Descubrimiento',
     'journal.maquette.voir': 'Ver la maqueta',
+    'journal.logos.voir': 'Ver los logos',
     'journal.maquette.fermer': 'Cerrar la maqueta',
     'journal.maquette.note': 'Maqueta no funcional, cifras de ejemplo.',
     'journal.rss': 'Suscribirse por RSS',

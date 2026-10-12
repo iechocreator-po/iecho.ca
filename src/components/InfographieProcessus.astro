@@ -59,7 +59,6 @@ const textes = {
     proprieteLignes: ["Liberté totale d'exploitation et", "d'évolution — les droits sur le code", 'sont partagés, sans contrainte contractuelle.'],
     citation1: '« Expérimenter, apprendre, faire résonner',
     citation2: 'des idées en produits numériques »',
-    pied: 'iecho — construit à la main, hébergé sobrement',
   },
   en: {
     eyebrow: 'CREATION PROCESS',
@@ -99,7 +98,6 @@ const textes = {
     proprieteLignes: ['Full freedom to use and evolve the', 'work — rights over the code are', 'shared, with no contractual strings.'],
     citation1: '“Experiment, learn, make ideas echo',
     citation2: 'into digital products”',
-    pied: 'iecho — handmade, soberly hosted',
   },
   es: {
     eyebrow: 'PROCESO DE CREACIÓN',
@@ -139,7 +137,6 @@ const textes = {
     proprieteLignes: ['Libertad total de explotación y', 'evolución — los derechos sobre el código', 'son compartidos, sin ataduras contractuales.'],
     citation1: '«Experimentar, aprender, hacer resonar',
     citation2: 'las ideas en productos digitales»',
-    pied: 'iecho — hecho a mano, alojado con sobriedad',
   },
 } as const;
 
@@ -153,7 +150,7 @@ const etapes = [
   { n: '04', couleur: '#a57cd9', y: 1530 },
 ];
 ---
-<svg viewBox="0 0 1200 2320" xmlns="http://www.w3.org/2000/svg" class="svg-processus" aria-hidden="true">
+<svg viewBox="0 0 1200 2200" xmlns="http://www.w3.org/2000/svg" class="svg-processus" aria-hidden="true">
   <style>
     .svg-processus .display { font-family: var(--police); }
     .svg-processus .body { font-family: var(--police); }
@@ -161,7 +158,7 @@ const etapes = [
   </style>
 
   <!-- Fond -->
-  <rect x="0" y="0" width="1200" height="2320" fill="var(--fond)" />
+  <rect x="0" y="0" width="1200" height="2200" fill="var(--fond)" />
 
   <!-- Halo décoratif d'ambiance (motif écho, très discret) -->
   <circle cx="1280" cy="180" r="260" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.05" />
@@ -265,5 +262,4 @@ const etapes = [
   <text x="600" y="2100" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="var(--texte)">{s.citation1}</text>
   <text x="600" y="2145" text-anchor="middle" class="display" font-size="30" font-style="italic" font-weight="500" fill="var(--texte)">{s.citation2}</text>
 
-  <text x="600" y="2255" text-anchor="middle" class="mono" font-size="14" fill="var(--texte-3)">{s.pied}</text>
 </svg>

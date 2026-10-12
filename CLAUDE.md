@@ -34,7 +34,7 @@ toute édition manuelle serait écrasée).
 
 Quatrième page du menu, **Journal** (`/fr/journal/`, `/en/journal/`, `/es/diario/`) : entrées datées de type
 **Livré** ou **Anticipé**, filtrables par produit et par type, avec un flux RSS (`/journal.xml`, français).
-**Travail sur la branche `journal-de-bord`, pas fusionné dans `main` : tant qu'il ne l'est pas, rien n'est en ligne.**
+**En ligne depuis le 12/10/2026** (fusionné dans `main` en avance rapide, commit `2b96aba` ; vérifié sur https://iecho.ca/fr/journal/, `/en/journal/`, `/es/diario/` et `/journal.xml`). La branche `journal-de-bord` a été supprimée, comme `refonte-navigation` (fusionnée depuis août) : il ne reste que `main`. Cloudflare redirige `*.html` vers l'URL sans extension (307) : les iframes des maquettes suivent cette redirection.
 
 - **Données** : `src/data/journal/entries.json`, une copie **éditoriale commitée**. Elle n'est jamais lue depuis bilbao
   au build (bilbao est local, le build Cloudflare ne le voit pas), et ne reprend jamais la description brute d'une

@@ -82,6 +82,48 @@
       "fr": { "titre": "Logos en gestation", "resume": "Le logo iecho se cherche encore. Voici les pistes explorées, niveau par niveau. Dites-nous lequel vous inspire via le bouton « Partager une idée »." },
       "en": { "titre": "Logos in gestation", "resume": "The iecho logo is still finding itself. Here are the directions explored, level by level. Tell us which one inspires you via the “Share an idea” button." },
       "es": { "titre": "Logos en gestación", "resume": "El logo de iecho aún se está buscando. Estas son las pistas exploradas, nivel por nivel. Cuéntanos cuál te inspira con el botón «Compartir una idea»." }
+    },
+    {
+      "id": "2026-10-11-design-system-briques",
+      "date": "2026-10-11",
+      "produit": "iecho",
+      "type": "livre",
+      "fr": { "titre": "Le design system devient un jeu de briques", "resume": "Au départ, un dossier de styles recopié dans chaque application. Aujourd'hui, des briques que l'on active : repères d'interface, styles complets, présentations de graphiques, réunis dans un onglet Personnalisation. Intention, expérimentation, résultat et limites, y compris le retard que nous n'avons pas encore rattrapé.", "corps": [
+          "# L'intention",
+          "Un seul développeur, une dizaine d'applications, et une exigence : qu'elles se ressemblent sans qu'on ait à y penser. Chaque nouveau produit repartait d'une page blanche, avec ses boutons et ses couleurs, et corriger un détail visuel voulait dire le corriger partout, à la main. L'idée était simple : valider les styles à un seul endroit, puis les déployer.",
+          "# L'expérimentation",
+          "Première étape : un dossier partagé de jetons de couleurs et de composants (cartes, boutons, pastilles, champs). Chaque application en emporte une copie plutôt que de lire le dossier d'origine, parce qu'un déploiement en ligne ne voit que son propre dépôt. Deuxième étape : des briques fonctionnelles par-dessus les styles. Des repères d'interface, une lettre par onglet et une lettre avec un numéro par carte, pour dire « F3 » au lieu de décrire un écran. Des boutons à effet. Puis des préférences que l'utilisateur règle lui-même : cinq présentations des graphiques dans castellana, quatre styles d'interface complets dans faro, une palette propre à toledo, le tout rangé dans un onglet Personnalisation des Réglages. Dernière étape : un détecteur, dans bilbao, qui compare les copies à la source.",
+          "# Le résultat",
+          "Les couleurs sont identiques partout : aucune application n'a dérivé sur ce point. Une nouvelle application adopte l'apparence commune en copiant deux fichiers, et la bascule clair/sombre fonctionne sans retouche. Trois applications ont désormais un onglet Personnalisation (toledo, castellana, faro), et les repères existent aussi dans bilbao.",
+          "# Les bénéfices",
+          "Un endroit pour décider, N applications qui en profitent. Une identité cohérente sans effort répété. Des préférences qui coûtent peu à ajouter, parce que la brique existe déjà. Et un retard qui se voit, au lieu de s'accumuler en silence.",
+          "# Ce qui ne marche pas encore",
+          "Les copies sont mises à jour à la main. Le détecteur de bilbao ne regarde que les jetons de couleurs, pas les composants : or la plupart des applications n'ont pas encore les boutons à effet. Le mécanisme des repères existe en plusieurs versions qui divergent. L'application macOS de toledo n'a été vérifiée que par compilation, et faro n'a pas été essayé sur téléphone. Rien de tout cela n'est caché : c'est la liste de ce qui vient ensuite."
+      ] },
+      "en": { "titre": "The design system becomes a set of bricks", "resume": "It started as a folder of styles copied into each application. Today it is bricks you switch on: interface markers, full styles, chart presentations, gathered in a Personalization tab. Intent, experiment, result and limits, including the lag we have not caught up with yet.", "corps": [
+          "# The intent",
+          "One developer, about ten applications, and one requirement: they should look related without anyone thinking about it. Each new product started from a blank page with its own buttons and colors, and fixing a visual detail meant fixing it everywhere by hand. The idea was simple: validate styles in one place, then roll them out.",
+          "# The experiment",
+          "First, a shared folder of color tokens and components (cards, buttons, badges, fields). Each application carries a copy instead of reading the original folder, because an online deployment only sees its own repository. Second, functional bricks on top of the styles. Interface markers, one letter per tab and a letter plus a number per card, so you can say \"F3\" instead of describing a screen. Effect buttons. Then preferences users set themselves: five chart presentations in castellana, four full interface styles in faro, a palette of its own in toledo, all gathered in a Personalization tab of the Settings. Last, a detector in bilbao that compares the copies to the source.",
+          "# The result",
+          "Colors are identical everywhere: no application has drifted on that front. A new application picks up the common look by copying two files, and light/dark switching works without changes. Three applications now have a Personalization tab (toledo, castellana, faro), and the markers also exist in bilbao.",
+          "# The benefits",
+          "One place to decide, N applications that benefit. A consistent identity without repeated effort. Preferences that are cheap to add because the brick already exists. And a lag that shows, instead of piling up in silence.",
+          "# What does not work yet",
+          "Copies are updated by hand. The bilbao detector only looks at color tokens, not components: most applications still lack the effect buttons. The markers mechanism exists in several diverging versions. toledo's macOS app has only been verified by compiling, and faro has not been tried on a phone. None of this is hidden: it is the list of what comes next."
+      ] },
+      "es": { "titre": "El sistema de diseño se vuelve un juego de piezas", "resume": "Empezó como una carpeta de estilos copiada en cada aplicación. Hoy son piezas que se activan: marcadores de interfaz, estilos completos, presentaciones de gráficos, reunidos en una pestaña Personalización. Intención, experimento, resultado y límites, incluido el atraso que aún no hemos recuperado.", "corps": [
+          "# La intención",
+          "Un solo desarrollador, una decena de aplicaciones y una exigencia: que se parezcan sin tener que pensarlo. Cada producto nuevo partía de una página en blanco con sus propios botones y colores, y corregir un detalle visual significaba corregirlo en todas partes a mano. La idea era simple: validar los estilos en un solo lugar y luego desplegarlos.",
+          "# El experimento",
+          "Primero, una carpeta compartida de tokens de color y componentes (tarjetas, botones, insignias, campos). Cada aplicación lleva una copia en lugar de leer la carpeta original, porque un despliegue en línea solo ve su propio repositorio. Segundo, piezas funcionales sobre los estilos. Marcadores de interfaz, una letra por pestaña y una letra con un número por tarjeta, para decir « F3 » en lugar de describir una pantalla. Botones con efecto. Después, preferencias que el usuario ajusta él mismo: cinco presentaciones de gráficos en castellana, cuatro estilos de interfaz completos en faro, una paleta propia en toledo, todo reunido en una pestaña Personalización de los Ajustes. Por último, un detector en bilbao que compara las copias con la fuente.",
+          "# El resultado",
+          "Los colores son idénticos en todas partes: ninguna aplicación se ha desviado en ese punto. Una aplicación nueva adopta el aspecto común copiando dos archivos, y el cambio claro/oscuro funciona sin retoques. Tres aplicaciones tienen ya una pestaña Personalización (toledo, castellana, faro), y los marcadores existen también en bilbao.",
+          "# Los beneficios",
+          "Un lugar para decidir, N aplicaciones que se benefician. Una identidad coherente sin esfuerzo repetido. Preferencias baratas de añadir porque la pieza ya existe. Y un atraso que se ve, en lugar de acumularse en silencio.",
+          "# Lo que aún no funciona",
+          "Las copias se actualizan a mano. El detector de bilbao solo mira los tokens de color, no los componentes: la mayoría de las aplicaciones aún no tiene los botones con efecto. El mecanismo de los marcadores existe en varias versiones que divergen. La aplicación macOS de toledo solo se ha verificado compilando, y faro no se ha probado en un teléfono. Nada de esto se oculta: es la lista de lo que viene."
+      ] }
     }
   ]
 }

@@ -253,3 +253,6 @@ que si la release correspondante est `publique: "Oui"` dans
 `feature-factory/data/<id>/releases.json` — sinon elle reste interne
 (ex. castellana au 25/7/2026, release marquée `"Non"`).
 
+## Revue de code
+
+Skill commune `/revue-code` (méthode : `2000_DigitalProducts/skills/revue-code/SKILL.md` ; mode d'emploi : `CLAUDE.md` racine, section « Revue de code »). À lancer depuis ce dossier avant chaque push (`/revue-code`) ou pour un état des lieux (`/revue-code audit`). Pas encore de `.claude/revue-pieges.md` : à créer au premier piège propre à ce produit (modèles : `trading-assistant/`, `traducteur-pdf/`) ; d'ici là, seuls le registre commun et les passes B à E s'appliquent. Pièges valables pour plusieurs produits : registre `2000_DigitalProducts/skills/revue-code/pieges-communs.md` (PC-01…) ; un piège qui peut toucher un autre produit y va, pas ici.

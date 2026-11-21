@@ -1,6 +1,6 @@
 {
   "genere_par": "bilbao",
-  "genere_le": "2026-07-31T16:10:33.391Z",
+  "genere_le": "2026-11-21T15:08:45.256Z",
   "note": "Artefact généré par bilbao (cockpit). À committer dans iecho.ca — ne pas éditer à la main.",
   "produits": {
     "barcelona": [
@@ -203,6 +203,34 @@
         "type": "Nouvelle_Feature"
       },
       {
+        "titre": "Visibilité publique ou privée par carte, et dossier anticipation/ par produit",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Onglet Anticipation dans bilbao : accès par compte, propositions, cartes, statuts",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Repères d'interface (lettre par onglet, lettre+numéro par carte) avec interrupteur ON/OFF",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Représentation du design system et de ses composants",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
         "titre": "Ajouter démarrage castillana",
         "statut": "Idee",
         "statut_public": "proposee",
@@ -275,6 +303,20 @@
     ],
     "castellana": [
       {
+        "titre": "Afficher les chaines d'options",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 9,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Plusieurs correctifs",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 6,
+        "type": "Nouvelle_Feature"
+      },
+      {
         "titre": "Routes API du journal de trades, et un cache pour le screening",
         "statut": "Livre",
         "statut_public": "livree",
@@ -308,65 +350,952 @@
         "statut_public": "livree",
         "votes": 1,
         "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 6 : ML jours à éviter, prime juste, échelle optimale",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 5 : ML probabilité de toucher la levée et quantile de baisse",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 4 : échelle de levées, prix limite, suivi en séance, bilan",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 3 : garde-fous (plafond notionnel, choc chiffré, calendrier)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 2 : scan de vente de puts lointains à 0–5 jours",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 1 : catalogue des échéances par titre",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Radar 0DTE — phase 0 : collecte des chaînes courtes et des barres 5 min",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue H4 : clôturer une partie des contrats (ex. racheter 2 sur 8)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ajuster un split d'actions (ratio + date) sur les positions ouvertes",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Tableau de bord des spreads (D6) : valeur à +30/+60/+90 jours, gains par mois, autres analyses",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "D5 : titre « Call (Bull) et Put (Bear) Spread », Agrandir, filtres au-dessus du tableau, Perte max. et Valeur de revente",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Cotation du bon marché : BMO saisi pour BMO.TO lisait le cours de New York (H2 et toute l application)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Fusionner les cartes Fondamentaux (A6) et quatre piliers (A7) en une seule, avec les poids des piliers réglables",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Spreads à débit (D5) : propositions de gestion d'une position ouverte (v2)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Spreads à débit (D5) : propositions de gestion d'une position ouverte (v1)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Onglet Options : expected move ×1 et ×2 (straddle) et lignes EM1 / EM2 dans la chaîne",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Spreads à débit : IV et HV dans l'analyse de risque (suite de #526)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "T1 · Spreads à débit (D5) : modifier une position déjà saisie",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Spreads à débit : analyse enrichie, score réglable, top 3 par titre, scanner des watchlists (suite de #502)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roll lisible et Bull Call Spread : suite de rolls, calculateur, journal et suivi des spreads",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Réglages → Balayage : chaque filtre du screening (fondamentaux A7 compris) avec interrupteur, valeur de référence, valeur ajustable et colonne affichée",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Fondamentaux en quatre piliers (carte A6) : rentabilité, flux de trésorerie, bilan, croissance",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Anticipation : épingle par carte et carte « Audit du code » en tête avec la dernière revue et le dernier audit",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Screener Prime G2 : champs compacts, filtres remontés, capital maximal saisi en chiffre",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roue H6 : put vendu comparé à l'achat des actions, au cours moyen du jour",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Balayage S&P 500 : case R-C2 « earnings des 2 prochains jours ouvrables », A3 Rafraîchir, A4 et B4 resserrés",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Expected Move expliqué simplement (glossaire, bouton i dans I3, Options et G2)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "G4 : prime gardée au rachat et probabilité de profit de chaque option vendue ouverte",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Earnings I2/I3 : capital requis, fenêtre de 1 à 14 jours, « Analyser tout » toujours visible, I3 lisible et détail en cadres",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Earnings play — nouvelle règle (Average Move + Expected Move) × 2, jours avant résultats (A4/B4), balayage, filtre G2",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Journal D2/D4 : VIX, RSI, OBV et corrélation proposés à la date d'entrée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Garde-fous avant d'agir et surveillance des jambes vendues (cas CLS)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "TD Sequential : indicateur (colonne TD, bloc A5, graphique à chandelles) et références dans l'onglet Anticipation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Options (F3) : choix Vendre / Acheter en plus de Calls / Puts; vente de calls couverts sur le coût de base (F et G); meilleurs deals alignés sur la Roue",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Terminer les audits et les revues : tout ce qui reste, par priorité, avec la définition de « terminé »",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Après les audits : supprimer la télémétrie de montants, publier l'empreinte de mise à jour, essayer le nouveau paquet",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Alertes de positions en ligne (cloud), évaluées sans que l'ordinateur soit allumé",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Cohérence des validations : tickers des listes, préférences, longueurs et corps invalides",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Radar et alertes de positions : relances en boucle et alerte d'échéance jamais déclenchée",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Analyste IA cloud : compter le coût avant la validation et rendre le plafond atomique",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Hacher les jetons de session et de lien de connexion stockés en base",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Connexion cloud : limiter le nombre de tentatives et de liens de connexion par courriel",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Boutons distants : désactiver pendant l'écriture et ignorer les réponses périmées",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Correctifs issus des audits de code (parite-routes, cloud-comptes, formules, donnees-marche) — 20/10/2026",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Aucune limitation du nombre d'essais de connexion, de demandes de lien magique et d'accès administrateur (constat 2, audit cloud-comptes)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Audit cloud-comptes : durcissements sous le seuil (lien magique, comptes devinables, en-têtes de sécurité, jetons, mots de passe)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Audit formules : observations sous le seuil (dates, échéance du screener de primes, capital d'un cycle)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Garder en mémoire les fondamentaux en lot (carte A6, qualité du FCF)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Golden Cross : le score ignore le seuil de 1 % (naissant 0 à 1 %, confirmé au-delà)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Force relative : variation du jour contre SPY, alors que le glossaire dit « sur la période »",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Question"
+      },
+      {
+        "titre": "VWAP « du jour » calculé sur 24 heures glissantes (deux séances, heures hors séance comprises)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Alertes??",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Découper index.html en modules (responsabilité unique, couplage, duplication)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Revue de code : /code-review ultra et revue de conception",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roue : supprimer l'ancien « Tableau annuel » (H9), remplacé par le tableau de bord annuel (H3)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roue : tableau de bord annuel refait (H3), dépôts séparés de la performance",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue : tableau de bord de la semaine (H2), avec sélecteur de semaine",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue : excess liquidity estimée (marge exigée des puts vendus sur compte margin)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Retirer E4 « Revenu de primes réalisé » (Option Lab)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Retirer G « Bilan de la Roue par cycle » (Screener Prime)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Retirer G « Cycles & positions ouvertes » (Screener Prime)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roue 6/6 : mise en ligne cloud et activation pour les membres du club",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue 5/6 : lignes d'état sur les sections existantes (améliorée / visée pour suppression)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roue 4/6 : import de l'onglet JOURNAL du Google Sheets du club",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue 3/6 : rapport hebdo et tableau annuel",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue 2/6 : onglet « Roue » (comptes, journal des jambes, positions, bilan par cycle)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Roue 1/6 : schéma et calculs (commissions, dividendes, achat/vente, flux de trésorerie)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Liens utiles : famille « Nouvelles » (CME FedWatch, EarningsHub, Barchart, Myfxbook)",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Résumé hebdomadaire par LLM, ancré sur le calendrier",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Rotation sectorielle : classement des secteurs et titres de qualité",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Profil « Roue » du screener : qualité, IV, liquidité, capital, support",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Expected move calculé depuis l'IV de la chaîne",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Calendrier de la Roue : fenêtres de vente et condition « jour vert »",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Position assignée en perte : prix moyen et call défensif",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Plan de match de la Roue : budget par titre et capital pour 2 ou 3 assignations",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Feu des résultats : orange à 10 jours, rouge à 5 jours, sinon vert",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Indicateurs de largeur MMTW, MMFI, MMTH calculés depuis le balayage S&P 500",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Préparation de la semaine : calendrier économique, Fed, largeur du marché",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Onglet Anticipation (flag, maquettes, votes, propositions)",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Chiffrer au repos le jeton TradingView de l'app locale",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Écran des alertes TradingView reçues par webhook",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Personnalisation : 5 styles pour la chaîne d'options (F3) et le screener de primes (G2)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Backtest réaliste : frais, glissement, filtre de régime",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Vue sectorielle des setups du S&P 500",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "IA étape 3 — texte non structuré et suivi des prédictions en conditions réelles",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "IA étape 1 — Claude comme analyste de contexte (sans effet sur le score)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Corrélation réelle des positions dans le calcul de taille (GO de JP, 8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Option Lab branché sur la vraie chaîne d'options (GO de JP, 8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Balayage S&P 500 planifié + « nouveautés depuis hier » + notifications (courriel / SMS)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Options F2/F3, recherche par nom, tableaux agrandis compacts, traits de graphique constants (8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Gestion d'erreurs du Screener — bandeau visible, cause explicite (8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "S&P 500 dans B2 (Screener) et G2 (Screener Prime), local seulement (8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "TradingView en appels locaux (mode 2) et balayage S&P 500 (7-8/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Credit Spreads (Bull Put / Bear Call) dans Option Lab (7/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Option Lab — refonte de l'onglet Labo (7/10/2026)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Retouches d'interface : favicon iecho, titre GICS (A2), carte SMA du Labo retirée, bouton Utiliser retiré",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Couleurs vert/jaune/rouge des tuiles EPS, FCF, FCF par action et rendement du FCF",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Pondération du P/S dans le pointage des fondamentaux (configurable)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Price-to-Sales et contexte des tuiles Fondamentaux",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Mode démo (cloud) : cache prolongé et préchauffage",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Repères du Screener Prime, clic sur ligne du screener, intro de Secteurs",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Roulement alimenté depuis la chaîne et les meilleurs deals",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "TradingView étape 2 : cotations et historique via TradingView",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Alertes sur les listes (local)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Alertes poussées (positions d'options et stops)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Bilan de la Roue par cycle",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "IV Rank réel depuis l'historique du Radar",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Rétro-analyse: le score prédit-il le R ?",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Backtest du signal d'alignement SMA",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Interface compacte — gabarits de champs, chaque élément dans une carte",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Radar — screener multi-titres de meilleurs deals (local)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Fondamentaux — EPS, FCF, qualité du FCF",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Screener Prime — screener de primes multi-titres",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Login et télémétrie — comptes, magic link, suppression par IP",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Options A — chaîne enrichie, meilleurs deals, flags par compte",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Connexion TradingView non persistante (OAuth 2.1 vers le serveur MCP officiel)",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Comptes et connexion : console des comptes dans bilbao, magic link, telemetrie triable, mots de passe par testeur",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Cloud : donnees Yahoo qui ne se rafraichissent pas (delai 6000 ms) - instance par requete et jeton partage",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Fiche de trade : prix d'entree sans valeur par defaut, cloture de la veille apres recuperation",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Section Symbole uniformisee dans tous les onglets (Secteurs, Screener, Fiche, Labo)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Recherche d'un symbole",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Retours de Louis : volume moyen (100 j) au Labo et onglet bilbao Watchlists",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Onglet Concepts : feature flag (defaut OFF), edition des fiches depuis bilbao, sans images",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Labo/Options : parametres de strategies editables, persistes, exportables, visibles dans bilbao",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Mise en place d'un login plus solide pour la télémétrie",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Intégration du tableau de bord de télémétrie dans bilbao",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Listes personnalisées dans le Screener (CRUD)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Cron Trigger — réchauffement automatique du cache (univers élargi)",
+        "statut": "Planifie",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Screener générateur de positions — deux axes, fraîcheur du signal, univers élargi",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Combler les trous sectoriels du P/E industrie et du PEG moyen",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Harmoniser les colonnes de la carte secteurs avec le Screening",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Tests automatisés sur les calculs (server/indicators.js)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Journal de trades — modifier un trade existant + export CSV",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Élargir la watchlist — XEQT.TO comme repère diversifié",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
       }
     ],
-    "eixample": [
+    "essen": [
       {
-        "titre": "Interface « Eixample » CRUDL (ex-« Master Editor »)",
-        "statut": "Livre",
-        "statut_public": "livree",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      }
-    ],
-    "iecho.ca": [
-      {
-        "titre": "Produit test-factory — cockpit de synchronisation des tests du portfolio",
+        "titre": "Améliorer les Breadcrumb",
         "statut": "Idee",
         "statut_public": "proposee",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Section « Logos en gestation » (votes visiteurs)",
-        "statut": "Idee",
-        "statut_public": "proposee",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Mission / À propos",
-        "statut": "Idee",
-        "statut_public": "proposee",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Bouton de feedback « Partager une idée » (Formspree)",
-        "statut": "Livre",
-        "statut_public": "livree",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Roadmap publique par produit (issue de bilbao)",
-        "statut": "Idee",
-        "statut_public": "proposee",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Sélecteur de produits + fiche détaillée",
-        "statut": "Livre",
-        "statut_public": "livree",
-        "votes": 0,
-        "type": "Nouvelle_Feature"
-      },
-      {
-        "titre": "Vitrine produits trilingue (FR/EN/ES)",
-        "statut": "Livre",
-        "statut_public": "livree",
-        "votes": 0,
+        "votes": 8,
         "type": "Nouvelle_Feature"
       }
     ],
@@ -521,6 +1450,15 @@
         "type": "Nouvelle_Feature"
       }
     ],
+    "porto": [
+      {
+        "titre": "Ajout du code source",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 4,
+        "type": "Nouvelle_Feature"
+      }
+    ],
     "toledo": [
       {
         "titre": "Voix TTS personnalisée",
@@ -545,8 +1483,8 @@
       },
       {
         "titre": "Transformation md vers html",
-        "statut": "En_Cours",
-        "statut_public": "encours",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 3,
         "type": "Nouvelle_Feature"
       },
@@ -558,23 +1496,653 @@
         "type": "Anomalie"
       },
       {
+        "titre": "Scan : signaler les pages redressées et leur angle",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Extraction OCR classique : redresser les pages photographiées de biais",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Scan : page photographiée de biais et papier gris pris pour une illustration",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "macOS : langue du document absente du TTS",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Chronique : totaux à 0 sans mesure",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Bibliothèque : course entre réponses",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Extracteur non figé : index de chapitres décalés",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Double clic sur Lancer, Reprendre ou ➕ Chapitres",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Erreur de validation affichée « [object Object] »",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "« Reprendre » du Laboratoire lit les menus",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "XSS par le nom d'une voix clonée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Double clic sur « Nettoyer le document » : deux scans",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Version d'origine de la comparaison coupée à 15 s",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "XSS par l'attribut alt des images exportées",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Voix clonées : sondage démultiplié, moteur TTS réinitialisé",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Analyse d'un PDF scanné : 0 qui ment",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Style Classeur en clair : ⚙ et thème actif illisibles",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Style Plan et repères d'interface en conflit",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Logo non effacé sous 590 px dans 4 styles",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "XSS par l'attribut href des liens d'un document",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Bibliothèque : « Reprendre » coupé à 15 s",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Interrupteurs : focus clavier invisible",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Planification d'un lot : chapitres cochés ignorés",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Fiche d'étude : Markdown réécrit sans écriture atomique",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Fiche d'étude et analyse : num_ctx non fixé",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Audio : un nom de voix clonée avec « / » rend la voix inutilisable",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Audio : relancer puis annuler ou échouer détruit l'audio précédent",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Voix clonée coupée par un arrêt : reste « en cours » pour toujours",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Scan : colonne sur fond blanc prise pour un encadré, titres perdus",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Scan : page simple à deux colonnes lue en pleine largeur",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Chapitres : un # dans un bloc de code crée un chapitre",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "_converti : servi quel que soit l'extracteur, écrit sans écriture atomique",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Purge des imports : régions, Markdown segmenté et fiches effacés au bout de 30 jours",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Signets vides comptés traduits : « Chapter 1 », titres en double",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Découpage : une table ou un bloc de code garde toute la section en un morceau",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Tests manquants de la zone api (champ erreur, routes sans test)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "/check-resume ignore le modèle",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Migration vers le store : document partiel ignoré, vérificateur qui annonce « aucune perte »",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Validation à la création : extracteur, modèle, date, lot vide, langue",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Traduction : sélection de chapitres vide ou inconnue finie « termine » et sortie écrasée",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Feature flags : chaîne « false » active, fichier invalide en 500, fichier local versionné",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Démarrage : récupération, purge et planificateur lancés à l'import de app.main",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Serveur local : origine null, POST simples sans garde, aucune garde Host",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Reprise : un double « Reprendre » efface la traduction",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Tests manquants : seuils et replis de Documents complexes (27 mutations non détectées)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Éditeur de régions : focus clavier perdu à chaque rendu",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "PDF mis en page : régions retouchées après le scan relues à la place de celles du scan",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Découpe : une section qui commence au milieu d'un chapitre perd ses premières pages",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Documents complexes : régions réglées à la main page par page",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Laboratoire › Découper un PDF en sections de N pages",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Onglet Anticipation à l'image de castellana",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Tests manquants : enchaînement scan vers traduction et promesses du parcours",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Test intermittent : test_une_traduction_reelle_laisse_ses_jetons_dans_l_historique",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Tests manquants : mention garantie, PNG géant, bornes de chapitres",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Signature : PDF refusé présélectionné dès la deuxième signature",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Lot : réglages figés conservés après un enchaînement raté",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Signature : lettres remplacées par « ? » dans la mention",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "PDF mis en page : pages perdues après un scan arrêté",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Tests manquants sur la reconstruction, la signature et les nouvelles routes",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Interface : hex en dur, couleur de signature tapée inaccessible, boutons Anticipation hors design system",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Dépendance cv2 non déclarée dans requirements.txt",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Écriture binaire non atomique et temporaire partagé entre threads",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "HTML interactif : langue forcée à fr, ancres en double pour deux titres identiques",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "PDF mis en page : papier jauni pris pour une illustration, troncature silencieuse après 20 pages suite",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "PDF mis en page : texte traduit placé sur les mauvaises pages",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "PDF mis en page : texte réduit à 7 pt dès qu'il dépasse la première colonne",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Signature : placement faux avec rotation et CropBox, copie signée écrasée, PNG géant en 500",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Signature : mention absente du PDF alors que l'interface affiche le succès",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Scan : « Recommencer » efface le Markdown source des traductions existantes",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Scan : pas de récupération au démarrage, un scan orphelin bloque Arrêter et Recommencer",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Parcours : statut de fiche faux, flags extraction_scan_colonnes et mode_avance contournés",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Parcours : états bloqués et erreurs invisibles",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Parcours : enchaînement scan vers traduction relancé, PDF brut resté au lot, langues lues aux menus",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Parcours : écouteurs ré-ajoutés toutes les 4 s, requêtes et gel de l'onglet",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Bibliothèque : bénéfice de chaque stratégie de fiche expliqué",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Accueil « parcours » par objectif, Scan multi-colonnes annuler et réinitialiser",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Signature visuelle d'un PDF",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Document scanné traduit recréé avec ses illustrations (PDF mis en page, HTML interactif)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Onglet Anticipation (module E)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Plafonds num_predict des fiches d étude + onglet D Chronique (historique des traitements)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Alignement UI sur castellana : composants, Réglages, repères, palette, icône (web + macOS)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Scan multi-colonnes : onglet du Laboratoire (OCR refait par colonne, sans LLM)",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Remplacer ScriptProcessorNode par AudioWorkletNode pour la capture voix",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Traduire les titres de la table des matières",
+        "statut": "Idee",
+        "statut_public": "proposee",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Parite macOS des fiches d'etude : strategie, dimensionnement, ciblage",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ajout d'un modèle Qwen",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "bug 31 july",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Les images extraites n'etaient pas les figures du PDF",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Le texte des pages illustrees etait remplace par de l'OCR",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
+        "titre": "Un upload rejete detruisait les traductions deja presentes",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 0,
+        "type": "Anomalie"
+      },
+      {
         "titre": "Architecture cible : durabilite des etats et traitement differe",
-        "statut": "En_Cours",
-        "statut_public": "encours",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 0,
         "type": "Amelioration"
       },
       {
         "titre": "Nouveau document / Vos traductions : infos persistantes pendant le job + minutage dynamique + suppression en cascade",
-        "statut": "Idee",
-        "statut_public": "proposee",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 0,
         "type": "Amelioration"
       },
       {
         "titre": "Mode relecture comparative (côte à côte)",
-        "statut": "Idee",
-        "statut_public": "proposee",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 0,
         "type": "Nouvelle_Feature"
       },
@@ -587,8 +2155,8 @@
       },
       {
         "titre": "Parité macOS — section « Reprendre une traduction »",
-        "statut": "Idee",
-        "statut_public": "proposee",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 0,
         "type": "Nouvelle_Feature"
       },
@@ -750,15 +2318,15 @@
     "valencia": [
       {
         "titre": "Sync Messenger doit permettre la création d'une fiche local",
-        "statut": "Idee",
-        "statut_public": "proposee",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 4,
         "type": "Nouvelle_Feature"
       },
       {
         "titre": "Améliorations v2",
-        "statut": "Idee",
-        "statut_public": "proposee",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 4,
         "type": "Nouvelle_Feature"
       },
@@ -770,9 +2338,30 @@
         "type": "Nouvelle_Feature"
       },
       {
-        "titre": "Formulaire d'ingestion de fiches",
+        "titre": "Extraction automatique des images (principale + 2 min.) par annonce",
+        "statut": "En_Cours",
+        "statut_public": "encours",
+        "votes": 3,
+        "type": "Amelioration"
+      },
+      {
+        "titre": "Ingestion d'annonces Idealista par email",
+        "statut": "Livre",
+        "statut_public": "livree",
+        "votes": 2,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Export PDF d'une sélection d'annonces avec photo principale",
         "statut": "Idee",
         "statut_public": "proposee",
+        "votes": 1,
+        "type": "Nouvelle_Feature"
+      },
+      {
+        "titre": "Formulaire d'ingestion de fiches",
+        "statut": "Livre",
+        "statut_public": "livree",
         "votes": 0,
         "type": "Nouvelle_Feature"
       },

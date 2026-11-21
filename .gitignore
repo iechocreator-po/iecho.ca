@@ -14,3 +14,6 @@ dist/
 scripts/.capture-tmp/
 scripts/.captures-originals-backup/
 scripts/.roadmap-diff/
+
+# Exports du tableau de bord Cloudflare (contiennent l'adresse du compte)
+/docs/*SecurityInsights*.csv

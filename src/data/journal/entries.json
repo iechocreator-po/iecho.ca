@@ -124,6 +124,96 @@
           "# Lo que aún no funciona",
           "Las copias se actualizan a mano. El detector de bilbao solo mira los tokens de color, no los componentes: la mayoría de las aplicaciones aún no tiene los botones con efecto. El mecanismo de los marcadores existe en varias versiones que divergen. La aplicación macOS de toledo solo se ha verificado compilando, y faro no se ha probado en un teléfono. Nada de esto se oculta: es la lista de lo que viene."
       ] }
+    },
+    {
+      "id": "2026-11-09-a-les-sens-ciel-en-ligne",
+      "date": "2026-11-09",
+      "produit": "a-les-sens-ciel",
+      "type": "livre",
+      "fr": { "titre": "alessensciel.com revient en ligne", "resume": "Le site de la pâtisserie montréalaise, tombé en panne, est reconstruit : reconstitué à partir des archives, puis refait en HTML, CSS et JavaScript simples, sans outil de build. Il est bilingue depuis le 22 novembre, avec un sélecteur de langue FR/EN." },
+      "en": { "titre": "alessensciel.com is back online", "resume": "The website of the Montréal pastry shop, which had gone down, has been rebuilt: reconstructed from archives, then redone in plain HTML, CSS and JavaScript, with no build tooling. It has been bilingual since November 22, with a FR/EN language switch." },
+      "es": { "titre": "alessensciel.com vuelve a estar en línea", "resume": "El sitio de la pastelería montrealesa, que había dejado de funcionar, se ha reconstruido: recuperado a partir de archivos y rehecho en HTML, CSS y JavaScript simples, sin herramientas de compilación. Es bilingüe desde el 22 de noviembre, con un selector de idioma FR/EN." }
+    },
+    {
+      "id": "2026-11-16-etincelle-spark-en-ligne",
+      "date": "2026-11-16",
+      "produit": "etincelle-spark",
+      "type": "livre",
+      "fr": { "titre": "etincelle-spark.com : le jeu Étincelle · Spark a son site", "resume": "Une page pour présenter le jeu de salon bilingue et en commander une boîte, dont le prix de lancement est de 55 $ (50 $ dès deux boîtes). Trois versions ont été soumises à la cliente avant la version officielle, publiée le 19 novembre, puis la version anglaise le 21." },
+      "en": { "titre": "etincelle-spark.com: the Étincelle · Spark game gets its website", "resume": "A page presenting the bilingual parlor game and taking orders for a box, at a launch price of $55 ($50 from two boxes). Several versions were shown to the client before the official one went live on November 19, followed by the English version on the 21st." },
+      "es": { "titre": "etincelle-spark.com: el juego Étincelle · Spark ya tiene su sitio", "resume": "Una página para presentar el juego de salón bilingüe y pedir una caja, con un precio de lanzamiento de 55 $ (50 $ desde dos cajas). Se mostraron varias versiones a la clienta antes de la oficial, publicada el 19 de noviembre, y la versión en inglés el día 21." }
+    },
+    {
+      "id": "2026-10-25-bilbao-audits",
+      "date": "2026-10-25",
+      "produit": "bilbao",
+      "type": "livre",
+      "fr": { "titre": "bilbao passe lui-même à la revue de code", "resume": "Quatre zones de bilbao ont été auditées une à une avec la skill /revue-code, et leurs correctifs sont livrés : gardes sur les adresses et les origines, marqueurs d'écriture, annulation avec instantané. Le dernier audit est épinglé dans l'onglet Anticipation, dans un registre des audits." },
+      "en": { "titre": "bilbao goes through code review itself", "resume": "Four areas of bilbao were audited one by one with the /revue-code skill, and the fixes have shipped: guards on hosts and origins, write markers, rollback with a snapshot. The latest audit is pinned in the Anticipation tab, in an audit register." },
+      "es": { "titre": "bilbao pasa también por la revisión de código", "resume": "Cuatro zonas de bilbao se auditaron una a una con la skill /revue-code y sus correcciones ya están entregadas: protecciones de host y origen, marcadores de escritura, restauración con instantánea. La última auditoría queda fijada en la pestaña Anticipación, en un registro de auditorías." }
+    },
+    {
+      "id": "2026-11-03-bilbao-console",
+      "date": "2026-11-03",
+      "produit": "bilbao",
+      "type": "livre",
+      "fr": { "titre": "bilbao relance les serveurs locaux et trie ses feedbacks", "resume": "La Console relance d'un bouton le serveur local de valencia, de toledo et de castellana. Les feedbacks se retrouvent par numéro, la télémétrie se filtre par colonne, et la roadmap publiée sur iecho.ca se limite aux produits publics." },
+      "en": { "titre": "bilbao restarts local servers and sorts its feedback", "resume": "The Console restarts the local server of valencia, toledo and castellana with one button. Feedback can be found by number, telemetry filters by column, and the roadmap published on iecho.ca is limited to public products." },
+      "es": { "titre": "bilbao reinicia los servidores locales y ordena sus comentarios", "resume": "La Consola reinicia con un botón el servidor local de valencia, toledo y castellana. Los comentarios se encuentran por número, la telemetría se filtra por columna y la hoja de ruta publicada en iecho.ca se limita a los productos públicos." }
+    },
+    {
+      "id": "2026-11-04-toledo-signature-scan",
+      "date": "2026-11-04",
+      "produit": "toledo",
+      "type": "livre",
+      "fr": { "titre": "toledo signe un PDF et recrée un scan traduit", "resume": "Une signature dessinée, tapée ou importée se place à la souris sur un PDF, qui est enregistré en copie. Un document scanné traduit est recréé avec ses illustrations replacées, en PDF mis en page ou en HTML interactif. Les régions d'un document complexe peuvent aussi se régler à la main, page par page." },
+      "en": { "titre": "toledo signs a PDF and rebuilds a translated scan", "resume": "A drawn, typed or imported signature can be placed with the mouse on a PDF, saved as a copy. A translated scanned document is rebuilt with its illustrations put back, as a laid-out PDF or an interactive HTML file. The regions of a complex document can also be set by hand, page by page." },
+      "es": { "titre": "toledo firma un PDF y recrea un escaneo traducido", "resume": "Una firma dibujada, escrita o importada se coloca con el ratón sobre un PDF, que se guarda como copia. Un documento escaneado y traducido se recrea con sus ilustraciones en su sitio, como PDF maquetado o HTML interactivo. Las regiones de un documento complejo también se pueden ajustar a mano, página por página." }
+    },
+    {
+      "id": "2026-11-18-toledo-scans-durcissement",
+      "date": "2026-11-18",
+      "produit": "toledo",
+      "type": "livre",
+      "fr": { "titre": "toledo redresse les photos de biais et se durcit", "resume": "Une page photographiée de travers est redressée avant l'extraction du texte, avec son angle signalé. Trois revues de code ont aussi corrigé des dizaines de défauts : écritures qui pouvaient s'interrompre, doubles clics qui relançaient un travail, failles d'affichage, totaux qui affichaient 0 à tort." },
+      "en": { "titre": "toledo straightens skewed photos and hardens itself", "resume": "A page photographed at an angle is straightened before text extraction, with its angle reported. Three code reviews also fixed dozens of defects: writes that could be interrupted, double clicks that restarted a job, display vulnerabilities, totals wrongly showing 0." },
+      "es": { "titre": "toledo endereza las fotos torcidas y se refuerza", "resume": "Una página fotografiada de lado se endereza antes de extraer el texto, indicando su ángulo. Tres revisiones de código también corrigieron decenas de defectos: escrituras que podían interrumpirse, dobles clics que relanzaban un trabajo, fallos de visualización y totales que mostraban 0 por error." }
+    },
+    {
+      "id": "2026-10-13-castellana-roue",
+      "date": "2026-10-13",
+      "produit": "castellana",
+      "type": "livre",
+      "fr": { "titre": "castellana suit la Roue, de la vente de puts aux dividendes", "resume": "Un onglet complet pour la stratégie de la Roue : comptes, journal des jambes, positions, bilan par cycle, import du journal d'un chiffrier du club. Il se prolonge d'un tableau de bord de la semaine et d'un tableau annuel, avec les dépôts comptés à part de la performance. Le put vendu se compare à l'achat des actions, et on peut clôturer une partie des contrats." },
+      "en": { "titre": "castellana tracks the Wheel, from selling puts to dividends", "resume": "A full tab for the Wheel strategy: accounts, leg journal, positions, per-cycle summary, and import of a club spreadsheet's journal. It is followed by a weekly dashboard and an annual one, with deposits counted apart from performance. The sold put is compared with buying the shares, and part of the contracts can be closed." },
+      "es": { "titre": "castellana sigue la Rueda, de la venta de puts a los dividendos", "resume": "Una pestaña completa para la estrategia de la Rueda: cuentas, diario de patas, posiciones, balance por ciclo e importación del diario de una hoja de cálculo del club. Se completa con un panel semanal y uno anual, con los depósitos contados aparte del rendimiento. El put vendido se compara con la compra de las acciones y se puede cerrar parte de los contratos." }
+    },
+    {
+      "id": "2026-11-01-castellana-earnings",
+      "date": "2026-11-01",
+      "produit": "castellana",
+      "type": "livre",
+      "fr": { "titre": "castellana prépare les résultats trimestriels", "resume": "Une règle « earnings play » compare le mouvement moyen au mouvement attendu, qu'un glossaire explique simplement. Un balayage du S&P 500 repère les titres dont les résultats tombent dans les deux prochains jours ouvrables. Le mouvement attendu se lit aussi dans la chaîne d'options, ×1 et ×2. Les garde-fous préviennent avant une action risquée et surveillent les jambes vendues." },
+      "en": { "titre": "castellana prepares for earnings season", "resume": "An “earnings play” rule compares the average move with the expected move, which a glossary explains in plain words. An S&P 500 sweep spots stocks reporting within the next two business days. The expected move can also be read in the options chain, ×1 and ×2. Safeguards warn before a risky action and watch sold legs." },
+      "es": { "titre": "castellana se prepara para los resultados trimestrales", "resume": "Una regla «earnings play» compara el movimiento medio con el esperado, que un glosario explica con sencillez. Un barrido del S&P 500 detecta los valores que presentan resultados en los próximos dos días hábiles. El movimiento esperado también se lee en la cadena de opciones, ×1 y ×2. Las salvaguardas avisan antes de una acción arriesgada y vigilan las patas vendidas." }
+    },
+    {
+      "id": "2026-11-17-castellana-spreads",
+      "date": "2026-11-17",
+      "produit": "castellana",
+      "type": "livre",
+      "fr": { "titre": "castellana analyse et gère les spreads à débit", "resume": "Les spreads Bull Call et Bear Put ont leur carte : analyse avec volatilité implicite et historique, score réglable, trois meilleures propositions par titre, balayage des listes de suivi. Une position ouverte reçoit des propositions de gestion, avec suivi des rolls. Le calcul de l'option sur BMO.TO lisait par erreur le cours de New York, corrigé." },
+      "en": { "titre": "castellana analyzes and manages debit spreads", "resume": "Bull Call and Bear Put spreads get their own card: analysis with implied and historical volatility, an adjustable score, the top three proposals per stock, a scan of watchlists. An open position gets management suggestions, with roll tracking. The BMO.TO calculation was wrongly reading the New York price, now fixed." },
+      "es": { "titre": "castellana analiza y gestiona los spreads de débito", "resume": "Los spreads Bull Call y Bear Put tienen su propia ficha: análisis con volatilidad implícita e histórica, puntuación ajustable, las tres mejores propuestas por valor y barrido de listas de seguimiento. Una posición abierta recibe propuestas de gestión, con seguimiento de rolls. El cálculo de BMO.TO leía por error el precio de Nueva York; ya está corregido." }
+    },
+    {
+      "id": "2026-11-22-castellana-radar-0dte",
+      "date": "2026-11-22",
+      "produit": "castellana",
+      "type": "livre",
+      "fr": { "titre": "castellana élargit son Radar 0DTE", "resume": "Le Radar cherche maintenant au-delà du S&P 500, avec un entonnoir de filtres, et dresse le catalogue des échéances de chaque titre. Des garde-fous plafonnent le notionnel, chiffrent un choc de marché et tiennent compte du calendrier. Les ajustements de fractionnement d'actions se saisissent sur les positions ouvertes." },
+      "en": { "titre": "castellana widens its 0DTE Radar", "resume": "The Radar now looks beyond the S&P 500, with a funnel of filters, and lists each stock's expirations. Safeguards cap the notional amount, quantify a market shock and take the calendar into account. Stock split adjustments can be entered on open positions." },
+      "es": { "titre": "castellana amplía su Radar 0DTE", "resume": "El Radar ahora busca más allá del S&P 500, con un embudo de filtros, y lista los vencimientos de cada valor. Unas salvaguardas limitan el nocional, cuantifican un choque de mercado y tienen en cuenta el calendario. Los ajustes por división de acciones se registran en las posiciones abiertas." }
     }
   ]
 }
